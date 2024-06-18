@@ -14,6 +14,7 @@
 		A2B8E3662C1BDE88008A0E5A /* ChordJamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B8E3652C1BDE88008A0E5A /* ChordJamTests.swift */; };
 		A2B8E3702C1BDE88008A0E5A /* ChordJamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B8E36F2C1BDE88008A0E5A /* ChordJamUITests.swift */; };
 		A2B8E3722C1BDE88008A0E5A /* ChordJamUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B8E3712C1BDE88008A0E5A /* ChordJamUITestsLaunchTests.swift */; };
+		FB5F5DB02C21873F008C6E68 /* SampleFretboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5F5DAF2C21873F008C6E68 /* SampleFretboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		A2B8E36B2C1BDE88008A0E5A /* ChordJamUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChordJamUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2B8E36F2C1BDE88008A0E5A /* ChordJamUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordJamUITests.swift; sourceTree = "<group>"; };
 		A2B8E3712C1BDE88008A0E5A /* ChordJamUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordJamUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FB5F5DAF2C21873F008C6E68 /* SampleFretboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleFretboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				A2B8E3562C1BDE87008A0E5A /* ContentView.swift */,
 				A2B8E3582C1BDE88008A0E5A /* Assets.xcassets */,
 				A2B8E35A2C1BDE88008A0E5A /* Preview Content */,
+				FB5F5DAF2C21873F008C6E68 /* SampleFretboard.swift */,
 			);
 			path = ChordJam;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			files = (
 				A2B8E3572C1BDE87008A0E5A /* ContentView.swift in Sources */,
 				A2B8E3552C1BDE87008A0E5A /* ChordJamApp.swift in Sources */,
+				FB5F5DB02C21873F008C6E68 /* SampleFretboard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
