@@ -14,6 +14,19 @@
 		A2B8E3662C1BDE88008A0E5A /* ChordJamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B8E3652C1BDE88008A0E5A /* ChordJamTests.swift */; };
 		A2B8E3702C1BDE88008A0E5A /* ChordJamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B8E36F2C1BDE88008A0E5A /* ChordJamUITests.swift */; };
 		A2B8E3722C1BDE88008A0E5A /* ChordJamUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B8E3712C1BDE88008A0E5A /* ChordJamUITestsLaunchTests.swift */; };
+		A2B8E3832C212C6D008A0E5A /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B8E3822C212C6D008A0E5A /* MainMenuView.swift */; };
+		A2B8E3862C212C82008A0E5A /* Level1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B8E3852C212C82008A0E5A /* Level1View.swift */; };
+		A2B8E3882C212C8F008A0E5A /* Level2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B8E3872C212C8F008A0E5A /* Level2View.swift */; };
+		A2B8E38A2C212C9A008A0E5A /* Level3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B8E3892C212C9A008A0E5A /* Level3View.swift */; };
+		A2B8E38C2C212CA3008A0E5A /* Level4View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B8E38B2C212CA3008A0E5A /* Level4View.swift */; };
+		A2B8E38E2C212CAA008A0E5A /* Level5View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B8E38D2C212CAA008A0E5A /* Level5View.swift */; };
+		A2B8E3902C21487D008A0E5A /* ChallengesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B8E38F2C21487D008A0E5A /* ChallengesView.swift */; };
+		A2B8E3922C214890008A0E5A /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B8E3912C214890008A0E5A /* LeaderboardView.swift */; };
+		A2B8E3942C21489D008A0E5A /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B8E3932C21489D008A0E5A /* CollectionView.swift */; };
+		A2B8E3962C2148A6008A0E5A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B8E3952C2148A6008A0E5A /* ProfileView.swift */; };
+		A2B8E3982C226F11008A0E5A /* GameCenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B8E3972C226F11008A0E5A /* GameCenterManager.swift */; };
+		A2B8E39B2C226F32008A0E5A /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2B8E39A2C226F32008A0E5A /* GameKit.framework */; };
+		A2B8E39E2C228606008A0E5A /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B8E39D2C228606008A0E5A /* NavBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +57,20 @@
 		A2B8E36B2C1BDE88008A0E5A /* ChordJamUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChordJamUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2B8E36F2C1BDE88008A0E5A /* ChordJamUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordJamUITests.swift; sourceTree = "<group>"; };
 		A2B8E3712C1BDE88008A0E5A /* ChordJamUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordJamUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A2B8E3822C212C6D008A0E5A /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
+		A2B8E3852C212C82008A0E5A /* Level1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level1View.swift; sourceTree = "<group>"; };
+		A2B8E3872C212C8F008A0E5A /* Level2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level2View.swift; sourceTree = "<group>"; };
+		A2B8E3892C212C9A008A0E5A /* Level3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level3View.swift; sourceTree = "<group>"; };
+		A2B8E38B2C212CA3008A0E5A /* Level4View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level4View.swift; sourceTree = "<group>"; };
+		A2B8E38D2C212CAA008A0E5A /* Level5View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level5View.swift; sourceTree = "<group>"; };
+		A2B8E38F2C21487D008A0E5A /* ChallengesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesView.swift; sourceTree = "<group>"; };
+		A2B8E3912C214890008A0E5A /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
+		A2B8E3932C21489D008A0E5A /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
+		A2B8E3952C2148A6008A0E5A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		A2B8E3972C226F11008A0E5A /* GameCenterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenterManager.swift; sourceTree = "<group>"; };
+		A2B8E39A2C226F32008A0E5A /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		A2B8E39C2C226F3F008A0E5A /* ChordJam.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChordJam.entitlements; sourceTree = "<group>"; };
+		A2B8E39D2C228606008A0E5A /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2B8E39B2C226F32008A0E5A /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +106,7 @@
 				A2B8E3642C1BDE88008A0E5A /* ChordJamTests */,
 				A2B8E36E2C1BDE88008A0E5A /* ChordJamUITests */,
 				A2B8E3522C1BDE87008A0E5A /* Products */,
+				A2B8E3992C226F31008A0E5A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,10 +123,13 @@
 		A2B8E3532C1BDE87008A0E5A /* ChordJam */ = {
 			isa = PBXGroup;
 			children = (
+				A2B8E39C2C226F3F008A0E5A /* ChordJam.entitlements */,
+				A2B8E3842C212C71008A0E5A /* Views */,
 				A2B8E3542C1BDE87008A0E5A /* ChordJamApp.swift */,
 				A2B8E3562C1BDE87008A0E5A /* ContentView.swift */,
 				A2B8E3582C1BDE88008A0E5A /* Assets.xcassets */,
 				A2B8E35A2C1BDE88008A0E5A /* Preview Content */,
+				A2B8E3972C226F11008A0E5A /* GameCenterManager.swift */,
 			);
 			path = ChordJam;
 			sourceTree = "<group>";
@@ -125,6 +157,32 @@
 				A2B8E3712C1BDE88008A0E5A /* ChordJamUITestsLaunchTests.swift */,
 			);
 			path = ChordJamUITests;
+			sourceTree = "<group>";
+		};
+		A2B8E3842C212C71008A0E5A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A2B8E3822C212C6D008A0E5A /* MainMenuView.swift */,
+				A2B8E3852C212C82008A0E5A /* Level1View.swift */,
+				A2B8E3872C212C8F008A0E5A /* Level2View.swift */,
+				A2B8E3892C212C9A008A0E5A /* Level3View.swift */,
+				A2B8E38B2C212CA3008A0E5A /* Level4View.swift */,
+				A2B8E38D2C212CAA008A0E5A /* Level5View.swift */,
+				A2B8E38F2C21487D008A0E5A /* ChallengesView.swift */,
+				A2B8E3912C214890008A0E5A /* LeaderboardView.swift */,
+				A2B8E3932C21489D008A0E5A /* CollectionView.swift */,
+				A2B8E3952C2148A6008A0E5A /* ProfileView.swift */,
+				A2B8E39D2C228606008A0E5A /* NavBar.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A2B8E3992C226F31008A0E5A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A2B8E39A2C226F32008A0E5A /* GameKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +315,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2B8E3922C214890008A0E5A /* LeaderboardView.swift in Sources */,
+				A2B8E3902C21487D008A0E5A /* ChallengesView.swift in Sources */,
+				A2B8E3882C212C8F008A0E5A /* Level2View.swift in Sources */,
+				A2B8E38C2C212CA3008A0E5A /* Level4View.swift in Sources */,
+				A2B8E3962C2148A6008A0E5A /* ProfileView.swift in Sources */,
+				A2B8E3982C226F11008A0E5A /* GameCenterManager.swift in Sources */,
+				A2B8E38A2C212C9A008A0E5A /* Level3View.swift in Sources */,
+				A2B8E38E2C212CAA008A0E5A /* Level5View.swift in Sources */,
+				A2B8E3832C212C6D008A0E5A /* MainMenuView.swift in Sources */,
 				A2B8E3572C1BDE87008A0E5A /* ContentView.swift in Sources */,
 				A2B8E3552C1BDE87008A0E5A /* ChordJamApp.swift in Sources */,
+				A2B8E39E2C228606008A0E5A /* NavBar.swift in Sources */,
+				A2B8E3942C21489D008A0E5A /* CollectionView.swift in Sources */,
+				A2B8E3862C212C82008A0E5A /* Level1View.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +489,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ChordJam/ChordJam.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ChordJam/Preview Content\"";
@@ -448,6 +519,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ChordJam/ChordJam.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ChordJam/Preview Content\"";

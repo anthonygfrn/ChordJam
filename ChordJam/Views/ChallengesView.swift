@@ -8,8 +8,19 @@
 import SwiftUI
 
 struct ChallengesView: View {
+    
+    @State private var currentView: String = "Challenges"
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text("Challenges")
+                .font(.largeTitle)
+                .padding()
+            
+            Spacer()
+            
+            NavBar(currentView: $currentView)
+        }
     }
 }
 
