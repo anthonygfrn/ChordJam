@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		290068E82C22A29F000DCE81 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290068E72C22A29E000DCE81 /* ProgressBar.swift */; };
+		290068EA2C22A2A8000DCE81 /* OnboardImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290068E92C22A2A8000DCE81 /* OnboardImage.swift */; };
+		290068EC2C22A2AE000DCE81 /* Introduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290068EB2C22A2AE000DCE81 /* Introduction.swift */; };
+		290068EE2C22A2B4000DCE81 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290068ED2C22A2B4000DCE81 /* Onboarding.swift */; };
 		A2B8E3552C1BDE87008A0E5A /* ChordJamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B8E3542C1BDE87008A0E5A /* ChordJamApp.swift */; };
 		A2B8E3572C1BDE87008A0E5A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B8E3562C1BDE87008A0E5A /* ContentView.swift */; };
 		A2B8E3592C1BDE88008A0E5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2B8E3582C1BDE88008A0E5A /* Assets.xcassets */; };
@@ -35,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		290068E72C22A29E000DCE81 /* ProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		290068E92C22A2A8000DCE81 /* OnboardImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardImage.swift; sourceTree = "<group>"; };
+		290068EB2C22A2AE000DCE81 /* Introduction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Introduction.swift; sourceTree = "<group>"; };
+		290068ED2C22A2B4000DCE81 /* Onboarding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		A2B8E3512C1BDE87008A0E5A /* ChordJam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChordJam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2B8E3542C1BDE87008A0E5A /* ChordJamApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordJamApp.swift; sourceTree = "<group>"; };
 		A2B8E3562C1BDE87008A0E5A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -96,6 +104,10 @@
 		A2B8E3532C1BDE87008A0E5A /* ChordJam */ = {
 			isa = PBXGroup;
 			children = (
+				290068EB2C22A2AE000DCE81 /* Introduction.swift */,
+				290068ED2C22A2B4000DCE81 /* Onboarding.swift */,
+				290068E92C22A2A8000DCE81 /* OnboardImage.swift */,
+				290068E72C22A29E000DCE81 /* ProgressBar.swift */,
 				A2B8E3542C1BDE87008A0E5A /* ChordJamApp.swift */,
 				A2B8E3562C1BDE87008A0E5A /* ContentView.swift */,
 				A2B8E3582C1BDE88008A0E5A /* Assets.xcassets */,
@@ -261,8 +273,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2B8E3572C1BDE87008A0E5A /* ContentView.swift in Sources */,
+				290068EC2C22A2AE000DCE81 /* Introduction.swift in Sources */,
 				A2B8E3552C1BDE87008A0E5A /* ChordJamApp.swift in Sources */,
+				290068EE2C22A2B4000DCE81 /* Onboarding.swift in Sources */,
+				290068E82C22A29F000DCE81 /* ProgressBar.swift in Sources */,
 				FB5F5DB02C21873F008C6E68 /* SampleFretboard.swift in Sources */,
+				290068EA2C22A2A8000DCE81 /* OnboardImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
