@@ -18,6 +18,11 @@
 		A2B8E3662C1BDE88008A0E5A /* ChordJamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B8E3652C1BDE88008A0E5A /* ChordJamTests.swift */; };
 		A2B8E3702C1BDE88008A0E5A /* ChordJamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B8E36F2C1BDE88008A0E5A /* ChordJamUITests.swift */; };
 		A2B8E3722C1BDE88008A0E5A /* ChordJamUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B8E3712C1BDE88008A0E5A /* ChordJamUITestsLaunchTests.swift */; };
+		BAEDEC922C22A7E900752435 /* Level1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEDEC912C22A7E900752435 /* Level1View.swift */; };
+		BAEDEC942C22A7F900752435 /* ModalLevel1.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEDEC932C22A7F900752435 /* ModalLevel1.swift */; };
+		BAEDEC962C22A82200752435 /* FinishLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEDEC952C22A82200752435 /* FinishLevel.swift */; };
+		BAEDEC982C22A83500752435 /* LevelsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEDEC972C22A83500752435 /* LevelsController.swift */; };
+		BAEDEC9A2C22A84C00752435 /* CombinedLevelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEDEC992C22A84C00752435 /* CombinedLevelsView.swift */; };
 		FB5F5DB02C21873F008C6E68 /* SampleFretboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5F5DAF2C21873F008C6E68 /* SampleFretboard.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +58,11 @@
 		A2B8E36B2C1BDE88008A0E5A /* ChordJamUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChordJamUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2B8E36F2C1BDE88008A0E5A /* ChordJamUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordJamUITests.swift; sourceTree = "<group>"; };
 		A2B8E3712C1BDE88008A0E5A /* ChordJamUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordJamUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BAEDEC912C22A7E900752435 /* Level1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level1View.swift; sourceTree = "<group>"; };
+		BAEDEC932C22A7F900752435 /* ModalLevel1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalLevel1.swift; sourceTree = "<group>"; };
+		BAEDEC952C22A82200752435 /* FinishLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishLevel.swift; sourceTree = "<group>"; };
+		BAEDEC972C22A83500752435 /* LevelsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsController.swift; sourceTree = "<group>"; };
+		BAEDEC992C22A84C00752435 /* CombinedLevelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinedLevelsView.swift; sourceTree = "<group>"; };
 		FB5F5DAF2C21873F008C6E68 /* SampleFretboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleFretboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,7 +114,9 @@
 		A2B8E3532C1BDE87008A0E5A /* ChordJam */ = {
 			isa = PBXGroup;
 			children = (
+				BAEDEC902C22A7DE00752435 /* Level1 */,
 				290068EB2C22A2AE000DCE81 /* Introduction.swift */,
+				BAEDEC952C22A82200752435 /* FinishLevel.swift */,
 				290068ED2C22A2B4000DCE81 /* Onboarding.swift */,
 				290068E92C22A2A8000DCE81 /* OnboardImage.swift */,
 				290068E72C22A29E000DCE81 /* ProgressBar.swift */,
@@ -113,6 +125,8 @@
 				A2B8E3582C1BDE88008A0E5A /* Assets.xcassets */,
 				A2B8E35A2C1BDE88008A0E5A /* Preview Content */,
 				FB5F5DAF2C21873F008C6E68 /* SampleFretboard.swift */,
+				BAEDEC972C22A83500752435 /* LevelsController.swift */,
+				BAEDEC992C22A84C00752435 /* CombinedLevelsView.swift */,
 			);
 			path = ChordJam;
 			sourceTree = "<group>";
@@ -140,6 +154,15 @@
 				A2B8E3712C1BDE88008A0E5A /* ChordJamUITestsLaunchTests.swift */,
 			);
 			path = ChordJamUITests;
+			sourceTree = "<group>";
+		};
+		BAEDEC902C22A7DE00752435 /* Level1 */ = {
+			isa = PBXGroup;
+			children = (
+				BAEDEC912C22A7E900752435 /* Level1View.swift */,
+				BAEDEC932C22A7F900752435 /* ModalLevel1.swift */,
+			);
+			path = Level1;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +253,13 @@
 				Base,
 			);
 			mainGroup = A2B8E3482C1BDE87008A0E5A;
+			packageReferences = (
+				BAEDEC9B2C22A86E00752435 /* XCRemoteSwiftPackageReference "AudioKit" */,
+				BAEDEC9C2C22A87700752435 /* XCRemoteSwiftPackageReference "AudioKitEX" */,
+				BAEDEC9D2C22A88900752435 /* XCRemoteSwiftPackageReference "AudioKitUI" */,
+				BAEDEC9E2C22A89700752435 /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */,
+				BAEDEC9F2C22A8A400752435 /* XCRemoteSwiftPackageReference "Tonic" */,
+			);
 			productRefGroup = A2B8E3522C1BDE87008A0E5A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -275,10 +305,15 @@
 				A2B8E3572C1BDE87008A0E5A /* ContentView.swift in Sources */,
 				290068EC2C22A2AE000DCE81 /* Introduction.swift in Sources */,
 				A2B8E3552C1BDE87008A0E5A /* ChordJamApp.swift in Sources */,
+				BAEDEC942C22A7F900752435 /* ModalLevel1.swift in Sources */,
+				BAEDEC982C22A83500752435 /* LevelsController.swift in Sources */,
 				290068EE2C22A2B4000DCE81 /* Onboarding.swift in Sources */,
+				BAEDEC9A2C22A84C00752435 /* CombinedLevelsView.swift in Sources */,
 				290068E82C22A29F000DCE81 /* ProgressBar.swift in Sources */,
 				FB5F5DB02C21873F008C6E68 /* SampleFretboard.swift in Sources */,
+				BAEDEC962C22A82200752435 /* FinishLevel.swift in Sources */,
 				290068EA2C22A2A8000DCE81 /* OnboardImage.swift in Sources */,
+				BAEDEC922C22A7E900752435 /* Level1View.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -608,6 +643,49 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BAEDEC9B2C22A86E00752435 /* XCRemoteSwiftPackageReference "AudioKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/AudioKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.4;
+			};
+		};
+		BAEDEC9C2C22A87700752435 /* XCRemoteSwiftPackageReference "AudioKitEX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/AudioKitEX.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
+		BAEDEC9D2C22A88900752435 /* XCRemoteSwiftPackageReference "AudioKitUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/AudioKitUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.7;
+			};
+		};
+		BAEDEC9E2C22A89700752435 /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/SoundpipeAudioKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.1;
+			};
+		};
+		BAEDEC9F2C22A8A400752435 /* XCRemoteSwiftPackageReference "Tonic" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/Tonic.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = A2B8E3492C1BDE87008A0E5A /* Project object */;
 }
