@@ -30,7 +30,7 @@
 		A2C4C1FD2C23CD2D002FEEAB /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4C1FC2C23CD2D002FEEAB /* CollectionView.swift */; };
 		A2C4C1FF2C23CD3A002FEEAB /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4C1FE2C23CD3A002FEEAB /* ProfileView.swift */; };
 		A2C4C2012C23CD4C002FEEAB /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4C2002C23CD4C002FEEAB /* NavBar.swift */; };
-		BAEDEC942C22A7F900752435 /* ModalLevel1.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEDEC932C22A7F900752435 /* ModalLevel1.swift */; };
+		A2C4C2042C23D537002FEEAB /* ModalLevel1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4C2032C23D537002FEEAB /* ModalLevel1.swift */; };
 		BAEDEC962C22A82200752435 /* FinishLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEDEC952C22A82200752435 /* FinishLevel.swift */; };
 		BAEDEC982C22A83500752435 /* LevelsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEDEC972C22A83500752435 /* LevelsController.swift */; };
 		BAEDEC9A2C22A84C00752435 /* CombinedLevelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEDEC992C22A84C00752435 /* CombinedLevelsView.swift */; };
@@ -86,7 +86,7 @@
 		A2C4C1FC2C23CD2D002FEEAB /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		A2C4C1FE2C23CD3A002FEEAB /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		A2C4C2002C23CD4C002FEEAB /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
-		BAEDEC932C22A7F900752435 /* ModalLevel1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalLevel1.swift; sourceTree = "<group>"; };
+		A2C4C2032C23D537002FEEAB /* ModalLevel1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalLevel1.swift; sourceTree = "<group>"; };
 		BAEDEC952C22A82200752435 /* FinishLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishLevel.swift; sourceTree = "<group>"; };
 		BAEDEC972C22A83500752435 /* LevelsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsController.swift; sourceTree = "<group>"; };
 		BAEDEC992C22A84C00752435 /* CombinedLevelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinedLevelsView.swift; sourceTree = "<group>"; };
@@ -148,7 +148,6 @@
 			isa = PBXGroup;
 			children = (
 				A2C4C1ED2C23CC56002FEEAB /* Views */,
-				BAEDEC902C22A7DE00752435 /* Level1 */,
 				290068EB2C22A2AE000DCE81 /* Introduction.swift */,
 				BAEDEC952C22A82200752435 /* FinishLevel.swift */,
 				290068ED2C22A2B4000DCE81 /* Onboarding.swift */,
@@ -194,8 +193,8 @@
 		A2C4C1ED2C23CC56002FEEAB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A2C4C2022C23D515002FEEAB /* Level1 */,
 				A2C4C1E92C23CC11002FEEAB /* MainMenuView.swift */,
-				A2C4C1EE2C23CCB6002FEEAB /* Level1View.swift */,
 				A2C4C1F02C23CCCD002FEEAB /* Level2View.swift */,
 				A2C4C1F22C23CCDB002FEEAB /* Level3View.swift */,
 				A2C4C1F42C23CCE8002FEEAB /* Level4View.swift */,
@@ -209,10 +208,11 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		BAEDEC902C22A7DE00752435 /* Level1 */ = {
+		A2C4C2022C23D515002FEEAB /* Level1 */ = {
 			isa = PBXGroup;
 			children = (
-				BAEDEC932C22A7F900752435 /* ModalLevel1.swift */,
+				A2C4C1EE2C23CCB6002FEEAB /* Level1View.swift */,
+				A2C4C2032C23D537002FEEAB /* ModalLevel1.swift */,
 			);
 			path = Level1;
 			sourceTree = "<group>";
@@ -370,12 +370,12 @@
 			files = (
 				A2C4C1F92C23CD04002FEEAB /* ChallengesView.swift in Sources */,
 				A2C4C1F12C23CCCD002FEEAB /* Level2View.swift in Sources */,
+				A2C4C2042C23D537002FEEAB /* ModalLevel1.swift in Sources */,
 				A2B8E3572C1BDE87008A0E5A /* ContentView.swift in Sources */,
 				A2C4C1F32C23CCDB002FEEAB /* Level3View.swift in Sources */,
 				290068EC2C22A2AE000DCE81 /* Introduction.swift in Sources */,
 				A2B8E3552C1BDE87008A0E5A /* ChordJamApp.swift in Sources */,
 				A2C4C1EF2C23CCB6002FEEAB /* Level1View.swift in Sources */,
-				BAEDEC942C22A7F900752435 /* ModalLevel1.swift in Sources */,
 				BAEDEC982C22A83500752435 /* LevelsController.swift in Sources */,
 				A2C4C1F52C23CCE8002FEEAB /* Level4View.swift in Sources */,
 				A2C4C1FB2C23CD1E002FEEAB /* LeaderboardView.swift in Sources */,
@@ -554,7 +554,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ChordJam/Preview Content\"";
-				DEVELOPMENT_TEAM = 68FP6TZ275;
+				DEVELOPMENT_TEAM = FTP77G36XW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -583,7 +583,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ChordJam/Preview Content\"";
-				DEVELOPMENT_TEAM = 68FP6TZ275;
+				DEVELOPMENT_TEAM = FTP77G36XW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
