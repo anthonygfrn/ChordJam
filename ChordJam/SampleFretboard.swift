@@ -7,30 +7,45 @@
 
 import SwiftUI
 
+enum Strumming: String {
+    case up = "up"
+    case down = "down"
+}
+
 struct Chord: Identifiable {
     let id = UUID()
     let name: String
     let time: Double
+    let strumming: Strumming
 }
 
 
 struct FretboardView: View {
     
     let chords: [Chord] = [
-        Chord(name: "C", time: 0),
-        Chord(name: "C", time: 0.5),
-        Chord(name: "C", time: 1),
-        Chord(name: "C", time: 2),
-        
-        Chord(name: "Em", time: 4), // 4 seconds
-        Chord(name: "D", time: 8), // 8 seconds
-        Chord(name: "C", time: 12), // 12 seconds
-        Chord(name: "G", time: 16), // 16 seconds
-        Chord(name: "Em", time: 20), // 20 seconds
-        Chord(name: "D", time: 24), // 24 seconds
-        Chord(name: "C", time: 28), // 28 seconds
+        Chord(name: "G", time: 0, strumming: .up),
+        Chord(name: "G", time: 0.5, strumming: .up),
+        Chord(name: "G", time: 1, strumming: .up),
+        Chord(name: "G", time: 1.5, strumming: .up),
+        Chord(name: "Em", time: 2, strumming: .up),
+        Chord(name: "D", time: 4, strumming: .up),
+        Chord(name: "C", time: 6, strumming: .up),
+        Chord(name: "G", time: 8, strumming: .up),
+        Chord(name: "C", time: 10, strumming: .up),
+        Chord(name: "G", time: 12, strumming: .up),
+        Chord(name: "D", time: 14, strumming: .up),
+        Chord(name: "G", time: 16, strumming: .up),
+        Chord(name: "Em", time: 18, strumming: .up),
+        Chord(name: "D", time: 20, strumming: .up),
+        Chord(name: "C", time: 22, strumming: .up),
+        Chord(name: "G", time: 24, strumming: .up),
+        Chord(name: "C", time: 26, strumming: .up),
+        Chord(name: "G", time: 28, strumming: .up),
+        Chord(name: "D", time: 30, strumming: .up),
+        Chord(name: "G", time: 32, strumming: .up),
     ]
-    @State private var offset: CGFloat = 0
+    
+    @State private var offset: CGFloat = 122
     @State private var contentWidth: CGFloat = 0
     @State private var viewLoaded: Bool = false
     var fretViewWidth: CGFloat = 300
@@ -40,7 +55,7 @@ struct FretboardView: View {
         fretViewWidth / CGFloat(desiredDuration / speed)
     }
     private var getFretBoardLong: Int {
-        return Int(ceil(Double(chords.last!.time) / 2.0 + 15.0))
+        return Int(ceil(Double(chords.last!.time) / 2.0 )) + 4
     }
     
     var body: some View {
@@ -53,6 +68,7 @@ struct FretboardView: View {
                         }
                         Spacer()
                     }
+//                    .drawingGroup()
                     .background(
                         GeometryReader { proxy in
                             Color.clear.onAppear {
@@ -76,6 +92,7 @@ struct FretboardView: View {
                     .offset(x: -300)
             )
         }
+        .edgesIgnoringSafeArea(.all)
         .frame(maxHeight: .infinity)
         .background(Color.purple)
         
@@ -85,7 +102,7 @@ struct FretboardView: View {
         Timer.scheduledTimer(withTimeInterval: speed, repeats: true) { timer in
             offset -= scrollSpeed
             if offset <= -contentWidth {
-                offset = 0
+                offset = 122
             }
         }
     }
@@ -102,7 +119,7 @@ struct FretView: View {
                     thickness: CGFloat(1 + Float(string) * 0.5)
                 ).overlay {
                     HStack {
-//                        NoteView(note: "\(index)")
+                        //                        NoteView(note: "\(index)")
                         
                     }.offset(x: -50)
                 }
@@ -137,10 +154,9 @@ struct ChordOverlay: View {
     }
     
     func getChords(index: Int) -> [Chord] {
-        if index == 1 {
-            return chords.filter { Double(index) - 1 <= $0.time && $0.time < Double(index + 1) }
-        }
-        return chords.filter { Double(index) < $0.time && $0.time < Double(index + 2) }
+        let startTime = Double((index - 2) * 2)
+        let endTime = startTime + 2
+        return chords.filter { startTime <= $0.time && $0.time < endTime }
     }
 }
 
@@ -151,13 +167,44 @@ struct ChordView: View {
         VStack{
             Rectangle()
                 .fill(Color.white)
-                .frame(width: 64, height: 250)
+                .frame(width: 64, height: CGFloat(getChordHeight()), alignment: .top)
                 .cornerRadius(10)
                 .overlay {
-                    Text("\(chord.name) ")
+                    VStack(alignment: .center){
+                        Text("\(chord.name)")
+                            .foregroundColor(.black)
+                        if(chord.strumming == .up){
+                            Image(systemName: "arrow.up")
+                                .foregroundColor(.black)
+                        } else {
+                            Image(systemName: "arrow.down")
+                                .foregroundColor(.black)
+                        }
+                    }
                 }
-        }.frame(height: 250)
+        }.frame(height: 250, alignment: .top)
             .offset(x:CGFloat(getChordOffset()))
+    }
+    
+    // 3 120
+    // 4 160
+    // 5 210
+    // 6 250
+
+    
+    func getChordHeight() -> Int {
+        switch(chord.name){
+        case "D":
+            return 120
+        case "G":
+            return 250
+        case "Em":
+            return 210
+        case "C":
+            return 210
+        default:
+            return 250
+        }
     }
     
     func getChordOffset() -> Int {
