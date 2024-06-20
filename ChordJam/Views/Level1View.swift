@@ -10,17 +10,17 @@
 //struct Level1View: View {
 //    @StateObject var manager = LevelsController()
 //    @State var showNextLevelView = false
-//    
+//
 //    var body: some View {
-//            
+//
 //        ZStack{
 //            Image("BackgroundLevel")
 //                .resizable()
-//            
+//
 //            HStack{
-//                
+//
 //                Spacer()
-//                
+//
 //                VStack(alignment: .leading){
 //                    Spacer()
 //                    VStack{
@@ -32,9 +32,9 @@
 //                            .bold()
 //                            .foregroundStyle(Color.yellow)
 //                    }
-//                    
-//                    
-//                    
+//
+//
+//
 //                    HStack{
 //    //                    Spacer()
 //                        Image("Strings")
@@ -49,23 +49,23 @@
 //
 //                    Spacer()
 //                }
-//                
+//
 //            }
 ////            Button(action: {
 ////                showNextLevelView = true
 ////            }, label: {
 ////                /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
 ////            })
-//            
-//            
+//
+//
 //            Image("Fingering")
 //                .resizable()
 //                .aspectRatio(contentMode: .fit)
 //                .frame(width: 96, height: 123)
 //                .offset(x: 350, y: 100)
-//            
+//
 ////            Text("\(manager.pointsC)")
-//            
+//
 //        }
 //        .ignoresSafeArea()
 //        .onAppear(perform: {
@@ -80,12 +80,26 @@
 //        .fullScreenCover(isPresented: $showNextLevelView) {
 //                    FinishLevel()
 //        }
-//        
 //
-//            
+//
+//
 //    }
 //}
 //
 //#Preview {
 //    Level1View(manager: LevelsController())
 //}
+
+
+
+import SwiftUI
+
+struct Level1View: View {
+    var body: some View {
+        Text("Level 1")
+    }
+}
+
+#Preview {
+    Level1View()
+}

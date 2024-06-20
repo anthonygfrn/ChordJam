@@ -18,7 +18,18 @@
 		A2B8E3662C1BDE88008A0E5A /* ChordJamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B8E3652C1BDE88008A0E5A /* ChordJamTests.swift */; };
 		A2B8E3702C1BDE88008A0E5A /* ChordJamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B8E36F2C1BDE88008A0E5A /* ChordJamUITests.swift */; };
 		A2B8E3722C1BDE88008A0E5A /* ChordJamUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B8E3712C1BDE88008A0E5A /* ChordJamUITestsLaunchTests.swift */; };
-		BAEDEC922C22A7E900752435 /* Level1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEDEC912C22A7E900752435 /* Level1View.swift */; };
+		A2C4C1EA2C23CC11002FEEAB /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4C1E92C23CC11002FEEAB /* MainMenuView.swift */; };
+		A2C4C1EC2C23CC36002FEEAB /* GameCenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4C1EB2C23CC36002FEEAB /* GameCenterManager.swift */; };
+		A2C4C1EF2C23CCB6002FEEAB /* Level1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4C1EE2C23CCB6002FEEAB /* Level1View.swift */; };
+		A2C4C1F12C23CCCD002FEEAB /* Level2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4C1F02C23CCCD002FEEAB /* Level2View.swift */; };
+		A2C4C1F32C23CCDB002FEEAB /* Level3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4C1F22C23CCDB002FEEAB /* Level3View.swift */; };
+		A2C4C1F52C23CCE8002FEEAB /* Level4View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4C1F42C23CCE8002FEEAB /* Level4View.swift */; };
+		A2C4C1F72C23CCF5002FEEAB /* Level5View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4C1F62C23CCF5002FEEAB /* Level5View.swift */; };
+		A2C4C1F92C23CD04002FEEAB /* ChallengesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4C1F82C23CD04002FEEAB /* ChallengesView.swift */; };
+		A2C4C1FB2C23CD1E002FEEAB /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4C1FA2C23CD1E002FEEAB /* LeaderboardView.swift */; };
+		A2C4C1FD2C23CD2D002FEEAB /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4C1FC2C23CD2D002FEEAB /* CollectionView.swift */; };
+		A2C4C1FF2C23CD3A002FEEAB /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4C1FE2C23CD3A002FEEAB /* ProfileView.swift */; };
+		A2C4C2012C23CD4C002FEEAB /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4C2002C23CD4C002FEEAB /* NavBar.swift */; };
 		BAEDEC942C22A7F900752435 /* ModalLevel1.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEDEC932C22A7F900752435 /* ModalLevel1.swift */; };
 		BAEDEC962C22A82200752435 /* FinishLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEDEC952C22A82200752435 /* FinishLevel.swift */; };
 		BAEDEC982C22A83500752435 /* LevelsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEDEC972C22A83500752435 /* LevelsController.swift */; };
@@ -63,7 +74,18 @@
 		A2B8E36B2C1BDE88008A0E5A /* ChordJamUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChordJamUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2B8E36F2C1BDE88008A0E5A /* ChordJamUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordJamUITests.swift; sourceTree = "<group>"; };
 		A2B8E3712C1BDE88008A0E5A /* ChordJamUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordJamUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		BAEDEC912C22A7E900752435 /* Level1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level1View.swift; sourceTree = "<group>"; };
+		A2C4C1E92C23CC11002FEEAB /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
+		A2C4C1EB2C23CC36002FEEAB /* GameCenterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenterManager.swift; sourceTree = "<group>"; };
+		A2C4C1EE2C23CCB6002FEEAB /* Level1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level1View.swift; sourceTree = "<group>"; };
+		A2C4C1F02C23CCCD002FEEAB /* Level2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level2View.swift; sourceTree = "<group>"; };
+		A2C4C1F22C23CCDB002FEEAB /* Level3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level3View.swift; sourceTree = "<group>"; };
+		A2C4C1F42C23CCE8002FEEAB /* Level4View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level4View.swift; sourceTree = "<group>"; };
+		A2C4C1F62C23CCF5002FEEAB /* Level5View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level5View.swift; sourceTree = "<group>"; };
+		A2C4C1F82C23CD04002FEEAB /* ChallengesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesView.swift; sourceTree = "<group>"; };
+		A2C4C1FA2C23CD1E002FEEAB /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
+		A2C4C1FC2C23CD2D002FEEAB /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
+		A2C4C1FE2C23CD3A002FEEAB /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		A2C4C2002C23CD4C002FEEAB /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
 		BAEDEC932C22A7F900752435 /* ModalLevel1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalLevel1.swift; sourceTree = "<group>"; };
 		BAEDEC952C22A82200752435 /* FinishLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishLevel.swift; sourceTree = "<group>"; };
 		BAEDEC972C22A83500752435 /* LevelsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsController.swift; sourceTree = "<group>"; };
@@ -125,6 +147,7 @@
 		A2B8E3532C1BDE87008A0E5A /* ChordJam */ = {
 			isa = PBXGroup;
 			children = (
+				A2C4C1ED2C23CC56002FEEAB /* Views */,
 				BAEDEC902C22A7DE00752435 /* Level1 */,
 				290068EB2C22A2AE000DCE81 /* Introduction.swift */,
 				BAEDEC952C22A82200752435 /* FinishLevel.swift */,
@@ -138,6 +161,7 @@
 				FB5F5DAF2C21873F008C6E68 /* SampleFretboard.swift */,
 				BAEDEC972C22A83500752435 /* LevelsController.swift */,
 				BAEDEC992C22A84C00752435 /* CombinedLevelsView.swift */,
+				A2C4C1EB2C23CC36002FEEAB /* GameCenterManager.swift */,
 			);
 			path = ChordJam;
 			sourceTree = "<group>";
@@ -167,10 +191,27 @@
 			path = ChordJamUITests;
 			sourceTree = "<group>";
 		};
+		A2C4C1ED2C23CC56002FEEAB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A2C4C1E92C23CC11002FEEAB /* MainMenuView.swift */,
+				A2C4C1EE2C23CCB6002FEEAB /* Level1View.swift */,
+				A2C4C1F02C23CCCD002FEEAB /* Level2View.swift */,
+				A2C4C1F22C23CCDB002FEEAB /* Level3View.swift */,
+				A2C4C1F42C23CCE8002FEEAB /* Level4View.swift */,
+				A2C4C1F62C23CCF5002FEEAB /* Level5View.swift */,
+				A2C4C1F82C23CD04002FEEAB /* ChallengesView.swift */,
+				A2C4C1FA2C23CD1E002FEEAB /* LeaderboardView.swift */,
+				A2C4C1FC2C23CD2D002FEEAB /* CollectionView.swift */,
+				A2C4C1FE2C23CD3A002FEEAB /* ProfileView.swift */,
+				A2C4C2002C23CD4C002FEEAB /* NavBar.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		BAEDEC902C22A7DE00752435 /* Level1 */ = {
 			isa = PBXGroup;
 			children = (
-				BAEDEC912C22A7E900752435 /* Level1View.swift */,
 				BAEDEC932C22A7F900752435 /* ModalLevel1.swift */,
 			);
 			path = Level1;
@@ -327,18 +368,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2C4C1F92C23CD04002FEEAB /* ChallengesView.swift in Sources */,
+				A2C4C1F12C23CCCD002FEEAB /* Level2View.swift in Sources */,
 				A2B8E3572C1BDE87008A0E5A /* ContentView.swift in Sources */,
+				A2C4C1F32C23CCDB002FEEAB /* Level3View.swift in Sources */,
 				290068EC2C22A2AE000DCE81 /* Introduction.swift in Sources */,
 				A2B8E3552C1BDE87008A0E5A /* ChordJamApp.swift in Sources */,
+				A2C4C1EF2C23CCB6002FEEAB /* Level1View.swift in Sources */,
 				BAEDEC942C22A7F900752435 /* ModalLevel1.swift in Sources */,
 				BAEDEC982C22A83500752435 /* LevelsController.swift in Sources */,
+				A2C4C1F52C23CCE8002FEEAB /* Level4View.swift in Sources */,
+				A2C4C1FB2C23CD1E002FEEAB /* LeaderboardView.swift in Sources */,
 				290068EE2C22A2B4000DCE81 /* Onboarding.swift in Sources */,
+				A2C4C1F72C23CCF5002FEEAB /* Level5View.swift in Sources */,
 				BAEDEC9A2C22A84C00752435 /* CombinedLevelsView.swift in Sources */,
 				290068E82C22A29F000DCE81 /* ProgressBar.swift in Sources */,
+				A2C4C1EC2C23CC36002FEEAB /* GameCenterManager.swift in Sources */,
 				FB5F5DB02C21873F008C6E68 /* SampleFretboard.swift in Sources */,
+				A2C4C2012C23CD4C002FEEAB /* NavBar.swift in Sources */,
+				A2C4C1FF2C23CD3A002FEEAB /* ProfileView.swift in Sources */,
+				A2C4C1EA2C23CC11002FEEAB /* MainMenuView.swift in Sources */,
 				BAEDEC962C22A82200752435 /* FinishLevel.swift in Sources */,
 				290068EA2C22A2A8000DCE81 /* OnboardImage.swift in Sources */,
-				BAEDEC922C22A7E900752435 /* Level1View.swift in Sources */,
+				A2C4C1FD2C23CD2D002FEEAB /* CollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
