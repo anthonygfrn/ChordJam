@@ -124,9 +124,9 @@
 				A2B8E3562C1BDE87008A0E5A /* ContentView.swift */,
 				A2B8E3582C1BDE88008A0E5A /* Assets.xcassets */,
 				A2B8E35A2C1BDE88008A0E5A /* Preview Content */,
-				FB5F5DAF2C21873F008C6E68 /* SampleFretboard.swift */,
 				BAEDEC972C22A83500752435 /* LevelsController.swift */,
 				BAEDEC992C22A84C00752435 /* CombinedLevelsView.swift */,
+				FB5F5DAF2C21873F008C6E68 /* SampleFretboard.swift */,
 			);
 			path = ChordJam;
 			sourceTree = "<group>";
@@ -477,7 +477,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ChordJam/Preview Content\"";
-				DEVELOPMENT_TEAM = FTP77G36XW;
+				DEVELOPMENT_TEAM = CAPH2JRFFZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -506,7 +506,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ChordJam/Preview Content\"";
-				DEVELOPMENT_TEAM = FTP77G36XW;
+				DEVELOPMENT_TEAM = CAPH2JRFFZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
