@@ -21,6 +21,7 @@ struct Chord: Identifiable {
 
 
 struct FretboardView: View {
+    @ObservedObject var viewModel = LyricsViewModel(lyricsProvider: LyricsProvider())
     
     let chords: [Chord] = [
         Chord(name: "G", time: 0, strumming: .up),
@@ -68,33 +69,63 @@ struct FretboardView: View {
                         }
                         Spacer()
                     }
-//                    .drawingGroup()
                     .background(
                         GeometryReader { proxy in
                             Color.clear.onAppear {
                                 if !viewLoaded {
                                     contentWidth = proxy.size.width
                                     viewLoaded = true
-                                    startAnimation()
+                                    //                                    startAnimation()
                                 }
                             }
                         }
                     )
                     .offset(x: offset)
                 }
-                .frame(width: geometry.size.width, alignment: .leading)
+                .frame(width: geometry.size.width, alignment: .bottomLeading)
             }
             
             .overlay(
-                RoundedRectangle(cornerRadius: 25)
-                    .fill(Color.blue)
-                    .frame(width: 8, height: 300)
-                    .offset(x: -300)
+                ZStack{
+                    RoundedRectangle(cornerRadius: 25)
+                        .fill(.accent)
+                        .frame(width: 8, height: 300)
+                        .offset(x: -300)
+                        .shadow(color: .accent, radius: 10, x: 0, y: 0)
+                        .blur(radius: 2)
+                    
+                    VStack {
+                        Text("test")
+                            .foregroundColor(.white)
+                            .font(.largeTitle)
+                            .multilineTextAlignment(.center)
+                            .padding()
+                            .transition(.opacity)
+                    }
+                    .offset(y: 160)
+                    .onAppear {
+                        
+                    }
+                    .animation(.easeInOut(duration: 0.5), value: viewModel.currentLyric)
+                    
+                    Button(action: {
+                        viewModel.startLyrics()
+                    }, label: {
+                        Image(systemName: "pause.fill")
+                            .resizable()
+                            .foregroundColor(.white)
+                            .frame(width: 24, height: 24)
+                    })
+                    .offset(x: 350, y: -160)
+                }
             )
         }
+        .navigationBarBackButtonHidden(true)
         .edgesIgnoringSafeArea(.all)
         .frame(maxHeight: .infinity)
-        .background(Color.purple)
+        .background(
+            LinearGradient(gradient: Gradient(colors: [Color(hex: "2A2A2A"), Color(hex: "434343")]), startPoint: .leading, endPoint: .trailing)
+        )
         
     }
     
@@ -140,7 +171,7 @@ struct ChordOverlay: View {
     var body: some View {
         HStack {
             Rectangle()
-                .fill(Color.white)
+                .fill(.white)
                 .frame(width: 0.5, height: 270)
             if(index >= 1) {
                 ZStack{
@@ -162,35 +193,44 @@ struct ChordOverlay: View {
 
 struct ChordView: View {
     var chord: Chord
+    @State private var timePassed = false
+    let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
     
     var body: some View {
         VStack{
             Rectangle()
-                .fill(Color.white)
+                .fill(.accent)
                 .frame(width: 64, height: CGFloat(getChordHeight()), alignment: .top)
                 .cornerRadius(10)
                 .overlay {
                     VStack(alignment: .center){
                         Text("\(chord.name)")
-                            .foregroundColor(.black)
-                        if(chord.strumming == .up){
-                            Image(systemName: "arrow.up")
-                                .foregroundColor(.black)
-                        } else {
-                            Image(systemName: "arrow.down")
-                                .foregroundColor(.black)
-                        }
+                            .foregroundColor(.white)
+                            .fontWeight(.bold)
+                        //                        if(chord.strumming == .up){
+                        //                            Image(systemName: "arrow.up")
+                        //                                .foregroundColor(.black)
+                        //                        } else {
+                        //                            Image(systemName: "arrow.down")
+                        //                                .foregroundColor(.black)
+                        //                        }
                     }
                 }
         }.frame(height: 250, alignment: .top)
             .offset(x:CGFloat(getChordOffset()))
+            .onReceive(timer) { _ in
+                print("\(timer)")
+                if self.chord.time < Date().timeIntervalSince1970 {
+                    self.timePassed = true
+                }
+            }
     }
     
     // 3 120
     // 4 160
     // 5 210
     // 6 250
-
+    
     
     func getChordHeight() -> Int {
         switch(chord.name){
@@ -245,7 +285,7 @@ struct StringView: View {
         Rectangle()
             .foregroundColor(.white)
             .frame(height: thickness)
-            .padding(.vertical, 20)
+            .padding(.vertical, 17)
             .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
     }
 }

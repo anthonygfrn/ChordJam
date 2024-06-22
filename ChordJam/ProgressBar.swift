@@ -17,7 +17,7 @@ struct ProgressBar: View {
                 .fill(.color3)
                 .frame(width: 264, height: 32)
             RoundedRectangle(cornerRadius: 22)
-                .fill(.color4)
+                .fill(.accent)
                 .frame(width: progress * 88, height: 32)
                 .animation(.easeInOut(duration: 0.5), value: progress)
             
