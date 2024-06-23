@@ -19,6 +19,5 @@ enum ChordType: String {
 struct ChordModel: Identifiable {
     let id = UUID()
     let chord: ChordType
-    let lyric: String
     let time: TimeInterval
 }

@@ -35,6 +35,7 @@
 		BAEDEC9A2C22A84C00752435 /* CombinedLevelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEDEC992C22A84C00752435 /* CombinedLevelsView.swift */; };
 		FB3C7B3B2C2526A500787FA6 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3C7B3A2C2526A500787FA6 /* Color.swift */; };
 		FB3C7B412C26CAD300787FA6 /* JohnDenver-TakeMeHomeCountryRoad.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FB3C7B402C26CAD300787FA6 /* JohnDenver-TakeMeHomeCountryRoad.mp3 */; };
+		FB7AA6DE2C28602900815143 /* LyricModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7AA6DD2C28602900815143 /* LyricModel.swift */; };
 		FBA5923D2C283B2F00E3FAFD /* Level6View.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA5923C2C283B2F00E3FAFD /* Level6View.swift */; };
 		FBA5923F2C283B7A00E3FAFD /* Level6ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA5923E2C283B7A00E3FAFD /* Level6ViewModel.swift */; };
 		FBA592422C283B9F00E3FAFD /* ChordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA592412C283B9F00E3FAFD /* ChordModel.swift */; };
@@ -96,6 +97,7 @@
 		BAEDEC992C22A84C00752435 /* CombinedLevelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinedLevelsView.swift; sourceTree = "<group>"; };
 		FB3C7B3A2C2526A500787FA6 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		FB3C7B402C26CAD300787FA6 /* JohnDenver-TakeMeHomeCountryRoad.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "JohnDenver-TakeMeHomeCountryRoad.mp3"; sourceTree = "<group>"; };
+		FB7AA6DD2C28602900815143 /* LyricModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricModel.swift; sourceTree = "<group>"; };
 		FBA5923C2C283B2F00E3FAFD /* Level6View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level6View.swift; sourceTree = "<group>"; };
 		FBA5923E2C283B7A00E3FAFD /* Level6ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level6ViewModel.swift; sourceTree = "<group>"; };
 		FBA592412C283B9F00E3FAFD /* ChordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordModel.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 			children = (
 				FBA592412C283B9F00E3FAFD /* ChordModel.swift */,
 				FBA592432C283C7A00E3FAFD /* MusicModel.swift */,
+				FB7AA6DD2C28602900815143 /* LyricModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 				A2C4C1EC2C23CC36002FEEAB /* GameCenterManager.swift in Sources */,
 				A2C4C2012C23CD4C002FEEAB /* NavBar.swift in Sources */,
 				A2C4C1FF2C23CD3A002FEEAB /* ProfileView.swift in Sources */,
+				FB7AA6DE2C28602900815143 /* LyricModel.swift in Sources */,
 				A2C4C1EA2C23CC11002FEEAB /* MainMenuView.swift in Sources */,
 				FBA592422C283B9F00E3FAFD /* ChordModel.swift in Sources */,
 				BAEDEC962C22A82200752435 /* FinishLevel.swift in Sources */,

@@ -15,7 +15,7 @@ struct Level6View: View {
     @State private var viewLoaded: Bool = false
     var fretViewWidth: CGFloat = 300
     var desiredDuration: Double = 2
-    var speed: Double = 0.01 // This is the time interval for the timer, in seconds
+    var speed: Double = 0.01
     private var scrollSpeed: CGFloat {
         fretViewWidth / CGFloat(desiredDuration / speed)
     }
@@ -29,7 +29,7 @@ struct Level6View: View {
                 HStack(spacing: 0) {
                     LazyHStack(spacing: 0) {
                         ForEach(0..<getFretBoardLong) { index in
-                            FretView(index: index, chords: viewModel.lyrics)
+                            FretView(index: index, chords: viewModel.chords)
                         }
                         Spacer()
                     }
@@ -39,7 +39,7 @@ struct Level6View: View {
                                 if !viewLoaded {
                                     contentWidth = proxy.size.width
                                     viewLoaded = true
-                                    //                                    startAnimation()
+//                                    startAnimation()
                                 }
                             }
                         }
