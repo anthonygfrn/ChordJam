@@ -1,54 +1,33 @@
 //
-//  LyricViewmodel.swift
+//  Level6ViewModel.swift
 //  ChordJam
 //
-//  Created by Rifat Khadafy on 21/06/24.
+//  Created by Rifat Khadafy on 23/06/24.
 //
 
 import Foundation
-import Combine
 import AVFoundation
-
-struct LyricLine {
-    let text: String
-    let time: TimeInterval
-}
-
-class LyricsProvider {
-    let lyrics: [LyricLine]
-    
-    init() {
-        self.lyrics = [
-            LyricLine(text: "Almost heaven, West Virginia", time: 0),
-            LyricLine(text: "Blue Ridge Mountains, Shenandoah River", time: 5),
-            LyricLine(text: "Life is old there, older than the trees", time: 10),
-            LyricLine(text: "Younger than the mountains, blowing like a breeze", time: 15),
-            LyricLine(text: "Country roads, take me home", time: 20),
-            LyricLine(text: "To the place I belong", time: 25),
-            LyricLine(text: "West Virginia, mountain mama", time: 30),
-            LyricLine(text: "Take me home, country roads", time: 35),
-            LyricLine(text: "All my memories gather round her", time: 40),
-            LyricLine(text: "Miner's lady, stranger to blue water", time: 45),
-            LyricLine(text: "Dark and dusty, painted on the sky", time: 50),
-            LyricLine(text: "Misty taste of moonshine, teardrop in my eye", time: 55),
-            LyricLine(text: "Country roads, take me home", time: 60),
-            LyricLine(text: "To the place I belong", time: 65),
-            LyricLine(text: "West Virginia, mountain mama", time: 70),
-            LyricLine(text: "Take me home, country roads", time: 75)
-        ]
-    }
-}
+import Combine
 
 
-class LyricsViewModel: ObservableObject {
+class Level6ViewModel: ObservableObject {
     @Published var currentLyric: String = ""
-    private var lyrics: [LyricLine]
+    let lyrics: [ChordModel] = [
+        ChordModel(chord: ChordType.A, lyric: "Almost heaven, West Virginia", time: 0),
+        ChordModel(chord: ChordType.A, lyric: "Blue Ridge Mountains, Shenandoah River", time: 5),
+        ChordModel(chord: ChordType.A,lyric: "Life is old there, older than the trees", time: 10),
+        ChordModel(chord: ChordType.A,lyric: "Younger than the mountains, blowing like a breeze", time: 15),
+        ChordModel(chord: ChordType.A,lyric: "Country roads, take me home", time: 20),
+        ChordModel(chord: ChordType.A,lyric: "To the place I belong", time: 25),
+        ChordModel(chord: ChordType.A,lyric: "West Virginia, mountain mama", time: 30),
+        ChordModel(chord: ChordType.A,lyric: "Take me home, country roads", time: 35),
+    ]
     private var currentIndex: Int = 0
     private var timer: AnyCancellable?
     private var audioPlayer: AVAudioPlayer!
     
-    init(lyricsProvider: LyricsProvider) {
-        self.lyrics = lyricsProvider.lyrics
+    init() {
+        
         setupAudioSession()
     }
     
@@ -81,11 +60,15 @@ class LyricsViewModel: ObservableObject {
         }
     }
     
+    func stopMusic() {
+        audioPlayer.stop()
+    }
+    
     private func updateLyric() {
         guard currentIndex < lyrics.count else { return }
         
         let lyricLine = lyrics[currentIndex]
-        currentLyric = lyricLine.text
+        currentLyric = lyricLine.lyric
         
         if currentIndex < lyrics.count - 1 {
             let nextLine = lyrics[currentIndex + 1]
