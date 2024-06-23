@@ -11,6 +11,7 @@
 		290068EA2C22A2A8000DCE81 /* OnboardImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290068E92C22A2A8000DCE81 /* OnboardImage.swift */; };
 		290068EC2C22A2AE000DCE81 /* Introduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290068EB2C22A2AE000DCE81 /* Introduction.swift */; };
 		290068EE2C22A2B4000DCE81 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290068ED2C22A2B4000DCE81 /* Onboarding.swift */; };
+		290069162C2511A5000DCE81 /* StringDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290069152C2511A5000DCE81 /* StringDetection.swift */; };
 		A2B8E3552C1BDE87008A0E5A /* ChordJamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B8E3542C1BDE87008A0E5A /* ChordJamApp.swift */; };
 		A2B8E3572C1BDE87008A0E5A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B8E3562C1BDE87008A0E5A /* ContentView.swift */; };
 		A2B8E3592C1BDE88008A0E5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2B8E3582C1BDE88008A0E5A /* Assets.xcassets */; };
@@ -64,6 +65,7 @@
 		290068E92C22A2A8000DCE81 /* OnboardImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardImage.swift; sourceTree = "<group>"; };
 		290068EB2C22A2AE000DCE81 /* Introduction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Introduction.swift; sourceTree = "<group>"; };
 		290068ED2C22A2B4000DCE81 /* Onboarding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
+		290069152C2511A5000DCE81 /* StringDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringDetection.swift; sourceTree = "<group>"; };
 		A2B8E3512C1BDE87008A0E5A /* ChordJam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChordJam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2B8E3542C1BDE87008A0E5A /* ChordJamApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordJamApp.swift; sourceTree = "<group>"; };
 		A2B8E3562C1BDE87008A0E5A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				290068EB2C22A2AE000DCE81 /* Introduction.swift */,
 				BAEDEC952C22A82200752435 /* FinishLevel.swift */,
 				290068ED2C22A2B4000DCE81 /* Onboarding.swift */,
+				290069152C2511A5000DCE81 /* StringDetection.swift */,
 				290068E92C22A2A8000DCE81 /* OnboardImage.swift */,
 				290068E72C22A29E000DCE81 /* ProgressBar.swift */,
 				A2B8E3542C1BDE87008A0E5A /* ChordJamApp.swift */,
@@ -374,6 +377,7 @@
 				A2B8E3572C1BDE87008A0E5A /* ContentView.swift in Sources */,
 				A2C4C1F32C23CCDB002FEEAB /* Level3View.swift in Sources */,
 				290068EC2C22A2AE000DCE81 /* Introduction.swift in Sources */,
+				290069162C2511A5000DCE81 /* StringDetection.swift in Sources */,
 				A2B8E3552C1BDE87008A0E5A /* ChordJamApp.swift in Sources */,
 				A2C4C1EF2C23CCB6002FEEAB /* Level1View.swift in Sources */,
 				BAEDEC982C22A83500752435 /* LevelsController.swift in Sources */,
