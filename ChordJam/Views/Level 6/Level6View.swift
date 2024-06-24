@@ -39,7 +39,6 @@ struct Level6View: View {
                                 if !viewLoaded {
                                     contentWidth = proxy.size.width
                                     viewLoaded = true
-//                                    startAnimation()
                                 }
                             }
                         }
@@ -87,18 +86,15 @@ struct Level6View: View {
             LinearGradient(gradient: Gradient(colors: [Color(hex: "2A2A2A"), Color(hex: "434343")]), startPoint: .leading, endPoint: .trailing)
         )
         .onReceive(viewModel.$currentTime, perform: { _ in
-            offset -= scrollSpeed
-            if offset <= -contentWidth {
-                offset = 122
+            
+            if viewLoaded {
+                offset -= scrollSpeed
+                if offset <= -contentWidth {
+                    offset = 122
+                }
             }
         })
         
-    }
-    
-    private func startAnimation() {
-//        Timer.scheduledTimer(withTimeInterval: speed, repeats: true) { timer in
-//            
-//        }
     }
 }
 

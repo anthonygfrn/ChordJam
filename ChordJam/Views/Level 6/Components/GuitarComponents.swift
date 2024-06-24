@@ -95,17 +95,19 @@ struct ChordView: View {
     func getChordHeight() -> Int {
         switch(chord.chord){
         case .D:
-            120
+            130
         case .E:
-            120
+            210
         case .A:
             130
         case .G:
-            120
+            210
         case .C:
-            120
+            170
         case .Dm:
-            120
+            130
+        case .Am:
+            170
         }
     }
     

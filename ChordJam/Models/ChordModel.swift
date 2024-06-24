@@ -14,6 +14,7 @@ enum ChordType: String {
     case G = "G"
     case C = "C"
     case Dm = "Dm"
+    case Am = "Am"
 }
 
 struct ChordModel: Identifiable {

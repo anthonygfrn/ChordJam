@@ -16,12 +16,12 @@ class Level6ViewModel: ObservableObject {
     
     let chords: [ChordModel] = [
         ChordModel(chord: ChordType.A, time: 0),
-        ChordModel(chord: ChordType.A, time: 0.5),
-        ChordModel(chord: ChordType.A, time: 1),
-        ChordModel(chord: ChordType.A, time: 5),
-        ChordModel(chord: ChordType.A, time: 10),
-        ChordModel(chord: ChordType.A, time: 15),
-        ChordModel(chord: ChordType.A, time: 20),
+        ChordModel(chord: ChordType.C, time: 0.5),
+        ChordModel(chord: ChordType.Am, time: 1),
+        ChordModel(chord: ChordType.Dm, time: 5),
+        ChordModel(chord: ChordType.G, time: 10),
+        ChordModel(chord: ChordType.D, time: 15),
+        ChordModel(chord: ChordType.E, time: 20),
         ChordModel(chord: ChordType.A, time: 25),
         ChordModel(chord: ChordType.A, time: 30),
         ChordModel(chord: ChordType.A, time: 35),
