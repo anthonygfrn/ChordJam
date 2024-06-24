@@ -6,12 +6,17 @@
 //
 
 import SwiftUI
+import GameKit
 
 struct LeaderboardView: View {
+    @EnvironmentObject var gameCenterManager: GameCenterManager
+
     var body: some View {
-        Text("Leaderboard")
-            .font(.largeTitle)
-            .padding()
+        VStack {
+        }
+        .onAppear {
+            gameCenterManager.showLeaderboard() // Show the leaderboard immediately when the view appears
+        }
     }
 }
 

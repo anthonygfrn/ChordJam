@@ -16,10 +16,6 @@ struct CollectionView: View {
             Text("Collection")
                 .font(.largeTitle)
                 .padding()
-            
-            Spacer()
-            
-            NavBar(currentView: $currentView)
         }
     }
 }

@@ -8,15 +8,29 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+  @State private var currentView = "Home"
+
+  var body: some View {
+    ZStack {
+      if currentView == "Home" {
+        MainMenuView()
+      } else if currentView == "Challenges" {
+        ChallengesView()
+      } else if currentView == "Leaderboard" {
+        LeaderboardView()
+      } else if currentView == "Collection" {
+        CollectionView()
+      } else if currentView == "Profile" {
+        ProfileView()
+      }
+
+      VStack {
+        Spacer()
+        NavBar(currentView: $currentView)
+      }
+      .padding(.bottom, -30)
     }
+  }
 }
 
 #Preview {

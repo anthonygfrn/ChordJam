@@ -15,7 +15,7 @@ struct ChordJamApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                MainMenuView()
+                ContentView()
                     .environmentObject(gameCenterManager)
             }
         }
