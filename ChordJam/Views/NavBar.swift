@@ -20,15 +20,23 @@ extension Color {
 import SwiftUI
 
 struct NavBar: View {
-    @Binding var currentView: String
-    
     var body: some View {
         HStack(spacing: 48) {
-            NavBarItem(currentView: $currentView, viewName: "Home", imageName: "home")
-            NavBarItem(currentView: $currentView, viewName: "Challenges", imageName: "challenges")
-            NavBarItem(currentView: $currentView, viewName: "Leaderboard", imageName: "leaderboard")
-            NavBarItem(currentView: $currentView, viewName: "Collection", imageName: "collection")
-            NavBarItem(currentView: $currentView, viewName: "Profile", imageName: "profile")
+            NavigationLink(destination: MainMenuView()) {
+                NavBarItem(viewName: "Home", imageName: "home", isActive: true)
+            }
+            NavigationLink(destination: ChallengesView()) {
+                NavBarItem(viewName: "Challenges", imageName: "challenges")
+            }
+            NavigationLink(destination: LeaderboardView()) {
+                NavBarItem(viewName: "Leaderboard", imageName: "leaderboard")
+            }
+            NavigationLink(destination: CollectionView()) {
+                NavBarItem(viewName: "Collection", imageName: "collection")
+            }
+            NavigationLink(destination: ProfileView()) {
+                NavBarItem(viewName: "Profile", imageName: "profile")
+            }
         }
         .padding(15)
         .background(Color(UIColor(red: 194/255, green: 194/255, blue: 194/255, alpha: 1)))
@@ -39,22 +47,18 @@ struct NavBar: View {
 }
 
 struct NavBarItem: View {
-    @Binding var currentView: String
     let viewName: String
     let imageName: String
+    var isActive: Bool = false // Added isActive to determine color
 
     var body: some View {
         VStack {
             Image(imageName)
                 .renderingMode(.template)
-                .foregroundColor(currentView == viewName ? .white : Color(hex: 0x686868))
-
+                .foregroundColor(isActive ? .white : Color(hex: 0x686868))
             Text(viewName)
                 .font(.footnote)
-                .foregroundColor(currentView == viewName ? .white : Color(hex: 0x686868))
-        }
-        .onTapGesture {
-            currentView = viewName
+                .foregroundColor(isActive ? .white : Color(hex: 0x686868))
         }
     }
 }

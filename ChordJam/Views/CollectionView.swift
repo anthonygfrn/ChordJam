@@ -9,21 +9,21 @@ import SwiftUI
 
 struct CollectionView: View {
     
-    @State private var currentView: String = "Collection"
-    
     var body: some View {
         VStack {
             Text("Collection")
                 .font(.largeTitle)
                 .padding()
             
-            Spacer()
-            
-            NavBar(currentView: $currentView)
+            VStack {
+                Spacer()
+                NavBar()
+            }
+            .padding(.bottom, -30)
         }
     }
 }
 
 #Preview {
-    CollectionView()
+    ChallengesView()
 }

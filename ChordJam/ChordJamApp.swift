@@ -9,9 +9,8 @@ import SwiftUI
 
 @main
 struct ChordJamApp: App {
-    
     @StateObject private var gameCenterManager = GameCenterManager.shared
-    
+
     var body: some Scene {
         WindowGroup {
             NavigationStack {

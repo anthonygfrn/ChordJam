@@ -7,9 +7,9 @@
 
 import SwiftUI
 
+import SwiftUI
+
 struct ChallengesView: View {
-    
-    @State private var currentView: String = "Challenges"
     
     var body: some View {
         VStack {
@@ -17,12 +17,16 @@ struct ChallengesView: View {
                 .font(.largeTitle)
                 .padding()
             
-            Spacer()
-            
-            NavBar(currentView: $currentView)
+            VStack {
+                Spacer()
+                NavBar()
+            }
+            .padding(.bottom, -30)
         }
+        
     }
 }
+
 
 #Preview {
     ChallengesView()
