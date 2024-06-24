@@ -18,6 +18,7 @@ class Level6ViewModel: ObservableObject {
         ChordModel(chord: ChordType.A, time: 0),
         ChordModel(chord: ChordType.C, time: 0.5),
         ChordModel(chord: ChordType.Am, time: 1),
+        ChordModel(chord: ChordType.Am, time: 2),
         ChordModel(chord: ChordType.Dm, time: 5),
         ChordModel(chord: ChordType.G, time: 10),
         ChordModel(chord: ChordType.D, time: 15),
@@ -86,7 +87,7 @@ class Level6ViewModel: ObservableObject {
         audioPlayer.stop()
         timer?.cancel()
     }
-
+    
     private func updateLyricBasedOnCurrentTime() {
         // Check if the current index is within the bounds of the lyrics array
         guard currentIndex < lyrics.count else { return }
@@ -98,6 +99,6 @@ class Level6ViewModel: ObservableObject {
         }
     }
     
-   
     
-    }
+    
+}

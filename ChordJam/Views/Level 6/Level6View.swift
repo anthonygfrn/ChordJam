@@ -28,7 +28,7 @@ struct Level6View: View {
             GeometryReader { geometry in
                 HStack(spacing: 0) {
                     LazyHStack(spacing: 0) {
-                        ForEach(0..<getFretBoardLong) { index in
+                        ForEach(2..<getFretBoardLong) { index in
                             FretView(index: index, chords: viewModel.chords)
                         }
                         Spacer()

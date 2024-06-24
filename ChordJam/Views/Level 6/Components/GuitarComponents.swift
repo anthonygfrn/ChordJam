@@ -41,11 +41,9 @@ struct ChordOverlay: View {
             Rectangle()
                 .fill(.white)
                 .frame(width: 0.5, height: 250)
-            if(index >= 1) {
-                ZStack{
-                    ForEach(getChords(index: index)) { chord in
-                        ChordView(chord: chord)
-                    }
+            ZStack{
+                ForEach(getChords(index: index)) { chord in
+                    ChordView(chord: chord)
                 }
             }
             Spacer()
