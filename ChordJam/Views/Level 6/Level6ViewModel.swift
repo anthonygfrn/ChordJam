@@ -60,7 +60,6 @@ class Level6ViewModel: ObservableObject {
     func startLyrics() {
         guard !lyrics.isEmpty else { return }
         startAudio()
-        updateLyric()
     }
     
     private func startAudio() {
@@ -101,23 +100,4 @@ class Level6ViewModel: ObservableObject {
     
    
     
-    private func updateLyric() {
-//         guard currentIndex < lyrics.count else { return }
-        
-//         let lyricLine = lyrics[currentIndex]
-//         currentLyric = lyricLine.text
-        
-//         if currentIndex < lyrics.count - 1 {
-//             let nextLine = lyrics[currentIndex + 1]
-//             let timeInterval = nextLine.time - lyricLine.time
-// //            
-//            timer2 = Timer.publish(every: timeInterval, on: .main, in: .default).autoconnect()
-//                .sink { [weak self] _ in
-//                    self?.timer2?.cancel()
-//                    self?.updateLyric()
-//                }
-//         }
-        
-//         currentIndex += 1
     }
-}
