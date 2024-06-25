@@ -10,55 +10,42 @@ import SwiftUI
 struct Introduction: View {
     @State var Opacity: Double = 0.0
     @State var showButton: Bool = false
-    @State private var navigateToOnboarding: Bool = false
     
     var body: some View {
         NavigationView {
             ZStack {
-                if !navigateToOnboarding {
-                    OnboardImage(Onboard: "Onboarding 1")
-                    OnboardImage(Onboard: "Onboarding 2")
-                        .opacity(Opacity)
-                        .onAppear {
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                                withAnimation(.easeIn(duration: 0.5)) {
-                                    Opacity = 1.0
-                                    showButton = true
-                                }
-                            }
-                        }
-                    if showButton{
-                        Button(action: {
-                            //Skip onboarding
-                            print("Button tapped!")
-                        }) {
-                            Text("Yes, skip onboarding")
-                                .frame(width: 200, height: 52)
-                                .background(.gray)
-                                .foregroundColor(.white)
-                                .cornerRadius(10)
-                                .position(x: 275, y: 223)
-                                .font(.system(size: 16, weight: .bold))
-                        }
-                        Button(action: {
+                OnboardImage(Onboard: "Onboarding 1")
+                OnboardImage(Onboard: "Onboarding 2")
+                    .opacity(Opacity)
+                    .onAppear {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                             withAnimation(.easeIn(duration: 0.5)) {
-                                navigateToOnboarding = true
+                                Opacity = 1.0
+                                showButton = true
                             }
-                        }) {
-                            Text("No")
-                                .frame(width: 200, height: 52)
-                                .background(.color1)
-                                .foregroundColor(.white)
-                                .cornerRadius(10)
-                                .position(x: 529, y: 223)
-                                .font(.system(size: 16, weight: .bold))
                         }
                     }
-                }
-                else {
-                    Onboarding()
-                        .transition(.opacity)
-                        .animation(.easeIn(duration: 1.0), value: navigateToOnboarding)
+                if showButton{
+                    VStack {
+                        NavigationLink(destination: MainMenuView().navigationBarBackButtonHidden()) {
+                            Text("Yes, skip onboarding")
+                                .frame(width: 200, height: 52)
+                                .background(Color.gray)
+                                .foregroundColor(.white)
+                                .cornerRadius(10)
+                                .font(.system(size: 16, weight: .bold))
+                        }
+                        .position(x: 277, y: 223)
+                        NavigationLink(destination: Onboarding().navigationBarBackButtonHidden()) {
+                            Text("No")
+                                .frame(width: 200, height: 52)
+                                .background(Color.color1)
+                                .foregroundColor(.white)
+                                .cornerRadius(10)
+                                .font(.system(size: 16, weight: .bold))
+                        }
+                        .position(x: 528, y: 33)
+                    }
                 }
             }
         }
