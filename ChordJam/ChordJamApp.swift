@@ -14,7 +14,8 @@ struct ChordJamApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            ContentView()
+            Level6View()
         }
     }
 }
