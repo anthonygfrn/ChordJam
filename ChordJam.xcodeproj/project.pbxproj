@@ -45,6 +45,14 @@
 		BA5E611A2C2A70FC00BA943E /* FinishLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5E61182C2A70FC00BA943E /* FinishLevel.swift */; };
 		BA5E611B2C2A70FC00BA943E /* ResultsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5E61192C2A70FC00BA943E /* ResultsObserver.swift */; };
 		FB5F5DB02C21873F008C6E68 /* SampleFretboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5F5DAF2C21873F008C6E68 /* SampleFretboard.swift */; };
+		FB7D9CE02C2A7FA300D47241 /* GuitarComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7D9CDB2C2A7FA300D47241 /* GuitarComponents.swift */; };
+		FB7D9CE12C2A7FA300D47241 /* Level6View.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7D9CDD2C2A7FA300D47241 /* Level6View.swift */; };
+		FB7D9CE22C2A7FA300D47241 /* Level6ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7D9CDE2C2A7FA300D47241 /* Level6ViewModel.swift */; };
+		FB7D9CE72C2A7FCD00D47241 /* ChordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7D9CE32C2A7FCD00D47241 /* ChordModel.swift */; };
+		FB7D9CE82C2A7FCD00D47241 /* LyricModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7D9CE42C2A7FCD00D47241 /* LyricModel.swift */; };
+		FB7D9CE92C2A7FCD00D47241 /* MusicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7D9CE52C2A7FCD00D47241 /* MusicModel.swift */; };
+		FB7D9CEC2C2A7FD400D47241 /* grikfrik.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FB7D9CEA2C2A7FD400D47241 /* grikfrik.mp3 */; };
+		FB7D9CEF2C2A7FDE00D47241 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7D9CED2C2A7FDE00D47241 /* Color.swift */; };
 		FBD0B7E42C22BFEC0067F90D /* AudioKitUI in Frameworks */ = {isa = PBXBuildFile; productRef = FBD0B7E32C22BFEC0067F90D /* AudioKitUI */; };
 		FBD0B7E62C22BFEF0067F90D /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = FBD0B7E52C22BFEF0067F90D /* AudioKit */; };
 		FBD0B7E82C22C0000067F90D /* AudioKitEX in Frameworks */ = {isa = PBXBuildFile; productRef = FBD0B7E72C22C0000067F90D /* AudioKitEX */; };
@@ -112,6 +120,14 @@
 		BA5E61182C2A70FC00BA943E /* FinishLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishLevel.swift; sourceTree = "<group>"; };
 		BA5E61192C2A70FC00BA943E /* ResultsObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsObserver.swift; sourceTree = "<group>"; };
 		FB5F5DAF2C21873F008C6E68 /* SampleFretboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleFretboard.swift; sourceTree = "<group>"; };
+		FB7D9CDB2C2A7FA300D47241 /* GuitarComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuitarComponents.swift; sourceTree = "<group>"; };
+		FB7D9CDD2C2A7FA300D47241 /* Level6View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level6View.swift; sourceTree = "<group>"; };
+		FB7D9CDE2C2A7FA300D47241 /* Level6ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level6ViewModel.swift; sourceTree = "<group>"; };
+		FB7D9CE32C2A7FCD00D47241 /* ChordModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChordModel.swift; sourceTree = "<group>"; };
+		FB7D9CE42C2A7FCD00D47241 /* LyricModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LyricModel.swift; sourceTree = "<group>"; };
+		FB7D9CE52C2A7FCD00D47241 /* MusicModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicModel.swift; sourceTree = "<group>"; };
+		FB7D9CEA2C2A7FD400D47241 /* grikfrik.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = grikfrik.mp3; sourceTree = "<group>"; };
+		FB7D9CED2C2A7FDE00D47241 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +184,9 @@
 		A2B8E3532C1BDE87008A0E5A /* ChordJam */ = {
 			isa = PBXGroup;
 			children = (
+				FB7D9CEE2C2A7FDE00D47241 /* Utils */,
+				FB7D9CEB2C2A7FD400D47241 /* Assets */,
+				FB7D9CE62C2A7FCD00D47241 /* Models */,
 				BA5E60F62C2A6FE200BA943E /* ML Model */,
 				294FD0CE2C2936F100031E61 /* Info.plist */,
 				A2C4C1ED2C23CC56002FEEAB /* Views */,
@@ -216,18 +235,19 @@
 		A2C4C1ED2C23CC56002FEEAB /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BA5E61182C2A70FC00BA943E /* FinishLevel.swift */,
 				A2C4C1F82C23CD04002FEEAB /* ChallengesView.swift */,
 				A2C4C1FC2C23CD2D002FEEAB /* CollectionView.swift */,
-				BA5E60FF2C2A709000BA943E /* CombinedLevels */,
+				BA5E61182C2A70FC00BA943E /* FinishLevel.swift */,
 				A2C4C1FA2C23CD1E002FEEAB /* LeaderboardView.swift */,
+				A2C4C1E92C23CC11002FEEAB /* MainMenuView.swift */,
+				A2C4C2002C23CD4C002FEEAB /* NavBar.swift */,
+				A2C4C1FE2C23CD3A002FEEAB /* ProfileView.swift */,
+				BA5E60FF2C2A709000BA943E /* CombinedLevels */,
+				FB7D9CDF2C2A7FA300D47241 /* Level 6 */,
 				BA5E61062C2A70B900BA943E /* Level1 */,
 				BA5E61112C2A70D800BA943E /* Level2 */,
 				BA5E610B2C2A70D800BA943E /* Level3 */,
 				BA5E610E2C2A70D800BA943E /* Level4 */,
-				A2C4C1E92C23CC11002FEEAB /* MainMenuView.swift */,
-				A2C4C2002C23CD4C002FEEAB /* NavBar.swift */,
-				A2C4C1FE2C23CD3A002FEEAB /* ProfileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -288,6 +308,50 @@
 				BA5E61102C2A70D800BA943E /* ModalLevel2.swift */,
 			);
 			path = Level2;
+			sourceTree = "<group>";
+		};
+		FB7D9CDC2C2A7FA300D47241 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				FB7D9CDB2C2A7FA300D47241 /* GuitarComponents.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		FB7D9CDF2C2A7FA300D47241 /* Level 6 */ = {
+			isa = PBXGroup;
+			children = (
+				FB7D9CDC2C2A7FA300D47241 /* Components */,
+				FB7D9CDD2C2A7FA300D47241 /* Level6View.swift */,
+				FB7D9CDE2C2A7FA300D47241 /* Level6ViewModel.swift */,
+			);
+			path = "Level 6";
+			sourceTree = "<group>";
+		};
+		FB7D9CE62C2A7FCD00D47241 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FB7D9CE32C2A7FCD00D47241 /* ChordModel.swift */,
+				FB7D9CE42C2A7FCD00D47241 /* LyricModel.swift */,
+				FB7D9CE52C2A7FCD00D47241 /* MusicModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FB7D9CEB2C2A7FD400D47241 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				FB7D9CEA2C2A7FD400D47241 /* grikfrik.mp3 */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		FB7D9CEE2C2A7FDE00D47241 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FB7D9CED2C2A7FDE00D47241 /* Color.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		FBD0B7E22C22BFDD0067F90D /* Frameworks */ = {
@@ -417,6 +481,7 @@
 			files = (
 				A2B8E35C2C1BDE88008A0E5A /* Preview Assets.xcassets in Resources */,
 				A2B8E3592C1BDE88008A0E5A /* Assets.xcassets in Resources */,
+				FB7D9CEC2C2A7FD400D47241 /* grikfrik.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +507,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2C4C1F92C23CD04002FEEAB /* ChallengesView.swift in Sources */,
+				FB7D9CE72C2A7FCD00D47241 /* ChordModel.swift in Sources */,
 				BA5E61122C2A70D800BA943E /* Level3View.swift in Sources */,
 				A2B8E3572C1BDE87008A0E5A /* ContentView.swift in Sources */,
 				BA5E611A2C2A70FC00BA943E /* FinishLevel.swift in Sources */,
@@ -453,15 +519,19 @@
 				BA5E61172C2A70D800BA943E /* ModalLevel2.swift in Sources */,
 				BA5E61142C2A70D800BA943E /* Level4View.swift in Sources */,
 				BA5E61002C2A709000BA943E /* CombinedLevels2View.swift in Sources */,
+				FB7D9CEF2C2A7FDE00D47241 /* Color.swift in Sources */,
 				A2B8E3552C1BDE87008A0E5A /* ChordJamApp.swift in Sources */,
 				BA5E61022C2A709000BA943E /* CombinedLevels4View.swift in Sources */,
 				BA5E611B2C2A70FC00BA943E /* ResultsObserver.swift in Sources */,
+				FB7D9CE02C2A7FA300D47241 /* GuitarComponents.swift in Sources */,
 				BA5E61152C2A70D800BA943E /* ModalLevel4.swift in Sources */,
 				A2C4C1FB2C23CD1E002FEEAB /* LeaderboardView.swift in Sources */,
+				FB7D9CE22C2A7FA300D47241 /* Level6ViewModel.swift in Sources */,
 				290068EE2C22A2B4000DCE81 /* Onboarding.swift in Sources */,
 				BA5E61162C2A70D800BA943E /* Level2View.swift in Sources */,
 				BA5E61082C2A70B900BA943E /* ModalLevel1.swift in Sources */,
 				290068E82C22A29F000DCE81 /* ProgressBar.swift in Sources */,
+				FB7D9CE12C2A7FA300D47241 /* Level6View.swift in Sources */,
 				BA5E61012C2A709000BA943E /* CombinedLevels3View.swift in Sources */,
 				A2C4C1EC2C23CC36002FEEAB /* GameCenterManager.swift in Sources */,
 				BA5E61032C2A709000BA943E /* CombinedLevelsView.swift in Sources */,
@@ -470,7 +540,9 @@
 				BA5E61132C2A70D800BA943E /* ModalLevel3.swift in Sources */,
 				A2C4C1FF2C23CD3A002FEEAB /* ProfileView.swift in Sources */,
 				A2C4C1EA2C23CC11002FEEAB /* MainMenuView.swift in Sources */,
+				FB7D9CE82C2A7FCD00D47241 /* LyricModel.swift in Sources */,
 				294FD0D42C29ACF100031E61 /* SuccessCase.swift in Sources */,
+				FB7D9CE92C2A7FCD00D47241 /* MusicModel.swift in Sources */,
 				290068EA2C22A2A8000DCE81 /* OnboardImage.swift in Sources */,
 				BA5E60F82C2A700400BA943E /* chordModel.swift in Sources */,
 				A2C4C1FD2C23CD2D002FEEAB /* CollectionView.swift in Sources */,
