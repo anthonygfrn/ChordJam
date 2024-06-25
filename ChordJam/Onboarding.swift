@@ -10,7 +10,7 @@ import SwiftUI
 struct Onboarding: View {
     @State var showBar: Bool = false
     @State var progress: Int = 0
-    @State var show1: Bool = false
+    @State var show1: Bool = true
     @State var show2: Bool = false
     @State var show3: Bool = false
     @State var show4: Bool = false
@@ -26,7 +26,7 @@ struct Onboarding: View {
     @State var show14: Bool = false
     @State var show15: Bool = false
     @State var show16: Bool = false
-    @State var show17: Bool = true
+    @State var show17: Bool = false
     @State var show18: Bool = false
     @State var show19: Bool = false
     @State var show20: Bool = false
@@ -38,11 +38,32 @@ struct Onboarding: View {
     @State var show26: Bool = false
     @State var show27: Bool = false
     @State var show28: Bool = false
+    @State var show29: Bool = false
+    @State var show30: Bool = false
+    @State var show31: Bool = false
+    @State var show32: Bool = false
+    @State var show33: Bool = false
+    @State var show34: Bool = false
+    @State var show35: Bool = false
+    @State var show36: Bool = false
+    @State var show37: Bool = false
+    @State var show38: Bool = false
+    @State var show39: Bool = false
+    @State var show40: Bool = false
+    @State var successString: Bool = false
+    @State private var successCase: SuccessCase = .none
     @State private var detectedString: String? = nil
+    @StateObject var stringDetection = StringDetection()
         
     var body: some View {
         NavigationView{
             ZStack {
+                if successString {
+                    OnboardImage(Onboard: "Validation")
+                        .onTapGesture {
+                            handleSuccessTap()
+                        }
+                }
                 if show1 {
                     OnboardImage(Onboard: "Onboarding 3")
                         .onTapGesture(perform: {
@@ -181,8 +202,26 @@ struct Onboarding: View {
                     OnboardImage(Onboard: "Onboarding 18")
                         .onTapGesture(perform: {
                             withAnimation(.easeIn(duration: 0.5)) {
-                                show17 = true
+                                show29 = true
                                 show15 = false
+                            }
+                        })
+                }
+                if show29 {
+                    OnboardImage(Onboard: "Onboarding 62")
+                        .onTapGesture(perform: {
+                            withAnimation(.easeIn(duration: 0.5)) {
+                                show30 = true
+                                show16 = false
+                            }
+                        })
+                }
+                if show30 {
+                    OnboardImage(Onboard: "Onboarding 64")
+                        .onTapGesture(perform: {
+                            withAnimation(.easeIn(duration: 0.5)) {
+                                show17 = true
+                                show29 = false
                             }
                         })
                 }
@@ -191,7 +230,7 @@ struct Onboarding: View {
                         .onTapGesture(perform: {
                             withAnimation(.easeIn(duration: 0.5)) {
                                 show18 = true
-                                show16 = false
+                                show30 = false
                                 showBar = true
                             }
                         })
@@ -200,16 +239,17 @@ struct Onboarding: View {
                     OnboardImage(Onboard: "Onboarding 20")
                         .onAppear {
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                                startHighEStringDetection()
+                                stringDetection.start()
                             }
                         }
+                }
+                if show31 {
+                    OnboardImage(Onboard: "Onboarding 66")
                         .onTapGesture(perform: {
                             withAnimation(.easeIn(duration: 0.5)) {
                                 show19 = true
-                                show17 = false
-                            }
-                            withAnimation(.easeOut(duration: 0.5)) {
-                                showBar = false
+                                progress = 0
+                                successString = false
                             }
                         })
                 }
@@ -218,7 +258,7 @@ struct Onboarding: View {
                         .onTapGesture(perform: {
                             withAnimation(.easeIn(duration: 0.5)) {
                                 show20 = true
-                                show18 = false
+                                show31 = false
                                 showBar = true
                             }
                         })
@@ -227,14 +267,17 @@ struct Onboarding: View {
                     OnboardImage(Onboard: "Onboarding 45")
                         .onAppear {
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                                startBStringDetection()
+                                stringDetection.start()
                             }
                         }
+                }
+                if show32 {
+                    OnboardImage(Onboard: "Onboarding 68")
                         .onTapGesture(perform: {
                             withAnimation(.easeIn(duration: 0.5)) {
                                 show21 = true
-                                show19 = false
-                                showBar = false
+                                progress = 0
+                                successString = false
                             }
                         })
                 }
@@ -243,7 +286,7 @@ struct Onboarding: View {
                         .onTapGesture(perform: {
                             withAnimation(.easeIn(duration: 0.5)) {
                                 show22 = true
-                                show20 = false
+                                show32 = false
                                 showBar = true
                             }
                         })
@@ -252,14 +295,17 @@ struct Onboarding: View {
                     OnboardImage(Onboard: "Onboarding 46")
                         .onAppear {
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                                startGStringDetection()
+                                stringDetection.start()
                             }
                         }
+                }
+                if show33 {
+                    OnboardImage(Onboard: "Onboarding 70")
                         .onTapGesture(perform: {
                             withAnimation(.easeIn(duration: 0.5)) {
                                 show23 = true
-                                show21 = false
-                                showBar = false
+                                progress = 0
+                                successString = false
                             }
                         })
                 }
@@ -268,7 +314,7 @@ struct Onboarding: View {
                         .onTapGesture(perform: {
                             withAnimation(.easeIn(duration: 0.5)) {
                                 show24 = true
-                                show22 = false
+                                show33 = false
                                 showBar = true
                             }
                         })
@@ -277,14 +323,17 @@ struct Onboarding: View {
                     OnboardImage(Onboard: "Onboarding 47")
                         .onAppear {
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                                startDStringDetection()
+                                stringDetection.start()
                             }
                         }
+                }
+                if show34 {
+                    OnboardImage(Onboard: "Onboarding 72")
                         .onTapGesture(perform: {
                             withAnimation(.easeIn(duration: 0.5)) {
                                 show25 = true
-                                show23 = false
-                                showBar = false
+                                progress = 0
+                                successString = false
                             }
                         })
                 }
@@ -293,7 +342,7 @@ struct Onboarding: View {
                         .onTapGesture(perform: {
                             withAnimation(.easeIn(duration: 0.5)) {
                                 show26 = true
-                                show24 = false
+                                show34 = false
                                 showBar = true
                             }
                         })
@@ -302,14 +351,17 @@ struct Onboarding: View {
                     OnboardImage(Onboard: "Onboarding 48")
                         .onAppear {
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                                startAStringDetection()
+                                stringDetection.start()
                             }
                         }
+                }
+                if show35 {
+                    OnboardImage(Onboard: "Onboarding 74")
                         .onTapGesture(perform: {
                             withAnimation(.easeIn(duration: 0.5)) {
                                 show27 = true
-                                show25 = false
-                                showBar = false
+                                progress = 0
+                                successString = false
                             }
                         })
                 }
@@ -318,7 +370,7 @@ struct Onboarding: View {
                         .onTapGesture(perform: {
                             withAnimation(.easeIn(duration: 0.5)) {
                                 show28 = true
-                                show26 = false
+                                show35 = false
                                 showBar = true
                             }
                         })
@@ -327,27 +379,25 @@ struct Onboarding: View {
                     OnboardImage(Onboard: "Onboarding 49")
                         .onAppear {
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                                startLowEStringDetection()
+                                stringDetection.start()
                             }
                         }
-                        .onTapGesture(perform: {
-                            withAnimation(.easeIn(duration: 0.5)) {
-                                show23 = true
-                                show21 = false
-                                showBar = false
-                            }
-                        })
                 }
-                
+                if show36 {
+                    NavigationLink(destination: MainMenuView().navigationBarBackButtonHidden()) {
+                        OnboardImage(Onboard: "Finishing Onboarding")
+                    }
+                }
                 if showBar {
-                    ProgressBar(progress: CGFloat(progress), total: 3)
+                    ProgressBar(progress: CGFloat(progress), total: 90)
                         .padding(.trailing, 410)
                         .padding(.bottom, 280)
                 }
+                
                 VStack {
                     HStack {
                         Spacer()
-                        NavigationLink(destination: MainMenuView()) {
+                        NavigationLink(destination: MainMenuView().navigationBarBackButtonHidden()) {
                             Text("Skip")
                                 .frame(width: 50, height: 50)
                                 .background(.color2)
@@ -361,95 +411,148 @@ struct Onboarding: View {
                 }
             }
         }
-    }
-    
-    func startLowEStringDetection() {
-        let detector = GuitarStringDetector()
-        detector.startDetection { string in
-            DispatchQueue.main.async {
-                self.detectedString = string
-                if let detectedString = detectedString, detectedString.contains("E2") {
-                    progress += 1
-                }
-                if progress == 3 {
-                    detector.stopDetection()
-                }
-            }
+        .onReceive(stringDetection.$data) { newData in
+            checkNoteDetection(newData.noteNameWithSharps)
         }
     }
     
-    func startAStringDetection() {
-        let detector = GuitarStringDetector()
-        detector.startDetection { string in
-            DispatchQueue.main.async {
-                self.detectedString = string
-                if let detectedString = detectedString, detectedString.contains("A2") {
-                    progress += 1
-                }
-                if progress == 3 {
-                    detector.stopDetection()
-                }
+    func handleSuccessTap() {
+        switch successCase {
+        case .E4:
+            withAnimation(.easeIn(duration: 0.5)) {
+                show31 = true
             }
+            print("E4 tapped")
+        case .B3:
+            withAnimation(.easeIn(duration: 0.5)) {
+                show32 = true
+            }
+            print("B3 tapped")
+        case .G3:
+            withAnimation(.easeIn(duration: 0.5)) {
+                show33 = true
+            }
+            print("G3 tapped")
+        case .D3:
+            withAnimation(.easeIn(duration: 0.5)) {
+                show34 = true
+            }
+            print("D3 tapped")
+        case .A3:
+            withAnimation(.easeIn(duration: 0.5)) {
+                show35 = true
+            }
+            print("A3 tapped")
+        case .none:
+            break
         }
     }
     
-    func startDStringDetection() {
-        let detector = GuitarStringDetector()
-        detector.startDetection { string in
-            DispatchQueue.main.async {
-                self.detectedString = string
-                if let detectedString = detectedString, detectedString.contains("D3") {
+    func checkNoteDetection(_ note: String) {
+        switch note {
+        case "E4":
+            if show18 {
+                if progress == 90 || Int(progress - 1) / 30 + 1 == 3 {
+                    stringDetection.stop()
+                    DispatchQueue.main.asyncAfter(deadline: .now()) {
+                        withAnimation (.easeIn(duration: 0.5)) {
+                            successString = true
+                            successCase = .E4
+                            show17 = false
+                            show18 = false
+                            showBar = false
+                        }
+                    }
+                } else {
                     progress += 1
                 }
-                if progress == 3 {
-                    detector.stopDetection()
-                }
             }
-        }
-    }
-    
-    func startGStringDetection() {
-        let detector = GuitarStringDetector()
-        detector.startDetection { string in
-            DispatchQueue.main.async {
-                self.detectedString = string
-                if let detectedString = detectedString, detectedString.contains("G3") {
+        case "B3":
+            if show20 {
+                if progress == 90 || Int(progress - 1) / 30 + 1 == 3 {
+                    stringDetection.stop()
+                    DispatchQueue.main.asyncAfter(deadline: .now()) {
+                        withAnimation (.easeIn(duration: 0.5)) {
+                            successString = true
+                            successCase = .B3
+                            show19 = false
+                            show20 = false
+                            showBar = false
+                        }
+                    }
+                } else {
                     progress += 1
                 }
-                if progress == 3 {
-                    detector.stopDetection()
-                }
             }
-        }
-    }
-    
-    func startBStringDetection() {
-        let detector = GuitarStringDetector()
-        detector.startDetection { string in
-            DispatchQueue.main.async {
-                self.detectedString = string
-                if let detectedString = detectedString, detectedString.contains("B3") {
+        case "G3":
+            if show22 {
+                if progress == 90 || Int(progress - 1) / 30 + 1 == 3 {
+                    stringDetection.stop()
+                    DispatchQueue.main.asyncAfter(deadline: .now()) {
+                        withAnimation (.easeIn(duration: 0.5)) {
+                            successString = true
+                            successCase = .G3
+                            show21 = false
+                            show22 = false
+                            showBar = false
+                        }
+                    }
+                } else {
                     progress += 1
                 }
-                if progress == 3 {
-                    detector.stopDetection()
-                }
             }
-        }
-    }
-    
-    func startHighEStringDetection() {
-        let detector = GuitarStringDetector()
-        detector.startDetection { string in
-            DispatchQueue.main.async {
-                self.detectedString = string
-                if let detectedString = detectedString, detectedString.contains("E4") {
+        case "D3":
+            if show24 {
+                if progress == 90 || Int(progress - 1) / 30 + 1 == 3 {
+                    stringDetection.stop()
+                    DispatchQueue.main.asyncAfter(deadline: .now()) {
+                        withAnimation (.easeIn(duration: 0.5)) {
+                            successString = true
+                            successCase = .D3
+                            show23 = false
+                            show24 = false
+                            showBar = false
+                        }
+                    }
+                } else {
                     progress += 1
                 }
-                if progress == 3 {
-                    detector.stopDetection()
+            }
+        case "A3":
+            if show26 {
+                if progress == 90 || Int(progress - 1) / 30 + 1 == 3 {
+                    stringDetection.stop()
+                    DispatchQueue.main.asyncAfter(deadline: .now()) {
+                        withAnimation (.easeIn(duration: 0.5)) {
+                            successString = true
+                            successCase = .A3
+                            show25 = false
+                            show26 = false
+                            showBar = false
+                        }
+                    }
+                } else {
+                    progress += 1
                 }
             }
+        case "E2":
+            if show28 {
+                if progress == 90 || Int(progress - 1) / 30 + 1 == 3 {
+                    stringDetection.stop()
+                    DispatchQueue.main.asyncAfter(deadline: .now()) {
+                        withAnimation (.easeIn(duration: 0.5)) {
+                            show36 = true
+                            show27 = false
+                            show28 = false
+                            showBar = false
+                        }
+                    }
+                } else {
+                    progress += 1
+                }
+            }
+        default:
+            break
         }
     }
 }

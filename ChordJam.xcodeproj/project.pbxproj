@@ -12,6 +12,8 @@
 		290068EC2C22A2AE000DCE81 /* Introduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290068EB2C22A2AE000DCE81 /* Introduction.swift */; };
 		290068EE2C22A2B4000DCE81 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290068ED2C22A2B4000DCE81 /* Onboarding.swift */; };
 		290069162C2511A5000DCE81 /* StringDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290069152C2511A5000DCE81 /* StringDetection.swift */; };
+		294FD0D02C29394800031E61 /* LevelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294FD0CF2C29394800031E61 /* LevelController.swift */; };
+		294FD0D42C29ACF100031E61 /* SuccessCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294FD0D32C29ACF100031E61 /* SuccessCase.swift */; };
 		A2B8E3552C1BDE87008A0E5A /* ChordJamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B8E3542C1BDE87008A0E5A /* ChordJamApp.swift */; };
 		A2B8E3572C1BDE87008A0E5A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B8E3562C1BDE87008A0E5A /* ContentView.swift */; };
 		A2B8E3592C1BDE88008A0E5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2B8E3582C1BDE88008A0E5A /* Assets.xcassets */; };
@@ -33,7 +35,6 @@
 		A2C4C2012C23CD4C002FEEAB /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4C2002C23CD4C002FEEAB /* NavBar.swift */; };
 		A2C4C2042C23D537002FEEAB /* ModalLevel1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4C2032C23D537002FEEAB /* ModalLevel1.swift */; };
 		BAEDEC962C22A82200752435 /* FinishLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEDEC952C22A82200752435 /* FinishLevel.swift */; };
-		BAEDEC982C22A83500752435 /* LevelsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEDEC972C22A83500752435 /* LevelsController.swift */; };
 		BAEDEC9A2C22A84C00752435 /* CombinedLevelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEDEC992C22A84C00752435 /* CombinedLevelsView.swift */; };
 		FB5F5DB02C21873F008C6E68 /* SampleFretboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5F5DAF2C21873F008C6E68 /* SampleFretboard.swift */; };
 		FBD0B7E42C22BFEC0067F90D /* AudioKitUI in Frameworks */ = {isa = PBXBuildFile; productRef = FBD0B7E32C22BFEC0067F90D /* AudioKitUI */; };
@@ -66,6 +67,9 @@
 		290068EB2C22A2AE000DCE81 /* Introduction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Introduction.swift; sourceTree = "<group>"; };
 		290068ED2C22A2B4000DCE81 /* Onboarding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		290069152C2511A5000DCE81 /* StringDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringDetection.swift; sourceTree = "<group>"; };
+		294FD0CE2C2936F100031E61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		294FD0CF2C29394800031E61 /* LevelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelController.swift; sourceTree = "<group>"; };
+		294FD0D32C29ACF100031E61 /* SuccessCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessCase.swift; sourceTree = "<group>"; };
 		A2B8E3512C1BDE87008A0E5A /* ChordJam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChordJam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2B8E3542C1BDE87008A0E5A /* ChordJamApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordJamApp.swift; sourceTree = "<group>"; };
 		A2B8E3562C1BDE87008A0E5A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -90,7 +94,6 @@
 		A2C4C2002C23CD4C002FEEAB /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
 		A2C4C2032C23D537002FEEAB /* ModalLevel1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalLevel1.swift; sourceTree = "<group>"; };
 		BAEDEC952C22A82200752435 /* FinishLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishLevel.swift; sourceTree = "<group>"; };
-		BAEDEC972C22A83500752435 /* LevelsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsController.swift; sourceTree = "<group>"; };
 		BAEDEC992C22A84C00752435 /* CombinedLevelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinedLevelsView.swift; sourceTree = "<group>"; };
 		FB5F5DAF2C21873F008C6E68 /* SampleFretboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleFretboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,10 +152,12 @@
 		A2B8E3532C1BDE87008A0E5A /* ChordJam */ = {
 			isa = PBXGroup;
 			children = (
+				294FD0CE2C2936F100031E61 /* Info.plist */,
 				A2C4C1ED2C23CC56002FEEAB /* Views */,
 				290068EB2C22A2AE000DCE81 /* Introduction.swift */,
 				BAEDEC952C22A82200752435 /* FinishLevel.swift */,
 				290068ED2C22A2B4000DCE81 /* Onboarding.swift */,
+				294FD0D32C29ACF100031E61 /* SuccessCase.swift */,
 				290069152C2511A5000DCE81 /* StringDetection.swift */,
 				290068E92C22A2A8000DCE81 /* OnboardImage.swift */,
 				290068E72C22A29E000DCE81 /* ProgressBar.swift */,
@@ -161,8 +166,8 @@
 				A2B8E3582C1BDE88008A0E5A /* Assets.xcassets */,
 				A2B8E35A2C1BDE88008A0E5A /* Preview Content */,
 				FB5F5DAF2C21873F008C6E68 /* SampleFretboard.swift */,
-				BAEDEC972C22A83500752435 /* LevelsController.swift */,
 				BAEDEC992C22A84C00752435 /* CombinedLevelsView.swift */,
+				294FD0CF2C29394800031E61 /* LevelController.swift */,
 				A2C4C1EB2C23CC36002FEEAB /* GameCenterManager.swift */,
 			);
 			path = ChordJam;
@@ -375,12 +380,12 @@
 				A2C4C1F12C23CCCD002FEEAB /* Level2View.swift in Sources */,
 				A2C4C2042C23D537002FEEAB /* ModalLevel1.swift in Sources */,
 				A2B8E3572C1BDE87008A0E5A /* ContentView.swift in Sources */,
+				294FD0D02C29394800031E61 /* LevelController.swift in Sources */,
 				A2C4C1F32C23CCDB002FEEAB /* Level3View.swift in Sources */,
 				290068EC2C22A2AE000DCE81 /* Introduction.swift in Sources */,
 				290069162C2511A5000DCE81 /* StringDetection.swift in Sources */,
 				A2B8E3552C1BDE87008A0E5A /* ChordJamApp.swift in Sources */,
 				A2C4C1EF2C23CCB6002FEEAB /* Level1View.swift in Sources */,
-				BAEDEC982C22A83500752435 /* LevelsController.swift in Sources */,
 				A2C4C1F52C23CCE8002FEEAB /* Level4View.swift in Sources */,
 				A2C4C1FB2C23CD1E002FEEAB /* LeaderboardView.swift in Sources */,
 				290068EE2C22A2B4000DCE81 /* Onboarding.swift in Sources */,
@@ -392,6 +397,7 @@
 				A2C4C2012C23CD4C002FEEAB /* NavBar.swift in Sources */,
 				A2C4C1FF2C23CD3A002FEEAB /* ProfileView.swift in Sources */,
 				A2C4C1EA2C23CC11002FEEAB /* MainMenuView.swift in Sources */,
+				294FD0D42C29ACF100031E61 /* SuccessCase.swift in Sources */,
 				BAEDEC962C22A82200752435 /* FinishLevel.swift in Sources */,
 				290068EA2C22A2A8000DCE81 /* OnboardImage.swift in Sources */,
 				A2C4C1FD2C23CD2D002FEEAB /* CollectionView.swift in Sources */,
@@ -558,14 +564,17 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ChordJam/Preview Content\"";
-				DEVELOPMENT_TEAM = FTP77G36XW;
+				DEVELOPMENT_TEAM = M793N4X6S7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ChordJam/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -587,14 +596,17 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ChordJam/Preview Content\"";
-				DEVELOPMENT_TEAM = FTP77G36XW;
+				DEVELOPMENT_TEAM = M793N4X6S7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ChordJam/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -27,7 +27,7 @@ struct Introduction: View {
                     }
                 if showButton{
                     VStack {
-                        NavigationLink(destination: MainMenuView()) {
+                        NavigationLink(destination: MainMenuView().navigationBarBackButtonHidden()) {
                             Text("Yes, skip onboarding")
                                 .frame(width: 200, height: 52)
                                 .background(Color.gray)
@@ -36,7 +36,7 @@ struct Introduction: View {
                                 .font(.system(size: 16, weight: .bold))
                         }
                         .position(x: 277, y: 223)
-                        NavigationLink(destination: Onboarding()) {
+                        NavigationLink(destination: Onboarding().navigationBarBackButtonHidden()) {
                             Text("No")
                                 .frame(width: 200, height: 52)
                                 .background(Color.color1)
