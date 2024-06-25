@@ -70,6 +70,12 @@ struct Level6View: View {
                     .offset(y: 160)
                     .animation(.easeInOut(duration: 0.5), value: viewModel.currentLyric)
                     
+                    if (viewModel.chordImage != nil){
+                        Image(getImageChord(type: viewModel.chordImage!))
+                            .offset(x: 300, y: 80)
+                            .transition(.opacity)
+                    }
+                    
                     Button(action: {
                         viewModel.startLyrics()
                     }, label: {
@@ -89,24 +95,25 @@ struct Level6View: View {
             LinearGradient(gradient: Gradient(colors: [Color(hex: "2A2A2A"), Color(hex: "434343")]), startPoint: .leading, endPoint: .trailing)
         )
         .onAppear {
-            manager.startAudioEngine()
+            //            manager.startAudioEngine()
         }
         .onReceive(viewModel.$currentTime, perform: { time in
-//            if currentChordIndex < viewModel.chords.count {
-//                let expectedChord = viewModel.chords[currentChordIndex].chord.rawValue
-//                let detectedChord = manager.predictionResult
-//                
-//                if time >= viewModel.chords[currentChordIndex].time {
-//                    print(time, viewModel.chords[currentChordIndex].time)
-//                    print(detectedChord)
-//                    if detectedChord == expectedChord {
-//                        print("Correct")
-//                    } else {
-//                        print("False")
-//                    }
-//                    currentChordIndex += 1
-//                }
-//            }
+            //            if currentChordIndex < viewModel.chords.count {
+            //                let expectedChord = viewModel.chords[currentChordIndex].chord.rawValue
+            //                let detectedChord = manager.predictionResult
+            //
+            //                if time >= viewModel.chords[currentChordIndex].time {
+            //                    print(time, viewModel.chords[currentChordIndex].time)
+            //                    print(detectedChord)
+            //                    if detectedChord == expectedChord {
+            //                        print("Correct")
+            //                    } else {
+            //                        print("False")
+            //                    }
+            //                    currentChordIndex += 1
+            //                }
+            //            }
+            
             if viewLoaded {
                 offset -= scrollSpeed
                 if offset <= -contentWidth {
@@ -118,6 +125,25 @@ struct Level6View: View {
             print(result)
         })
         
+    }
+    
+    func getImageChord(type: ChordType) -> ImageResource {
+        switch type {
+        case .D:
+                .chordD
+        case .E:
+                .chordD
+        case .A:
+                .chordD
+        case .G:
+                .chordG
+        case .C:
+                .chordC
+        case .Dm:
+                .chordDm
+        case .Am:
+                .chordAm
+        }
     }
 }
 
