@@ -34,7 +34,6 @@
 		BAEDEC982C22A83500752435 /* LevelsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEDEC972C22A83500752435 /* LevelsController.swift */; };
 		BAEDEC9A2C22A84C00752435 /* CombinedLevelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEDEC992C22A84C00752435 /* CombinedLevelsView.swift */; };
 		FB3C7B3B2C2526A500787FA6 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3C7B3A2C2526A500787FA6 /* Color.swift */; };
-		FB3C7B412C26CAD300787FA6 /* JohnDenver-TakeMeHomeCountryRoad.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FB3C7B402C26CAD300787FA6 /* JohnDenver-TakeMeHomeCountryRoad.mp3 */; };
 		FB7AA6DE2C28602900815143 /* LyricModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7AA6DD2C28602900815143 /* LyricModel.swift */; };
 		FBA5923D2C283B2F00E3FAFD /* Level6View.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA5923C2C283B2F00E3FAFD /* Level6View.swift */; };
 		FBA5923F2C283B7A00E3FAFD /* Level6ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA5923E2C283B7A00E3FAFD /* Level6ViewModel.swift */; };
@@ -46,6 +45,7 @@
 		FBD0B7E82C22C0000067F90D /* AudioKitEX in Frameworks */ = {isa = PBXBuildFile; productRef = FBD0B7E72C22C0000067F90D /* AudioKitEX */; };
 		FBD0B7EA2C22C0120067F90D /* SoundpipeAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = FBD0B7E92C22C0120067F90D /* SoundpipeAudioKit */; };
 		FBD0B7EC2C22C0170067F90D /* Tonic in Frameworks */ = {isa = PBXBuildFile; productRef = FBD0B7EB2C22C0170067F90D /* Tonic */; };
+		FBFEF3222C29C4A00022503B /* grikfrik.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FBFEF3212C29C4A00022503B /* grikfrik.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,13 +96,13 @@
 		BAEDEC972C22A83500752435 /* LevelsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsController.swift; sourceTree = "<group>"; };
 		BAEDEC992C22A84C00752435 /* CombinedLevelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinedLevelsView.swift; sourceTree = "<group>"; };
 		FB3C7B3A2C2526A500787FA6 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		FB3C7B402C26CAD300787FA6 /* JohnDenver-TakeMeHomeCountryRoad.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "JohnDenver-TakeMeHomeCountryRoad.mp3"; sourceTree = "<group>"; };
 		FB7AA6DD2C28602900815143 /* LyricModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricModel.swift; sourceTree = "<group>"; };
 		FBA5923C2C283B2F00E3FAFD /* Level6View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level6View.swift; sourceTree = "<group>"; };
 		FBA5923E2C283B7A00E3FAFD /* Level6ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level6ViewModel.swift; sourceTree = "<group>"; };
 		FBA592412C283B9F00E3FAFD /* ChordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordModel.swift; sourceTree = "<group>"; };
 		FBA592432C283C7A00E3FAFD /* MusicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicModel.swift; sourceTree = "<group>"; };
 		FBA592492C283DE100E3FAFD /* GuitarComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuitarComponents.swift; sourceTree = "<group>"; };
+		FBFEF3212C29C4A00022503B /* grikfrik.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = grikfrik.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,7 +279,7 @@
 		FBA592462C283D1800E3FAFD /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				FB3C7B402C26CAD300787FA6 /* JohnDenver-TakeMeHomeCountryRoad.mp3 */,
+				FBFEF3212C29C4A00022503B /* grikfrik.mp3 */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -424,9 +424,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB3C7B412C26CAD300787FA6 /* JohnDenver-TakeMeHomeCountryRoad.mp3 in Resources */,
 				A2B8E35C2C1BDE88008A0E5A /* Preview Assets.xcassets in Resources */,
 				A2B8E3592C1BDE88008A0E5A /* Assets.xcassets in Resources */,
+				FBFEF3222C29C4A00022503B /* grikfrik.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

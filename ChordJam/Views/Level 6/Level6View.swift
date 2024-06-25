@@ -20,7 +20,7 @@ struct Level6View: View {
         fretViewWidth / CGFloat(desiredDuration / speed)
     }
     private var getFretBoardLong: Int {
-        return Int(ceil(Double(viewModel.lyrics.last!.time) / 2.0 )) + 4
+        return Int(ceil(Double(viewModel.lyrics.last!.time) / 2.0 )) + 10
     }
     
     var body: some View {
@@ -45,6 +45,7 @@ struct Level6View: View {
                     )
                     .offset(x: offset)
                 }
+                .environmentObject(viewModel)
                 .frame(width: geometry.size.width, alignment: .bottomLeading)
             }
             .overlay(
@@ -85,8 +86,7 @@ struct Level6View: View {
         .background(
             LinearGradient(gradient: Gradient(colors: [Color(hex: "2A2A2A"), Color(hex: "434343")]), startPoint: .leading, endPoint: .trailing)
         )
-        .onReceive(viewModel.$currentTime, perform: { _ in
-            
+        .onReceive(viewModel.$currentTime, perform: { time in
             if viewLoaded {
                 offset -= scrollSpeed
                 if offset <= -contentWidth {
