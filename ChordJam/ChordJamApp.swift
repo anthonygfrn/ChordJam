@@ -15,6 +15,7 @@ struct ChordJamApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(gameCenterManager)
         }
     }
 }

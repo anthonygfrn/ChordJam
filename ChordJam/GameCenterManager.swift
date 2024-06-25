@@ -15,6 +15,8 @@ class GameCenterManager: NSObject, ObservableObject {
     @Published var isAuthenticated = false
     @Published var playerAlias: String?
     
+    let leaderboardID = "chordjam_leaderboard" // Your leaderboard ID
+    
     private override init() {
         super.init()
         authenticatePlayer()
@@ -45,6 +47,7 @@ class GameCenterManager: NSObject, ObservableObject {
     func showLeaderboard() {
         let viewController = GKGameCenterViewController(state: .leaderboards)
         viewController.gameCenterDelegate = self
+        viewController.leaderboardIdentifier = leaderboardID // Set the leaderboard ID
         if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
             windowScene.windows.first?.rootViewController?.present(viewController, animated: true)
         }
