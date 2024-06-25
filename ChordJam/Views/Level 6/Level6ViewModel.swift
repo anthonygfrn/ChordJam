@@ -16,18 +16,35 @@ class Level6ViewModel: ObservableObject {
     
     let chords: [ChordModel] = [
         ChordModel(chord: ChordType.C, time: 13),
-        ChordModel(chord: ChordType.Am, time: 19),
-        ChordModel(chord: ChordType.Dm, time: 27),
-        ChordModel(chord: ChordType.G, time: 33),
-        ChordModel(chord: ChordType.C, time: 38),
-        ChordModel(chord: ChordType.Am, time: 44),
-        ChordModel(chord: ChordType.Dm, time: 50.5),
-        ChordModel(chord: ChordType.G, time: 57),
-        ChordModel(chord: ChordType.C, time: 69),
-        ChordModel(chord: ChordType.Dm, time: 75.5),
-        ChordModel(chord: ChordType.C, time: 79.5),
-        ChordModel(chord: ChordType.Dm, time: 84.5),
+        ChordModel(chord: ChordType.C, time: 13.5),
+        ChordModel(chord: ChordType.C, time: 14),
+        ChordModel(chord: ChordType.C, time: 14.5),
+        ChordModel(chord: ChordType.C, time: 15),
+        ChordModel(chord: ChordType.C, time: 15.5),
+        ChordModel(chord: ChordType.C, time: 16), // 26.5
+        ChordModel(chord: ChordType.C, time: 16.5),
+        ChordModel(chord: ChordType.C, time: 17),
+        ChordModel(chord: ChordType.Am, time: 45.5),
+        ChordModel(chord: ChordType.Dm, time: 51.5),
+        ChordModel(chord: ChordType.G, time: 58),
+        ChordModel(chord: ChordType.C, time: 70),
+        ChordModel(chord: ChordType.Dm, time: 75.5), // 76
+        ChordModel(chord: ChordType.C, time: 80.5),
+        ChordModel(chord: ChordType.Dm, time: 85),
     ]
+    
+//    ChordModel(chord: ChordType.C, time: 14),
+//    ChordModel(chord: ChordType.Am, time: 20.5),
+//    ChordModel(chord: ChordType.Dm, time: 26.5), // 26.5
+//    ChordModel(chord: ChordType.G, time: 33),
+//    ChordModel(chord: ChordType.C, time: 39),
+//    ChordModel(chord: ChordType.Am, time: 45.5),
+//    ChordModel(chord: ChordType.Dm, time: 51.5),
+//    ChordModel(chord: ChordType.G, time: 58),
+//    ChordModel(chord: ChordType.C, time: 70),
+//    ChordModel(chord: ChordType.Dm, time: 75.5), // 76
+//    ChordModel(chord: ChordType.C, time: 80.5),
+//    ChordModel(chord: ChordType.Dm, time: 85),
     let lyrics: [LyricModel] = [
         LyricModel(text: "You know I can't smile without you", time: 11),
         LyricModel(text: "I can't smile without you", time: 20 ),
@@ -42,6 +59,7 @@ class Level6ViewModel: ObservableObject {
         LyricModel(text: "And brighten my day", time: 75.8),
         LyricModel(text: "Who would have believed that you were part of a dream", time: 79),
         LyricModel(text: "Now it all seems light years away", time: 84.8),
+        LyricModel(text: "♪", time: 86),
     ]
     private var currentIndex: Int = 0
     private var timer: AnyCancellable?
@@ -95,12 +113,10 @@ class Level6ViewModel: ObservableObject {
     
     private func updateLyricBasedOnCurrentTime() {
         // Check if the current index is within the bounds of the lyrics array
-        guard currentIndex < lyrics.count else {
-            if(currentTime > (lyrics.last?.time ?? 0 ) + 8 ){
-                stopMusic()
-            }
-            return
+        if(currentTime > (lyrics.last?.time ?? 0 ) + 2 ){
+            stopMusic()
         }
+        guard currentIndex < lyrics.count else {return}
         
         // If the current time is greater than the next lyric's time, update the current index and lyric
         if currentTime >= lyrics[currentIndex].time {

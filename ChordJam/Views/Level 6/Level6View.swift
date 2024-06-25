@@ -9,9 +9,11 @@ import SwiftUI
 
 struct Level6View: View {
     @ObservedObject var viewModel = Level6ViewModel()
+    @StateObject var manager = chordModel()
     
     @State private var offset: CGFloat = 122
     @State private var contentWidth: CGFloat = 0
+    @State private var currentChordIndex = 0
     @State private var viewLoaded: Bool = false
     var fretViewWidth: CGFloat = 300
     var desiredDuration: Double = 2
@@ -86,13 +88,34 @@ struct Level6View: View {
         .background(
             LinearGradient(gradient: Gradient(colors: [Color(hex: "2A2A2A"), Color(hex: "434343")]), startPoint: .leading, endPoint: .trailing)
         )
+        .onAppear {
+            manager.startAudioEngine()
+        }
         .onReceive(viewModel.$currentTime, perform: { time in
+//            if currentChordIndex < viewModel.chords.count {
+//                let expectedChord = viewModel.chords[currentChordIndex].chord.rawValue
+//                let detectedChord = manager.predictionResult
+//                
+//                if time >= viewModel.chords[currentChordIndex].time {
+//                    print(time, viewModel.chords[currentChordIndex].time)
+//                    print(detectedChord)
+//                    if detectedChord == expectedChord {
+//                        print("Correct")
+//                    } else {
+//                        print("False")
+//                    }
+//                    currentChordIndex += 1
+//                }
+//            }
             if viewLoaded {
                 offset -= scrollSpeed
                 if offset <= -contentWidth {
                     offset = 122
                 }
             }
+        })
+        .onReceive(manager.$predictionResult, perform: { result in
+            print(result)
         })
         
     }

@@ -60,7 +60,7 @@ struct ChordOverlay: View {
 struct ChordView: View {
     var chord: ChordModel
     @State private var timePassed = false
-    let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
+//    let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
     
     var body: some View {
         VStack{
@@ -77,12 +77,11 @@ struct ChordView: View {
                 }
         }.frame(height: 210, alignment: .top)
             .offset(x:CGFloat(getChordOffset()))
-            .onReceive(timer) { _ in
-                print("\(timer)")
-                if self.chord.time < Date().timeIntervalSince1970 {
-                    self.timePassed = true
-                }
-            }
+//            .onReceive(timer) { _ in
+//                if self.chord.time < Date().timeIntervalSince1970 {
+//                    self.timePassed = true
+//                }
+//            }
     }
     
     // 3 120

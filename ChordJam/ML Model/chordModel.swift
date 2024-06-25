@@ -220,6 +220,34 @@ class chordModel: NSObject, ObservableObject, SNResultsObserving {
                     }
                 }
             }
+            else if currentLevel == 6 {
+//                print("ini level 3")
+                if predictionResult == "Dm"{
+                    DispatchQueue.main.async {
+                        self.objectWillChange.send()
+                        self.pointsDm += 0.34
+                        self.pointsC = 0
+                        self.pointsAm = 0
+                        self.pointsG = 0
+                    }
+    //                updatePoints(points: pointsC)
+                    print(pointsDm)
+                    
+                    if pointsDm >= 1.0{
+    //                    print("Lanjut Om!")
+                        pointsC = 0
+                        pointsAm = 0
+                        pointsG = 0
+                        nextLevel = 5
+                        
+//                        DispatchQueue.main.async{
+//                            self.objectWillChange.send()
+//                            self.currentLevel = 4
+//                        }
+                        return
+                    }
+                }
+            }
             
             
 
