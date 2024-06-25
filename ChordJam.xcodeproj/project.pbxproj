@@ -34,8 +34,6 @@
 		BA5E61012C2A709000BA943E /* CombinedLevels3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5E60FC2C2A709000BA943E /* CombinedLevels3View.swift */; };
 		BA5E61022C2A709000BA943E /* CombinedLevels4View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5E60FD2C2A709000BA943E /* CombinedLevels4View.swift */; };
 		BA5E61032C2A709000BA943E /* CombinedLevelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5E60FE2C2A709000BA943E /* CombinedLevelsView.swift */; };
-		BA5E61072C2A70B900BA943E /* Level1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5E61042C2A70B900BA943E /* Level1View.swift */; };
-		BA5E61082C2A70B900BA943E /* ModalLevel1.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5E61052C2A70B900BA943E /* ModalLevel1.swift */; };
 		BA5E61122C2A70D800BA943E /* Level3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5E61092C2A70D800BA943E /* Level3View.swift */; };
 		BA5E61132C2A70D800BA943E /* ModalLevel3.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5E610A2C2A70D800BA943E /* ModalLevel3.swift */; };
 		BA5E61142C2A70D800BA943E /* Level4View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5E610C2C2A70D800BA943E /* Level4View.swift */; };
@@ -44,7 +42,6 @@
 		BA5E61172C2A70D800BA943E /* ModalLevel2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5E61102C2A70D800BA943E /* ModalLevel2.swift */; };
 		BA5E611A2C2A70FC00BA943E /* FinishLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5E61182C2A70FC00BA943E /* FinishLevel.swift */; };
 		BA5E611B2C2A70FC00BA943E /* ResultsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5E61192C2A70FC00BA943E /* ResultsObserver.swift */; };
-		FB5F5DB02C21873F008C6E68 /* SampleFretboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5F5DAF2C21873F008C6E68 /* SampleFretboard.swift */; };
 		FB7D9CE02C2A7FA300D47241 /* GuitarComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7D9CDB2C2A7FA300D47241 /* GuitarComponents.swift */; };
 		FB7D9CE12C2A7FA300D47241 /* Level6View.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7D9CDD2C2A7FA300D47241 /* Level6View.swift */; };
 		FB7D9CE22C2A7FA300D47241 /* Level6ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7D9CDE2C2A7FA300D47241 /* Level6ViewModel.swift */; };
@@ -53,6 +50,8 @@
 		FB7D9CE92C2A7FCD00D47241 /* MusicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7D9CE52C2A7FCD00D47241 /* MusicModel.swift */; };
 		FB7D9CEC2C2A7FD400D47241 /* grikfrik.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FB7D9CEA2C2A7FD400D47241 /* grikfrik.mp3 */; };
 		FB7D9CEF2C2A7FDE00D47241 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7D9CED2C2A7FDE00D47241 /* Color.swift */; };
+		FB7D9CF32C2A8B8E00D47241 /* Level1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7D9CF02C2A8B8E00D47241 /* Level1View.swift */; };
+		FB7D9CF42C2A8B8E00D47241 /* ModalLevel1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7D9CF12C2A8B8E00D47241 /* ModalLevel1.swift */; };
 		FBD0B7E42C22BFEC0067F90D /* AudioKitUI in Frameworks */ = {isa = PBXBuildFile; productRef = FBD0B7E32C22BFEC0067F90D /* AudioKitUI */; };
 		FBD0B7E62C22BFEF0067F90D /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = FBD0B7E52C22BFEF0067F90D /* AudioKit */; };
 		FBD0B7E82C22C0000067F90D /* AudioKitEX in Frameworks */ = {isa = PBXBuildFile; productRef = FBD0B7E72C22C0000067F90D /* AudioKitEX */; };
@@ -109,8 +108,6 @@
 		BA5E60FC2C2A709000BA943E /* CombinedLevels3View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombinedLevels3View.swift; sourceTree = "<group>"; };
 		BA5E60FD2C2A709000BA943E /* CombinedLevels4View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombinedLevels4View.swift; sourceTree = "<group>"; };
 		BA5E60FE2C2A709000BA943E /* CombinedLevelsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombinedLevelsView.swift; sourceTree = "<group>"; };
-		BA5E61042C2A70B900BA943E /* Level1View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level1View.swift; sourceTree = "<group>"; };
-		BA5E61052C2A70B900BA943E /* ModalLevel1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalLevel1.swift; sourceTree = "<group>"; };
 		BA5E61092C2A70D800BA943E /* Level3View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level3View.swift; sourceTree = "<group>"; };
 		BA5E610A2C2A70D800BA943E /* ModalLevel3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalLevel3.swift; sourceTree = "<group>"; };
 		BA5E610C2C2A70D800BA943E /* Level4View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level4View.swift; sourceTree = "<group>"; };
@@ -119,7 +116,6 @@
 		BA5E61102C2A70D800BA943E /* ModalLevel2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalLevel2.swift; sourceTree = "<group>"; };
 		BA5E61182C2A70FC00BA943E /* FinishLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishLevel.swift; sourceTree = "<group>"; };
 		BA5E61192C2A70FC00BA943E /* ResultsObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsObserver.swift; sourceTree = "<group>"; };
-		FB5F5DAF2C21873F008C6E68 /* SampleFretboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleFretboard.swift; sourceTree = "<group>"; };
 		FB7D9CDB2C2A7FA300D47241 /* GuitarComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuitarComponents.swift; sourceTree = "<group>"; };
 		FB7D9CDD2C2A7FA300D47241 /* Level6View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level6View.swift; sourceTree = "<group>"; };
 		FB7D9CDE2C2A7FA300D47241 /* Level6ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level6ViewModel.swift; sourceTree = "<group>"; };
@@ -128,6 +124,8 @@
 		FB7D9CE52C2A7FCD00D47241 /* MusicModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicModel.swift; sourceTree = "<group>"; };
 		FB7D9CEA2C2A7FD400D47241 /* grikfrik.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = grikfrik.mp3; sourceTree = "<group>"; };
 		FB7D9CED2C2A7FDE00D47241 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		FB7D9CF02C2A8B8E00D47241 /* Level1View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level1View.swift; sourceTree = "<group>"; };
+		FB7D9CF12C2A8B8E00D47241 /* ModalLevel1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalLevel1.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,7 +198,6 @@
 				A2B8E3562C1BDE87008A0E5A /* ContentView.swift */,
 				A2B8E3582C1BDE88008A0E5A /* Assets.xcassets */,
 				A2B8E35A2C1BDE88008A0E5A /* Preview Content */,
-				FB5F5DAF2C21873F008C6E68 /* SampleFretboard.swift */,
 				294FD0CF2C29394800031E61 /* LevelController.swift */,
 				A2C4C1EB2C23CC36002FEEAB /* GameCenterManager.swift */,
 			);
@@ -235,6 +232,7 @@
 		A2C4C1ED2C23CC56002FEEAB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FB7D9CF22C2A8B8E00D47241 /* Level1 */,
 				A2C4C1F82C23CD04002FEEAB /* ChallengesView.swift */,
 				A2C4C1FC2C23CD2D002FEEAB /* CollectionView.swift */,
 				BA5E61182C2A70FC00BA943E /* FinishLevel.swift */,
@@ -244,7 +242,6 @@
 				A2C4C1FE2C23CD3A002FEEAB /* ProfileView.swift */,
 				BA5E60FF2C2A709000BA943E /* CombinedLevels */,
 				FB7D9CDF2C2A7FA300D47241 /* Level 6 */,
-				BA5E61062C2A70B900BA943E /* Level1 */,
 				BA5E61112C2A70D800BA943E /* Level2 */,
 				BA5E610B2C2A70D800BA943E /* Level3 */,
 				BA5E610E2C2A70D800BA943E /* Level4 */,
@@ -271,16 +268,6 @@
 				BA5E60FE2C2A709000BA943E /* CombinedLevelsView.swift */,
 			);
 			path = CombinedLevels;
-			sourceTree = "<group>";
-		};
-		BA5E61062C2A70B900BA943E /* Level1 */ = {
-			isa = PBXGroup;
-			children = (
-				BA5E61042C2A70B900BA943E /* Level1View.swift */,
-				BA5E61052C2A70B900BA943E /* ModalLevel1.swift */,
-			);
-			name = Level1;
-			path = ../../../../ChordJam/ChordJam/Views/Level1;
 			sourceTree = "<group>";
 		};
 		BA5E610B2C2A70D800BA943E /* Level3 */ = {
@@ -352,6 +339,15 @@
 				FB7D9CED2C2A7FDE00D47241 /* Color.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		FB7D9CF22C2A8B8E00D47241 /* Level1 */ = {
+			isa = PBXGroup;
+			children = (
+				FB7D9CF02C2A8B8E00D47241 /* Level1View.swift */,
+				FB7D9CF12C2A8B8E00D47241 /* ModalLevel1.swift */,
+			);
+			path = Level1;
 			sourceTree = "<group>";
 		};
 		FBD0B7E22C22BFDD0067F90D /* Frameworks */ = {
@@ -511,7 +507,6 @@
 				BA5E61122C2A70D800BA943E /* Level3View.swift in Sources */,
 				A2B8E3572C1BDE87008A0E5A /* ContentView.swift in Sources */,
 				BA5E611A2C2A70FC00BA943E /* FinishLevel.swift in Sources */,
-				BA5E61072C2A70B900BA943E /* Level1View.swift in Sources */,
 				BA5E60FA2C2A702C00BA943E /* ChordDetection.mlmodel in Sources */,
 				294FD0D02C29394800031E61 /* LevelController.swift in Sources */,
 				290068EC2C22A2AE000DCE81 /* Introduction.swift in Sources */,
@@ -529,15 +524,15 @@
 				FB7D9CE22C2A7FA300D47241 /* Level6ViewModel.swift in Sources */,
 				290068EE2C22A2B4000DCE81 /* Onboarding.swift in Sources */,
 				BA5E61162C2A70D800BA943E /* Level2View.swift in Sources */,
-				BA5E61082C2A70B900BA943E /* ModalLevel1.swift in Sources */,
+				FB7D9CF32C2A8B8E00D47241 /* Level1View.swift in Sources */,
 				290068E82C22A29F000DCE81 /* ProgressBar.swift in Sources */,
 				FB7D9CE12C2A7FA300D47241 /* Level6View.swift in Sources */,
 				BA5E61012C2A709000BA943E /* CombinedLevels3View.swift in Sources */,
 				A2C4C1EC2C23CC36002FEEAB /* GameCenterManager.swift in Sources */,
 				BA5E61032C2A709000BA943E /* CombinedLevelsView.swift in Sources */,
-				FB5F5DB02C21873F008C6E68 /* SampleFretboard.swift in Sources */,
 				A2C4C2012C23CD4C002FEEAB /* NavBar.swift in Sources */,
 				BA5E61132C2A70D800BA943E /* ModalLevel3.swift in Sources */,
+				FB7D9CF42C2A8B8E00D47241 /* ModalLevel1.swift in Sources */,
 				A2C4C1FF2C23CD3A002FEEAB /* ProfileView.swift in Sources */,
 				A2C4C1EA2C23CC11002FEEAB /* MainMenuView.swift in Sources */,
 				FB7D9CE82C2A7FCD00D47241 /* LyricModel.swift in Sources */,
