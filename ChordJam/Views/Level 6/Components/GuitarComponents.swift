@@ -70,7 +70,7 @@ struct ChordView: View {
                 .cornerRadius(10)
                 .overlay {
                     VStack(alignment: .center){
-                        Text("\(chord.chord)")
+                        Text("\(chord.chord.rawValue)")
                             .foregroundColor(.white)
                             .fontWeight(.bold)
                     }
