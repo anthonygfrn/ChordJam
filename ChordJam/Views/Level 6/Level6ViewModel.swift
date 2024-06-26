@@ -115,7 +115,7 @@ class Level6ViewModel: ObservableObject {
     }
     
     func pauseMusic(){
-        if musicPlayerState != MusicPlayerState.running {
+        if musicPlayerState != MusicPlayerState.pause {
             audioPlayer.pause()
             timer?.invalidate()
             musicPlayerState = MusicPlayerState.pause
