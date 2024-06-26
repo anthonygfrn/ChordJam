@@ -20,8 +20,7 @@ struct CombinedLevelsView: View {
             } else {
                 ModalLevel1()
                     .onAppear {
-                        // Start a timer to switch the view after 2 seconds
-                        Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { _ in
+                        Timer.scheduledTimer(withTimeInterval: 18.0, repeats: false) { _ in
                             withAnimation {
                                 showLevel1View = true
                             }

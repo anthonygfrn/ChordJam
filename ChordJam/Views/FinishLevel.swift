@@ -21,7 +21,7 @@ struct FinishLevel: View {
                             .bold()
                             .foregroundStyle(Color.white)
 
-                        Image("Coin+Exp")
+                        Image("Exp")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 326, height: 35)
@@ -56,24 +56,29 @@ struct FinishLevel: View {
             }
             .ignoresSafeArea()
             
-            if showNotification{
-                BadgeNotif()
-                    .offset(y: -100)
-//                    .padding(.top, 50)
-            }
+//            if showNotification{
+//                BadgeNotif()
+//                    .offset(y: -100)
+////                    .padding(.top, 50)
+//            }
             
         }
         .navigationBarBackButtonHidden(true)
-        .onAppear{
-            withAnimation{
-                showNotification = true
-            }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                withAnimation {
-                    showNotification = false
-                }
-            }
-        }
+//        .onAppear{
+//            withAnimation{
+//                showNotification = true
+//            }
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+//                withAnimation {
+//                    showNotification = false
+//                }
+//            }
+//    
+//        }
+        .overlay(
+                        BadgeNotif()
+                            .offset(y: -150) // Adjust this value to control the starting position
+                    )
     }
 
     private func unlockNextLevel() {
