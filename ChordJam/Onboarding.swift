@@ -54,6 +54,7 @@ struct Onboarding: View {
     @State private var successCase: SuccessCase = .none
     @State private var detectedString: String? = nil
     @StateObject var stringDetection = StringDetection()
+    @Binding var unlockedLevel: Int
         
     var body: some View {
         NavigationView{
@@ -384,10 +385,10 @@ struct Onboarding: View {
                         }
                 }
                 if show36 {
-                    NavigationLink(destination: MainMenuView().navigationBarBackButtonHidden()) {
-                        OnboardImage(Onboard: "Finishing Onboarding")
-                    }
-                }
+                                    NavigationLink(destination: MainMenuView(unlockedLevel: $unlockedLevel).navigationBarBackButtonHidden()) {
+                                        OnboardImage(Onboard: "Finishing Onboarding")
+                                    }
+                                }
                 if showBar {
                     ProgressBar(progress: CGFloat(progress), total: 90)
                         .padding(.trailing, 410)
@@ -397,7 +398,7 @@ struct Onboarding: View {
                 VStack {
                     HStack {
                         Spacer()
-                        NavigationLink(destination: MainMenuView().navigationBarBackButtonHidden()) {
+                        NavigationLink(destination: MainMenuView(unlockedLevel: $unlockedLevel).navigationBarBackButtonHidden()) {
                             Text("Skip")
                                 .frame(width: 50, height: 50)
                                 .background(.color2)
@@ -558,5 +559,5 @@ struct Onboarding: View {
 }
 
 #Preview {
-    Onboarding()
+    Onboarding(unlockedLevel: .constant(1))
 }

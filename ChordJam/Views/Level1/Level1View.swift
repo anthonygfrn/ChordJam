@@ -7,29 +7,18 @@
 
 import SwiftUI
 
-struct Level1View: View{
-    
-//    @State private var predictionResult:String  = ""
-//    @State private var confidence:Double  = 0.0
-    
-//    @ObservedObject var observerManager = ResultsObserver()
+struct Level1View: View {
     @StateObject var manager = chordModel()
+    @Binding var unlockedLevel: Int
     @State var showNextLevelView = false
     
-    var levelStatus = 1
-    
-//    private var text : String = ""
-    
     var body: some View {
-            
         ZStack{
             Image("BackgroundLevel")
                 .resizable()
             
             HStack{
-                
                 Spacer()
-                
                 VStack(alignment: .leading){
                     Spacer()
                     VStack{
@@ -37,17 +26,13 @@ struct Level1View: View{
                             .progressViewStyle(.linear)
                             .frame(width: 200)
                         
-//                        Text("Points: \(String(describing: manager.pointsC))")
                         Text("C Major Chord")
                             .font(.largeTitle)
                             .bold()
                             .foregroundStyle(Color.yellow)
                     }
                     
-                    
-                    
                     HStack{
-    //                    Spacer()
                         Image("Strings")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
@@ -57,61 +42,32 @@ struct Level1View: View{
                             .frame(width: 700)
                     }
                     .frame(height: 190)
-
                     Spacer()
                 }
-                
             }
-//            Button(action: {
-//                showNextLevelView = true
-//            }, label: {
-//                Text("Button")
-//            })
-            
             
             Image("Fingering")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 96, height: 123)
                 .offset(x: 350, y: 100)
-            
-//            Text("\(manager.pointsC)")
-            
         }
         .ignoresSafeArea()
-        .onAppear(perform: {
-//            manager.start()
-//            ResultsObserver().delegate = self
+        .onAppear {
             manager.currentLevel = 1
             manager.startAudioEngine()
-//            text = String(observerManager.pointsC)
-        })
-        .onChange(of: manager.pointsC >= 1.0){
-//            manager.currentLevel = 2
+        }
+        .onChange(of: manager.pointsC >= 1.0) { _ in
             manager.audioEngine.stop()
             showNextLevelView = true
+            unlockedLevel = max(unlockedLevel, 2) // Unlock the next level
         }
         .fullScreenCover(isPresented: $showNextLevelView) {
-            
-                    FinishLevel()
+            FinishLevel(unlockedLevel: $unlockedLevel)
         }
-//        .onReceive(manager.$pointsC, perform: { _ in
-//            print("called")
-//        })
-        
-
-            
     }
-    
-//    func displayPredictionResult(identifier: String, confidence: Double) {
-//        DispatchQueue.main.async {
-//            self.predictionResult = identifier
-//            print(self.predictionResult)
-//            self.confidence = confidence
-//        }
-//    }
 }
 
 #Preview {
-    Level1View()
+    Level1View(unlockedLevel: .constant(1))
 }

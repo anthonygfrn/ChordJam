@@ -1,107 +1,77 @@
-//
-//  FinishLevel.swift
-//  ChordJam
-//
-//  Created by Christian Aldrich Darrien on 18/06/24.
-//
-
 import SwiftUI
 
 struct FinishLevel: View {
-//    var data = 1
+    @Binding var unlockedLevel: Int
     @StateObject var manager = chordModel()
-    @State private var path = NavigationPath()
-    @State private var showNextLevelView = false
+    @State private var navigateToMainMenu = false
+    @EnvironmentObject var gameCenterManager: GameCenterManager
     
     var body: some View {
-//        var nextLevel = manager.nextLevel
-        
-        NavigationStack{
-            ZStack{
+        NavigationStack {
+            ZStack {
                 Image("BackgroundLevel")
                     .resizable()
-                
-                VStack(spacing: 30.0){
-                    
-                    VStack(spacing: 20.0){
+
+                VStack(spacing: 30.0) {
+                    VStack(spacing: 20.0) {
                         Text("Congratulations!")
                             .font(.largeTitle)
                             .bold()
                             .foregroundStyle(Color.white)
-                        
+
                         Image("Coin+Exp")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 326, height: 35)
                     }
-                    
-                    HStack(spacing: 100.0){
+
+                    HStack(spacing: 100.0) {
                         Button(action: {}, label: {
-                            Image("RetryButton")
+                            Image("Retry")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 51, height: 95)
                         })
-                        
-        //                Spacer()
-                        
-                        
-                
+
                         Button(action: {
-//                            manager.checkNextLevel()
-                            showNextLevelView = manager.currentLevel > 0
-                            
+                            unlockNextLevel()
+                            navigateToMainMenu = true
                         }, label: {
-                            Image("ContinueButton")
+                            Image("Continue")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: 86,height: 94)
+                                .frame(width: 86, height: 94)
                         })
                     }
                     .padding()
-                    NavigationLink(destination: nextDestinationView, isActive: $showNextLevelView) {
+                    NavigationLink(destination: MainMenuView(unlockedLevel: $unlockedLevel).environmentObject(gameCenterManager).onAppear {
+                        unlockNextLevel()
+                    }, isActive: $navigateToMainMenu) {
                         EmptyView()
                     }
                     .navigationBarBackButtonHidden(true)
                 }
-                
             }
             .ignoresSafeArea()
         }
         .navigationBarBackButtonHidden(true)
-        
+    }
+
+    private func unlockNextLevel() {
+        if manager.currentLevel == 1 && unlockedLevel < 2 {
+            unlockedLevel = 2
+        } else if manager.currentLevel == 2 && unlockedLevel < 3 {
+            unlockedLevel = 3
+        } else if manager.currentLevel == 3 && unlockedLevel < 4 {
+            unlockedLevel = 4
+        } else if manager.currentLevel == 4 && unlockedLevel < 5 {
+            unlockedLevel = 5
+        } else if manager.currentLevel == 5 && unlockedLevel < 6 {
+            unlockedLevel = 6
+        }
     }
 }
 
-@ViewBuilder
-private var nextDestinationView: some View {
-    let manager = chordModel()
-//    Text(manager.currentLevel)
-      switch manager.currentLevel {
-          
-      case 1:
-//          print()
-          //sukses
-          CombinedLevels2View()
-              .environmentObject(manager)
-          
-      case 2:
-          //prob
-          CombinedLevels3View()
-              .environmentObject(manager)
-          
-      case 3:
-          CombinedLevels4View()
-              .environmentObject(manager)
-      case 4:
-          CombinedLevels4View()
-              .environmentObject(manager)
-      default:
-          Text("CUAKKKKK")
-          EmptyView()
-      }
-  }
-
 #Preview {
-    FinishLevel()
+    FinishLevel(unlockedLevel: .constant(1))
 }

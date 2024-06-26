@@ -1,10 +1,3 @@
-//
-//  Level6View.swift
-//  ChordJam
-//
-//  Created by Rifat Khadafy on 23/06/24.
-//
-
 import SwiftUI
 
 struct Level6View: View {
@@ -127,7 +120,6 @@ struct Level6View: View {
 //        .onReceive(manager.$predictionResult, perform: { result in
 //            print(result)
 //        })
-        
     }
     
     func getImageChord(type: ChordType) -> ImageResource {
@@ -151,5 +143,5 @@ struct Level6View: View {
 }
 
 #Preview {
-    Level6View()
+    Level6View(unlockedLevel: .constant(6))
 }

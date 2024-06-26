@@ -16,10 +16,6 @@ struct ChallengesView: View {
             Text("Challenges")
                 .font(.largeTitle)
                 .padding()
-            
-            Spacer()
-            
-            NavBar(currentView: $currentView)
         }
     }
 }
