@@ -6,6 +6,8 @@ struct FinishLevel: View {
     @State private var navigateToMainMenu = false
     @EnvironmentObject var gameCenterManager: GameCenterManager
     
+    @State private var showNotification = false
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -27,7 +29,7 @@ struct FinishLevel: View {
 
                     HStack(spacing: 100.0) {
                         Button(action: {}, label: {
-                            Image("Retry")
+                            Image("RetryButton")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 51, height: 95)
@@ -37,7 +39,7 @@ struct FinishLevel: View {
                             unlockNextLevel()
                             navigateToMainMenu = true
                         }, label: {
-                            Image("Continue")
+                            Image("ContinueButton")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 86, height: 94)
@@ -53,8 +55,25 @@ struct FinishLevel: View {
                 }
             }
             .ignoresSafeArea()
+            
+            if showNotification{
+                BadgeNotif()
+                    .offset(y: -100)
+//                    .padding(.top, 50)
+            }
+            
         }
         .navigationBarBackButtonHidden(true)
+        .onAppear{
+            withAnimation{
+                showNotification = true
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                withAnimation {
+                    showNotification = false
+                }
+            }
+        }
     }
 
     private func unlockNextLevel() {

@@ -16,6 +16,8 @@ struct ChordJamApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(gameCenterManager)
+//            BadgeNotif()
+//            CombinedLevelsView()
         }
     }
 }

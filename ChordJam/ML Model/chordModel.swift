@@ -126,15 +126,15 @@ class chordModel: NSObject, ObservableObject, SNResultsObserving {
             
             if currentLevel == 1 {
                 //                print("ini level 1")
-                if predictionResult == "C"{
+                if predictionResult == "Ambient Noise"{
                     DispatchQueue.main.async {
                         self.objectWillChange.send()
                         self.pointsC += 0.34
                         self.pointsAm = 0
                         self.pointsDm = 0
                         self.pointsG = 0
-                        
-                        
+//                        self.currentLevel = 1
+//                        print(self.currentLevel)
                     }
                     //                updatePoints(points: pointsC)
                     print(pointsC)
@@ -145,6 +145,7 @@ class chordModel: NSObject, ObservableObject, SNResultsObserving {
                         pointsDm = 0
                         pointsG = 0
                         nextLevel = 2
+//                        currentLevel = 1
                         
                         //                        DispatchQueue.main.async{
                         //                            self.objectWillChange.send()
@@ -155,7 +156,7 @@ class chordModel: NSObject, ObservableObject, SNResultsObserving {
                 }
             }else if currentLevel == 2{
                 //                print("ini level 2")
-                if predictionResult == "Am"{
+                if predictionResult == "Ambient Noise"{
                     DispatchQueue.main.async {
                         self.objectWillChange.send()
                         self.pointsAm += 0.34
@@ -186,7 +187,7 @@ class chordModel: NSObject, ObservableObject, SNResultsObserving {
                 //                print("ini level 3")
                 
                 //Ganti nnti
-                if predictionResult == "G"{
+                if predictionResult == "Ambient Noise"{
                     DispatchQueue.main.async {
                         self.objectWillChange.send()
                         self.pointsG += 0.34
@@ -214,7 +215,7 @@ class chordModel: NSObject, ObservableObject, SNResultsObserving {
             }
             else if currentLevel == 4 {
                 //                print("ini level 3")
-                if predictionResult == "Dm"{
+                if predictionResult == "Ambient Noise"{
                     DispatchQueue.main.async {
                         self.objectWillChange.send()
                         self.pointsDm += 0.34
