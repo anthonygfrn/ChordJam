@@ -42,13 +42,13 @@ struct Level6View: View {
             }
             .overlay(
                 ZStack{
-                    if(viewModel.isPause){
+                    if(viewModel.musicPlayerState == MusicPlayerState.pause){
                             PauseComponent(retryAction: {
                                 viewModel.resetMusic()
                             }, exitAction: {
                                 navigate = true
                             }, resumeAction: {
-                                viewModel.restartMusic()
+                                viewModel.resumeMusic()
                             }).background{
                                 NavigationLink(destination: MainMenuView(unlockedLevel: $level).navigationBarBackButtonHidden(), isActive: $navigate) {EmptyView()}
                             }
@@ -78,7 +78,7 @@ struct Level6View: View {
                             .animation(.easeInOut, value: viewModel.chordImage)
                     }
                     
-                    if(!viewModel.isPause){
+                    if(viewModel.musicPlayerState != MusicPlayerState.pause){
                         Button(action: {
                             viewModel.pauseMusic()
                         }, label: {

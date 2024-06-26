@@ -62,7 +62,6 @@ struct ChordView: View {
     @EnvironmentObject var viewModel: Level6ViewModel
     @EnvironmentObject var manager: chordModel
     @State private var chordConditional = ChordConditionalType.none
-    //    let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
     
     var body: some View {
         VStack{
@@ -81,27 +80,28 @@ struct ChordView: View {
             .offset(x:CGFloat(getChordOffset()))
             .onReceive(viewModel.$currentTime, perform: { time in
                 if chordConditional != ChordConditionalType.none {
+                    if time <= 0.5 {
+                        chordConditional = ChordConditionalType.none
+                    }
                     return
                 }
                 let expectedChord = chord.chord.rawValue
                 let detectedChord = manager.predictionResult
                 
-                if time >= (chord.time ) && time <= (chord.time + 1) {
+                if time >= (chord.time) && time <= (chord.time + 1) {
                     print(time, chord.time)
                     print("Detected Chord \(detectedChord), Expected Chord: \(expectedChord)")
                     if detectedChord == expectedChord {
-                        print("Correct")
                         chordConditional = ChordConditionalType.correct
                     } else {
-                        print("False")
                         chordConditional = ChordConditionalType.inCorrect
-                        viewModel.pauseMusic()
+                        viewModel.pauseWrongChord()
                     }
                 }
                 
             })
             .onReceive(manager.$predictionResult, perform: { result in
-                if chordConditional == ChordConditionalType.inCorrect {
+                if chordConditional == ChordConditionalType.inCorrect && viewModel.musicPlayerState != MusicPlayerState.pause {
                     let expectedChord = chord.chord.rawValue
                     let detectedChord = manager.predictionResult
                     
@@ -109,8 +109,9 @@ struct ChordView: View {
                     print("Detected Chord \(detectedChord), Expected Chord: \(expectedChord)")
                     if detectedChord == expectedChord {
                         print("Correct")
+                        viewModel.isWrongChord = false
                         chordConditional = ChordConditionalType.correct
-                        viewModel.restartMusic()
+                        viewModel.resumeMusic()
                     } else {
                         print("False")
                     }

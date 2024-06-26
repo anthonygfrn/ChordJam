@@ -18,7 +18,8 @@ class Level6ViewModel: ObservableObject {
     private var audioPlayer: AVAudioPlayer!
     @Published var currentTime: Double = 0
     @Published var chordImage: ChordType?
-    @Published var isPause: Bool = false
+    @Published var musicPlayerState: MusicPlayerState = MusicPlayerState.none
+    var isWrongChord = false
     @Published var contentWidth: CGFloat = 0
     var fretViewWidth: CGFloat = 300
     var desiredDuration: Double = 2
@@ -71,6 +72,7 @@ class Level6ViewModel: ObservableObject {
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: url)
             audioPlayer.play()
+            musicPlayerState = MusicPlayerState.running
             timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) {_ in
                 self.currentTime += 0.01
                 self.updateLyricBasedOnCurrentTime()
@@ -87,7 +89,7 @@ class Level6ViewModel: ObservableObject {
         currentTime = 0.0
         currentIndex = 0
         currentLyric = ""
-        isPause = false
+        musicPlayerState = MusicPlayerState.running
         offset = 122
         timer = Timer.scheduledTimer(withTimeInterval: speed, repeats: true) {_ in
             self.currentTime += self.speed
@@ -95,9 +97,13 @@ class Level6ViewModel: ObservableObject {
         }
     }
     
-    func restartMusic() {
-        if isPause {
-            isPause = false
+    func resumeMusic() {
+        if isWrongChord {
+            musicPlayerState = MusicPlayerState.stopWrongChord
+            return
+        }
+        if musicPlayerState != MusicPlayerState.running {
+            musicPlayerState = MusicPlayerState.running
             audioPlayer?.currentTime = currentTime
             audioPlayer?.play()
             timer = Timer.scheduledTimer(withTimeInterval: speed, repeats: true) {_ in
@@ -109,17 +115,24 @@ class Level6ViewModel: ObservableObject {
     }
     
     func pauseMusic(){
-        if !isPause {
+        if musicPlayerState != MusicPlayerState.running {
             audioPlayer.pause()
             timer?.invalidate()
-            isPause = true
+            musicPlayerState = MusicPlayerState.pause
         }
-        
     }
     
+    func pauseWrongChord(){
+        if musicPlayerState != MusicPlayerState.stopWrongChord {
+            audioPlayer.pause()
+            timer?.invalidate()
+            isWrongChord = true
+            musicPlayerState = MusicPlayerState.stopWrongChord
+        }
+    }
     
     func stopMusic() {
-//        audioPlayer.stop()
+        audioPlayer.stop()
         timer?.invalidate()
     }
     
