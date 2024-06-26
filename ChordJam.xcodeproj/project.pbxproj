@@ -58,6 +58,8 @@
 		FBD0B7E82C22C0000067F90D /* AudioKitEX in Frameworks */ = {isa = PBXBuildFile; productRef = FBD0B7E72C22C0000067F90D /* AudioKitEX */; };
 		FBD0B7EA2C22C0120067F90D /* SoundpipeAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = FBD0B7E92C22C0120067F90D /* SoundpipeAudioKit */; };
 		FBD0B7EC2C22C0170067F90D /* Tonic in Frameworks */ = {isa = PBXBuildFile; productRef = FBD0B7EB2C22C0170067F90D /* Tonic */; };
+		FBD1C2212C2C3041009D356F /* PauseComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD1C2202C2C3041009D356F /* PauseComponent.swift */; };
+		FBD1C2232C2C3CA9009D356F /* LearnSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD1C2222C2C3CA9009D356F /* LearnSong.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +130,8 @@
 		FB7D9CED2C2A7FDE00D47241 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		FB7D9CF02C2A8B8E00D47241 /* Level1View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level1View.swift; sourceTree = "<group>"; };
 		FB7D9CF12C2A8B8E00D47241 /* ModalLevel1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalLevel1.swift; sourceTree = "<group>"; };
+		FBD1C2202C2C3041009D356F /* PauseComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseComponent.swift; sourceTree = "<group>"; };
+		FBD1C2222C2C3CA9009D356F /* LearnSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnSong.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +203,7 @@
 				A2B8E3542C1BDE87008A0E5A /* ChordJamApp.swift */,
 				A2B8E3562C1BDE87008A0E5A /* ContentView.swift */,
 				A2B8E3582C1BDE88008A0E5A /* Assets.xcassets */,
+				FBD1C2222C2C3CA9009D356F /* LearnSong.swift */,
 				A2B8E35A2C1BDE88008A0E5A /* Preview Content */,
 				294FD0CF2C29394800031E61 /* LevelController.swift */,
 				A2C4C1EB2C23CC36002FEEAB /* GameCenterManager.swift */,
@@ -234,6 +239,7 @@
 		A2C4C1ED2C23CC56002FEEAB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FBD1C21F2C2C1681009D356F /* Components */,
 				FB7D9CF22C2A8B8E00D47241 /* Level1 */,
 				A2C4C1F82C23CD04002FEEAB /* ChallengesView.swift */,
 				A2C4C1FC2C23CD2D002FEEAB /* CollectionView.swift */,
@@ -302,6 +308,7 @@
 			isa = PBXGroup;
 			children = (
 				FB7D9CDB2C2A7FA300D47241 /* GuitarComponents.swift */,
+				FBD1C2202C2C3041009D356F /* PauseComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -358,6 +365,13 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FBD1C21F2C2C1681009D356F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -525,6 +539,7 @@
 				FB7D9CE02C2A7FA300D47241 /* GuitarComponents.swift in Sources */,
 				BA5E61152C2A70D800BA943E /* ModalLevel4.swift in Sources */,
 				A2C4C1FB2C23CD1E002FEEAB /* LeaderboardView.swift in Sources */,
+				FBD1C2232C2C3CA9009D356F /* LearnSong.swift in Sources */,
 				FB7D9CE22C2A7FA300D47241 /* Level6ViewModel.swift in Sources */,
 				290068EE2C22A2B4000DCE81 /* Onboarding.swift in Sources */,
 				BA5E61162C2A70D800BA943E /* Level2View.swift in Sources */,
@@ -538,6 +553,7 @@
 				BA5E61132C2A70D800BA943E /* ModalLevel3.swift in Sources */,
 				FB7D9CF42C2A8B8E00D47241 /* ModalLevel1.swift in Sources */,
 				A2C4C1FF2C23CD3A002FEEAB /* ProfileView.swift in Sources */,
+				FBD1C2212C2C3041009D356F /* PauseComponent.swift in Sources */,
 				A2C4C1EA2C23CC11002FEEAB /* MainMenuView.swift in Sources */,
 				FB7D9CE82C2A7FCD00D47241 /* LyricModel.swift in Sources */,
 				294FD0D42C29ACF100031E61 /* SuccessCase.swift in Sources */,
@@ -708,7 +724,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ChordJam/Preview Content\"";
-				DEVELOPMENT_TEAM = CAPH2JRFFZ;
+				DEVELOPMENT_TEAM = 68FP6TZ275;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ChordJam/Info.plist;
@@ -740,7 +756,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ChordJam/Preview Content\"";
-				DEVELOPMENT_TEAM = CAPH2JRFFZ;
+				DEVELOPMENT_TEAM = 68FP6TZ275;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ChordJam/Info.plist;

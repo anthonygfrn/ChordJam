@@ -13,6 +13,19 @@ import Combine
 class Level6ViewModel: ObservableObject {
     @Published var currentLyric: String = ""
     @Published var offset: CGFloat = 122
+    private var currentIndex: Int = 0
+    private var timer: Timer?
+    private var audioPlayer: AVAudioPlayer!
+    @Published var currentTime: Double = 0
+    @Published var chordImage: ChordType?
+    @Published var isPause: Bool = false
+    @Published var contentWidth: CGFloat = 0
+    var fretViewWidth: CGFloat = 300
+    var desiredDuration: Double = 2
+    var speed: Double = 0.01
+    private var scrollSpeed: CGFloat {
+        fretViewWidth / CGFloat(desiredDuration / speed)
+    }
     
     let chords: [ChordModel] = [
         ChordModel(chord: ChordType.C, time: 14),
@@ -45,27 +58,12 @@ class Level6ViewModel: ObservableObject {
         LyricModel(text: "Now it all seems light years away", time: 84.8),
         LyricModel(text: "♪", time: 88),
     ]
-    private var currentIndex: Int = 0
-    private var timer: Timer?
-
-    private var audioPlayer: AVAudioPlayer!
-    @Published var currentTime: Double = 0
-    @Published var chordImage: ChordType?
-        
+    
     func startLyrics() {
         guard !lyrics.isEmpty else { return }
         startAudio()
     }
-    
-    func startTimerAgain() {
-        audioPlayer?.currentTime = currentTime
-        audioPlayer?.play()
-        timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) {_ in
-            self.currentTime += 0.01
-            self.updateLyricBasedOnCurrentTime()
-        }
-    }
-    
+        
     private func startAudio() {
         guard let path = Bundle.main.path(forResource: "grikfrik", ofType: "mp3") else { return }
         let url = URL(fileURLWithPath: path)
@@ -73,7 +71,7 @@ class Level6ViewModel: ObservableObject {
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: url)
             audioPlayer.play()
-            timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) {_ in 
+            timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) {_ in
                 self.currentTime += 0.01
                 self.updateLyricBasedOnCurrentTime()
             }
@@ -83,15 +81,45 @@ class Level6ViewModel: ObservableObject {
         }
     }
     
+    func resetMusic() {
+        audioPlayer?.currentTime = 0.0
+        audioPlayer?.play()
+        currentTime = 0.0
+        currentIndex = 0
+        currentLyric = ""
+        isPause = false
+        offset = 122
+        timer = Timer.scheduledTimer(withTimeInterval: speed, repeats: true) {_ in
+            self.currentTime += self.speed
+            self.updateLyricBasedOnCurrentTime()
+        }
+    }
     
-    func pauseTimer(){
-        audioPlayer.pause() 
-        timer?.invalidate()
+    func restartMusic() {
+        if isPause {
+            isPause = false
+            audioPlayer?.currentTime = currentTime
+            audioPlayer?.play()
+            timer = Timer.scheduledTimer(withTimeInterval: speed, repeats: true) {_ in
+                self.currentTime += self.speed
+                self.updateLyricBasedOnCurrentTime()
+            }
+            
+        }
+    }
+    
+    func pauseMusic(){
+        if !isPause {
+            audioPlayer.pause()
+            timer?.invalidate()
+            isPause = true
+        }
+        
     }
     
     
     func stopMusic() {
-        audioPlayer.stop()
+//        audioPlayer.stop()
         timer?.invalidate()
     }
     
@@ -105,8 +133,7 @@ class Level6ViewModel: ObservableObject {
     }
     
     private func updateLyricBasedOnCurrentTime() {
-        // Check if the current index is within the bounds of the lyrics array
-    
+        // Update
         guard currentIndex < lyrics.count else {
             if(currentTime > (lyrics.last?.time ?? 0 ) + 2 ){
                 stopMusic()
@@ -114,12 +141,19 @@ class Level6ViewModel: ObservableObject {
             return
         }
         
+        // Update Fretboard State
+        offset -= scrollSpeed
+        if offset <= -contentWidth {
+            offset = 122
+        }
+        
+        // Update Image Chord Logic
         let closestChord = getClosestChord(at: currentTime)
         if closestChord != self.chordImage && closestChord != nil {
             self.chordImage = closestChord!
         }
         
-        // If the current time is greater than the next lyric's time, update the current index and lyric
+        // Update Lyric Logic
         if currentTime >= lyrics[currentIndex].time {
             currentLyric = lyrics[currentIndex].text
             currentIndex += 1
