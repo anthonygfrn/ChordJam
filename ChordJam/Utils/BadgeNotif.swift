@@ -77,6 +77,9 @@ struct BadgeNotif: View {
         else if level == 4 {
             return "Learning Dm Major"
         }
+        else if level == 5 {
+            return "Learning One Song"
+        }
         return "NULL"
     }
     
@@ -92,6 +95,9 @@ struct BadgeNotif: View {
         }
         else if level == 4 {
             return "BadgeDm"
+        }
+        else if level == 5 {
+            return "oneSong"
         }
         return "NULL"
     }

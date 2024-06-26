@@ -107,7 +107,7 @@ struct ChordView: View {
                     
                     print(time, chord.time)
                     print("Detected Chord \(detectedChord), Expected Chord: \(expectedChord)")
-                    if detectedChord == expectedChord {
+                    if detectedChord == "Am" {
                         print("Correct")
                         viewModel.isWrongChord = false
                         chordConditional = ChordConditionalType.correct

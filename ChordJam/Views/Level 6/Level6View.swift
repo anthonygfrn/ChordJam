@@ -8,6 +8,9 @@ struct Level6View: View {
     @State private var viewLoaded: Bool = false
     @State private var level  = 6
     @State private var navigate = false
+    
+    @State var showNextLevelView = false
+    @Binding var unlockedLevel: Int
 
     private var getFretBoardLong: Int {
         return Int(ceil(Double(viewModel.lyrics.last!.time) / 2.0 )) + 10
@@ -101,11 +104,16 @@ struct Level6View: View {
         .task{
             manager.startAudioEngine()
         }
-        .onReceive(viewModel.$currentTime, perform: { time in
-            if viewLoaded {
-
+        .onReceive(viewModel.$isEnd, perform: { isEnd in
+            if isEnd {
+                showNextLevelView = true
+                unlockedLevel = max(unlockedLevel, 5)
+                manager.currentLevel = 5
             }
         })
+        .fullScreenCover(isPresented: $showNextLevelView){
+            FinishLevel(unlockedLevel: $unlockedLevel)
+        }
     }
     
     func getImageChord(type: ChordType) -> ImageResource {
@@ -129,5 +137,5 @@ struct Level6View: View {
 }
 
 #Preview {
-    Level6View()
+    Level6View(unlockedLevel: .constant(6))
 }

@@ -29,21 +29,20 @@ struct FinishLevel: View {
 
                     HStack(spacing: 100.0) {
                         Button(action: {}, label: {
-                            Image(systemName: "arrow.clockwise")
+                            Image("RetryButton")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 51, height: 95)
-                                .rotationEffect(.degrees(45))
                         })
 
                         Button(action: {
                             unlockNextLevel()
                             navigateToMainMenu = true
                         }, label: {
-                            Image(systemName: "play.fill")
+                            Image("ContinueButton")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: 51, height: 95)
+                                .frame(width: 86, height: 94)
                         })
                     }
                     .padding()

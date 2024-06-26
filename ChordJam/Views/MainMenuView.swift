@@ -85,35 +85,35 @@ struct MainMenuView: View {
                 .background(
                     VStack {
                         NavigationLink(
-                            destination: CombinedLevelsView(unlockedLevel: $unlockedLevel),
+                            destination: CombinedLevelsView(unlockedLevel: $unlockedLevel).navigationBarBackButtonHidden(),
                             isActive: $navigateToLevel1,
                             label: { EmptyView() }
                         )
                         NavigationLink(
-                            destination: CombinedLevels2View(unlockedLevel: $unlockedLevel),
+                            destination: CombinedLevels2View(unlockedLevel: $unlockedLevel).navigationBarBackButtonHidden(),
                             isActive: $navigateToLevel2,
                             label: { EmptyView() }
                         )
                         NavigationLink(
-                            destination: CombinedLevels3View(unlockedLevel: $unlockedLevel),
+                            destination: CombinedLevels3View(unlockedLevel: $unlockedLevel).navigationBarBackButtonHidden(),
                             isActive: $navigateToLevel3,
                             label: { EmptyView() }
                         )
                         NavigationLink(
-                            destination: CombinedLevels4View(unlockedLevel: $unlockedLevel),
+                            destination: CombinedLevels4View(unlockedLevel: $unlockedLevel).navigationBarBackButtonHidden(),
                             isActive: $navigateToLevel4,
                             label: { EmptyView() }
                         )
                         NavigationLink(
-                            destination: LearnSong(),
+                            destination: LearnSong(unlockedLevel: $unlockedLevel).navigationBarBackButtonHidden(),
                             isActive: $navigateToLevel5,
                             label: { EmptyView() }
                         )
-                        NavigationLink(
-                            destination: LearnSong(),
-                            isActive: $navigateToLevel6,
-                            label: { EmptyView() }
-                        )
+//                        NavigationLink(
+//                            destination: LearnSong(),
+//                            isActive: $navigateToLevel6,
+//                            label: { EmptyView() }
+//                        )
                     }
                 )
             }

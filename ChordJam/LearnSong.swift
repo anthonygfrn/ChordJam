@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LearnSong: View {
     @State var Opacity: Double = 0.0
+    @Binding var unlockedLevel: Int
     
     var body: some View {
         NavigationView {
@@ -21,7 +22,7 @@ struct LearnSong: View {
                             }
                         }
                     }
-                NavigationLink(destination: Level6View().navigationBarBackButtonHidden()){
+                NavigationLink(destination: Level6View(unlockedLevel:$unlockedLevel).navigationBarBackButtonHidden()){
                     OnboardImage(Onboard: "songs")
                 }
                 .opacity(Opacity)
@@ -31,5 +32,5 @@ struct LearnSong: View {
 }
 
 #Preview {
-    LearnSong()
+    LearnSong(unlockedLevel: .constant(6))
 }

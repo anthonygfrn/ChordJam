@@ -21,6 +21,7 @@ class Level6ViewModel: ObservableObject {
     @Published var musicPlayerState: MusicPlayerState = MusicPlayerState.none
     var isWrongChord = false
     @Published var contentWidth: CGFloat = 0
+    @Published var isEnd = false
     var fretViewWidth: CGFloat = 300
     var desiredDuration: Double = 2
     var speed: Double = 0.01
@@ -43,6 +44,19 @@ class Level6ViewModel: ObservableObject {
         ChordModel(chord: ChordType.Dm, time: 85),
     ]
     
+//    ChordModel(chord: ChordType.C, time: 14),
+//    ChordModel(chord: ChordType.Am, time: 20.5),
+//    ChordModel(chord: ChordType.Dm, time: 26.5), // 26.5
+//    ChordModel(chord: ChordType.G, time: 33),
+//    ChordModel(chord: ChordType.C, time: 39),
+//    ChordModel(chord: ChordType.Am, time: 45.5),
+//    ChordModel(chord: ChordType.Dm, time: 51.5),
+//    ChordModel(chord: ChordType.G, time: 58),
+//    ChordModel(chord: ChordType.C, time: 70),
+//    ChordModel(chord: ChordType.Dm, time: 75.5), // 76
+//    ChordModel(chord: ChordType.C, time: 80.5),
+//    ChordModel(chord: ChordType.Dm, time: 85),
+
     let lyrics: [LyricModel] = [
         LyricModel(text: "You know I can't smile without you", time: 11),
         LyricModel(text: "I can't smile without you", time: 20 ),
@@ -134,6 +148,7 @@ class Level6ViewModel: ObservableObject {
     func stopMusic() {
         audioPlayer.stop()
         timer?.invalidate()
+        isEnd = true
     }
     
     func getClosestChord(at time: Double) -> ChordType? {

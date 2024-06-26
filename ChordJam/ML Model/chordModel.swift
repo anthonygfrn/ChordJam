@@ -124,12 +124,12 @@ class chordModel: NSObject, ObservableObject, SNResultsObserving {
             //            print(classifiedConfidence)
             
             
-            if currentLevel == 1 {
+            if currentLevel == 10 {
                 //                print("ini level 1")
-                if predictionResult == "C"{
+                if predictionResult == "Am"{
                     DispatchQueue.main.async {
                         self.objectWillChange.send()
-                        self.pointsC += 0.34
+                        self.pointsC += 30
                         self.pointsAm = 0
                         self.pointsDm = 0
                         self.pointsG = 0
@@ -139,7 +139,7 @@ class chordModel: NSObject, ObservableObject, SNResultsObserving {
                     //                updatePoints(points: pointsC)
                     print(pointsC)
                     
-                    if pointsC >= 1.0{
+                    if pointsC >= 90.0{
                         //                    print("Lanjut Om!")
                         pointsAm = 0
                         pointsDm = 0
@@ -154,12 +154,12 @@ class chordModel: NSObject, ObservableObject, SNResultsObserving {
                         return
                     }
                 }
-            }else if currentLevel == 2{
+            }else if currentLevel == 1 || currentLevel == 2 || currentLevel == 3 ||  currentLevel == 4{
                 //                print("ini level 2")
                 if predictionResult == "Am"{
                     DispatchQueue.main.async {
                         self.objectWillChange.send()
-                        self.pointsAm += 0.34
+                        self.pointsAm += 30
                         self.pointsC = 0
                         self.pointsDm = 0
                         self.pointsG = 0
@@ -167,7 +167,7 @@ class chordModel: NSObject, ObservableObject, SNResultsObserving {
                     //                updatePoints(points: pointsC)
                     print(pointsAm)
                     
-                    if pointsAm >= 1.0{
+                    if pointsAm >= 90.0{
                         //                    print("Lanjut Om!")
                         pointsC = 0
                         pointsDm = 0
@@ -183,14 +183,14 @@ class chordModel: NSObject, ObservableObject, SNResultsObserving {
                     }
                 }
             }
-            else if currentLevel == 3 {
+            else if currentLevel == 13 {
                 //                print("ini level 3")
                 
                 //Ganti nnti
-                if predictionResult == "G"{
+                if predictionResult == "Am"{
                     DispatchQueue.main.async {
                         self.objectWillChange.send()
-                        self.pointsG += 0.34
+                        self.pointsG += 30
                         self.pointsC = 0
                         self.pointsDm = 0
                         self.pointsAm = 0
@@ -198,7 +198,7 @@ class chordModel: NSObject, ObservableObject, SNResultsObserving {
                     //                updatePoints(points: pointsC)
                     print(pointsG)
                     
-                    if pointsG >= 1.0{
+                    if pointsG >= 90.0{
                         //                    print("Lanjut Om!")
                         pointsC = 0
                         pointsDm = 0
@@ -213,12 +213,12 @@ class chordModel: NSObject, ObservableObject, SNResultsObserving {
                     }
                 }
             }
-            else if currentLevel == 4 {
+            else if currentLevel == 14 {
                 //                print("ini level 3")
-                if predictionResult == "Dm"{
+                if predictionResult == "Am"{
                     DispatchQueue.main.async {
                         self.objectWillChange.send()
-                        self.pointsDm += 0.34
+                        self.pointsDm += 30
                         self.pointsC = 0
                         self.pointsAm = 0
                         self.pointsG = 0
@@ -226,7 +226,7 @@ class chordModel: NSObject, ObservableObject, SNResultsObserving {
                     //                updatePoints(points: pointsC)
                     print(pointsDm)
                     
-                    if pointsDm >= 1.0{
+                    if pointsDm >= 90.0{
                         //                    print("Lanjut Om!")
                         pointsC = 0
                         pointsAm = 0
@@ -241,12 +241,12 @@ class chordModel: NSObject, ObservableObject, SNResultsObserving {
                     }
                 }
             }
-            else if currentLevel == 6 {
+            else if currentLevel == 15 {
                 //                print("ini level 3")
-                if predictionResult == "Dm"{
+                if predictionResult == "Am"{
                     DispatchQueue.main.async {
                         self.objectWillChange.send()
-                        self.pointsDm += 0.34
+                        self.pointsDm += 30
                         self.pointsC = 0
                         self.pointsAm = 0
                         self.pointsG = 0
@@ -254,7 +254,7 @@ class chordModel: NSObject, ObservableObject, SNResultsObserving {
                     //                updatePoints(points: pointsC)
                     print(pointsDm)
                     
-                    if pointsDm >= 1.0{
+                    if pointsDm >= 90.0{
                         //                    print("Lanjut Om!")
                         pointsC = 0
                         pointsAm = 0

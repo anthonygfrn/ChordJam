@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var currentView = "Introduction"
-    @State private var unlockedLevel = 1
+    @State private var unlockedLevel = 5
 
     var body: some View {
         ZStack {

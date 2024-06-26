@@ -22,9 +22,7 @@ struct Level1View: View {
                 VStack(alignment: .leading){
                     Spacer()
                     VStack{
-                        ProgressView(value: manager.pointsC)
-                            .progressViewStyle(.linear)
-                            .frame(width: 200)
+                        ProgressBar(progress: manager.pointsAm, total: 90)
                         
                         Text("C Major Chord")
                             .font(.largeTitle)
@@ -57,7 +55,7 @@ struct Level1View: View {
             manager.currentLevel = 1
             manager.startAudioEngine()
         }
-        .onChange(of: manager.pointsC >= 1.0) { _ in
+        .onChange(of: manager.pointsAm >= 90.0) { _ in
             UserDefaults.standard.set(manager.currentLevel, forKey: "LevelSekarang")
             manager.audioEngine.stop()
             showNextLevelView = true
