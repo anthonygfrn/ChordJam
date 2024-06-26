@@ -59,6 +59,7 @@
 		FBD0B7EC2C22C0170067F90D /* Tonic in Frameworks */ = {isa = PBXBuildFile; productRef = FBD0B7EB2C22C0170067F90D /* Tonic */; };
 		FBD1C2212C2C3041009D356F /* PauseComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD1C2202C2C3041009D356F /* PauseComponent.swift */; };
 		FBD1C2232C2C3CA9009D356F /* LearnSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD1C2222C2C3CA9009D356F /* LearnSong.swift */; };
+		FBD1C2252C2C52C7009D356F /* MusicPlayerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD1C2242C2C52C7009D356F /* MusicPlayerState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +131,7 @@
 		FB7D9CF12C2A8B8E00D47241 /* ModalLevel1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalLevel1.swift; sourceTree = "<group>"; };
 		FBD1C2202C2C3041009D356F /* PauseComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseComponent.swift; sourceTree = "<group>"; };
 		FBD1C2222C2C3CA9009D356F /* LearnSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnSong.swift; sourceTree = "<group>"; };
+		FBD1C2242C2C52C7009D356F /* MusicPlayerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -325,6 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				FB7D9CE32C2A7FCD00D47241 /* ChordModel.swift */,
+				FBD1C2242C2C52C7009D356F /* MusicPlayerState.swift */,
 				FB7D9CE42C2A7FCD00D47241 /* LyricModel.swift */,
 				FB7D9CE52C2A7FCD00D47241 /* MusicModel.swift */,
 				FB3A97AC2C2B924200EB2B92 /* ChordConditionalModel.swift */,
@@ -524,6 +527,7 @@
 				BA5E60FA2C2A702C00BA943E /* ChordDetection.mlmodel in Sources */,
 				294FD0D02C29394800031E61 /* LevelController.swift in Sources */,
 				290068EC2C22A2AE000DCE81 /* Introduction.swift in Sources */,
+				FBD1C2252C2C52C7009D356F /* MusicPlayerState.swift in Sources */,
 				290069162C2511A5000DCE81 /* StringDetection.swift in Sources */,
 				BA5E61172C2A70D800BA943E /* ModalLevel2.swift in Sources */,
 				BA5E61142C2A70D800BA943E /* Level4View.swift in Sources */,
