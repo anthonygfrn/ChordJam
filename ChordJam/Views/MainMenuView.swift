@@ -89,12 +89,12 @@ struct MainMenuView: View {
                             label: { EmptyView() }
                         )
                         NavigationLink(
-                            destination: Level6View(),
+                            destination: LearnSong(),
                             isActive: $navigateToLevel5,
                             label: { EmptyView() }
                         )
                         NavigationLink(
-                            destination: Level6View(),
+                            destination: LearnSong(),
                             isActive: $navigateToLevel6,
                             label: { EmptyView() }
                         )

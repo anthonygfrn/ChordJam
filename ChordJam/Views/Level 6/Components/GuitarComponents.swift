@@ -95,7 +95,7 @@ struct ChordView: View {
                     } else {
                         print("False")
                         chordConditional = ChordConditionalType.inCorrect
-                        viewModel.pauseTimer()
+                        viewModel.pauseMusic()
                     }
                 }
                 
@@ -110,7 +110,7 @@ struct ChordView: View {
                     if detectedChord == expectedChord {
                         print("Correct")
                         chordConditional = ChordConditionalType.correct
-                        viewModel.startTimerAgain()
+                        viewModel.restartMusic()
                     } else {
                         print("False")
                     }
