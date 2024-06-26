@@ -67,7 +67,7 @@ struct MainMenuView: View {
                     }
                 }
                 .background(
-                    Group {
+                    VStack {
                         NavigationLink(
                             destination: Level1View(unlockedLevel: $unlockedLevel),
                             isActive: $navigateToLevel1,
@@ -89,12 +89,12 @@ struct MainMenuView: View {
                             label: { EmptyView() }
                         )
                         NavigationLink(
-                            destination: Level6View(unlockedLevel: $unlockedLevel),
+                            destination: Level6View(),
                             isActive: $navigateToLevel5,
                             label: { EmptyView() }
                         )
                         NavigationLink(
-                            destination: Level6View(unlockedLevel: $unlockedLevel),
+                            destination: Level6View(),
                             isActive: $navigateToLevel6,
                             label: { EmptyView() }
                         )

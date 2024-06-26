@@ -143,5 +143,5 @@ struct Level6View: View {
 }
 
 #Preview {
-    Level6View(unlockedLevel: .constant(6))
+    Level6View()
 }
