@@ -99,11 +99,6 @@ struct MainMenuView: View {
                             isActive: $navigateToLevel5,
                             label: { EmptyView() }
                         )
-                        NavigationLink(
-                            destination: LearnSong(),
-                            isActive: $navigateToLevel6,
-                            label: { EmptyView() }
-                        )
                     }
                 )
             }
@@ -137,10 +132,10 @@ struct MainMenuView: View {
             button(imageName: "Dm", action: { navigateToLevel4 = true }, isLocked: unlockedLevel < 4)
                 .offset(x: scrollOffsetForButton(x: geometry.size.width * 1.1 + 95, geometry: geometry), y: geometry.size.height * -0.1 + 35)
             
-            button(imageName: "R", action: { navigateToLevel5 = true }, isLocked: unlockedLevel < 5)
+            button(imageName: "Song", action: { navigateToLevel5 = true }, isLocked: unlockedLevel < 5)
                 .offset(x: scrollOffsetForButton(x: geometry.size.width * 1.5 + 70, geometry: geometry), y: geometry.size.height * -0.4 + 30)
             
-            button(imageName: "Song", action: { navigateToLevel6 = true }, isLocked: unlockedLevel < 6)
+            button(imageName: "Next", action: { }, isLocked: unlockedLevel < 6)
                 .offset(x: scrollOffsetForButton(x: geometry.size.width * 1.8 + 50, geometry: geometry), y: geometry.size.height * -0.8 + 20)
         }
     }

@@ -241,20 +241,20 @@
 		A2C4C1ED2C23CC56002FEEAB /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				FBD1C21F2C2C1681009D356F /* Components */,
-				FB7D9CF22C2A8B8E00D47241 /* Level1 */,
 				A2C4C1F82C23CD04002FEEAB /* ChallengesView.swift */,
 				A2C4C1FC2C23CD2D002FEEAB /* CollectionView.swift */,
+				BA5E60FF2C2A709000BA943E /* CombinedLevels */,
+				FBD1C21F2C2C1681009D356F /* Components */,
 				BA5E61182C2A70FC00BA943E /* FinishLevel.swift */,
 				A2C4C1FA2C23CD1E002FEEAB /* LeaderboardView.swift */,
-				A2C4C1E92C23CC11002FEEAB /* MainMenuView.swift */,
-				A2C4C2002C23CD4C002FEEAB /* NavBar.swift */,
-				A2C4C1FE2C23CD3A002FEEAB /* ProfileView.swift */,
-				BA5E60FF2C2A709000BA943E /* CombinedLevels */,
 				FB7D9CDF2C2A7FA300D47241 /* Level 6 */,
+				FB7D9CF22C2A8B8E00D47241 /* Level1 */,
 				BA5E61112C2A70D800BA943E /* Level2 */,
 				BA5E610B2C2A70D800BA943E /* Level3 */,
 				BA5E610E2C2A70D800BA943E /* Level4 */,
+				A2C4C1E92C23CC11002FEEAB /* MainMenuView.swift */,
+				A2C4C2002C23CD4C002FEEAB /* NavBar.swift */,
+				A2C4C1FE2C23CD3A002FEEAB /* ProfileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

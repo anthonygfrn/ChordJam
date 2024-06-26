@@ -98,7 +98,8 @@ struct Level2View: View {
             UserDefaults.standard.set(manager.currentLevel, forKey: "LevelSekarang")
             manager.audioEngine.stop()
             showNextLevelView = true
-            unlockedLevel = max(unlockedLevel, 3) // Unlock the next level (G chord)
+            unlockedLevel = 3
+            print(unlockedLevel)// Unlock the next level (G chord)
         }
         .fullScreenCover(isPresented: $showNextLevelView) {
             FinishLevel(unlockedLevel: $unlockedLevel)
