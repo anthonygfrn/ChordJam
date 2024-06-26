@@ -10,6 +10,7 @@ import SwiftUI
 struct Level6View: View {
     @ObservedObject var viewModel = Level6ViewModel()
     @StateObject var manager = chordModel()
+    @StateObject var detection = StringDetection()
     
     @State private var offset: CGFloat = 122
     @State private var contentWidth: CGFloat = 0
@@ -39,6 +40,7 @@ struct Level6View: View {
                         GeometryReader { proxy in
                             Color.clear.onAppear {
                                 if !viewLoaded {
+                                    
                                     contentWidth = proxy.size.width
                                     viewLoaded = true
                                 }
@@ -48,6 +50,7 @@ struct Level6View: View {
                     .offset(x: offset)
                 }
                 .environmentObject(viewModel)
+                .environmentObject(manager)
                 .frame(width: geometry.size.width, alignment: .bottomLeading)
             }
             .overlay(
@@ -94,25 +97,25 @@ struct Level6View: View {
         .background(
             LinearGradient(gradient: Gradient(colors: [Color(hex: "2A2A2A"), Color(hex: "434343")]), startPoint: .leading, endPoint: .trailing)
         )
-        .onAppear {
-            //            manager.startAudioEngine()
+        .task{
+            manager.startAudioEngine()
         }
         .onReceive(viewModel.$currentTime, perform: { time in
-            //            if currentChordIndex < viewModel.chords.count {
-            //                let expectedChord = viewModel.chords[currentChordIndex].chord.rawValue
-            //                let detectedChord = manager.predictionResult
-            //
-            //                if time >= viewModel.chords[currentChordIndex].time {
-            //                    print(time, viewModel.chords[currentChordIndex].time)
-            //                    print(detectedChord)
-            //                    if detectedChord == expectedChord {
-            //                        print("Correct")
-            //                    } else {
-            //                        print("False")
-            //                    }
-            //                    currentChordIndex += 1
-            //                }
-            //            }
+//            if currentChordIndex < viewModel.chords.count {
+//                let expectedChord = viewModel.chords[currentChordIndex].chord.rawValue
+//                let detectedChord = manager.predictionResult
+//                
+//                if time >= viewModel.chords[currentChordIndex].time {
+//                    print(time, viewModel.chords[currentChordIndex].time)
+//                    print("Detected Chord \(detectedChord), Expected Chord: \(expectedChord)")
+//                    if detectedChord == expectedChord {
+//                        print("Correct")
+//                    } else {
+//                        print("False")
+//                    }
+//                    currentChordIndex += 1
+//                }
+//            }
             
             if viewLoaded {
                 offset -= scrollSpeed
@@ -121,9 +124,9 @@ struct Level6View: View {
                 }
             }
         })
-        .onReceive(manager.$predictionResult, perform: { result in
-            print(result)
-        })
+//        .onReceive(manager.$predictionResult, perform: { result in
+//            print(result)
+//        })
         
     }
     

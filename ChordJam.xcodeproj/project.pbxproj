@@ -41,7 +41,7 @@
 		BA5E61162C2A70D800BA943E /* Level2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5E610F2C2A70D800BA943E /* Level2View.swift */; };
 		BA5E61172C2A70D800BA943E /* ModalLevel2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5E61102C2A70D800BA943E /* ModalLevel2.swift */; };
 		BA5E611A2C2A70FC00BA943E /* FinishLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5E61182C2A70FC00BA943E /* FinishLevel.swift */; };
-		BA5E611B2C2A70FC00BA943E /* ResultsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5E61192C2A70FC00BA943E /* ResultsObserver.swift */; };
+		FB3A97AD2C2B924200EB2B92 /* ChordConditionalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3A97AC2C2B924200EB2B92 /* ChordConditionalModel.swift */; };
 		FB7D9CE02C2A7FA300D47241 /* GuitarComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7D9CDB2C2A7FA300D47241 /* GuitarComponents.swift */; };
 		FB7D9CE12C2A7FA300D47241 /* Level6View.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7D9CDD2C2A7FA300D47241 /* Level6View.swift */; };
 		FB7D9CE22C2A7FA300D47241 /* Level6ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7D9CDE2C2A7FA300D47241 /* Level6ViewModel.swift */; };
@@ -115,7 +115,7 @@
 		BA5E610F2C2A70D800BA943E /* Level2View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level2View.swift; sourceTree = "<group>"; };
 		BA5E61102C2A70D800BA943E /* ModalLevel2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalLevel2.swift; sourceTree = "<group>"; };
 		BA5E61182C2A70FC00BA943E /* FinishLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishLevel.swift; sourceTree = "<group>"; };
-		BA5E61192C2A70FC00BA943E /* ResultsObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsObserver.swift; sourceTree = "<group>"; };
+		FB3A97AC2C2B924200EB2B92 /* ChordConditionalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordConditionalModel.swift; sourceTree = "<group>"; };
 		FB7D9CDB2C2A7FA300D47241 /* GuitarComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuitarComponents.swift; sourceTree = "<group>"; };
 		FB7D9CDD2C2A7FA300D47241 /* Level6View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level6View.swift; sourceTree = "<group>"; };
 		FB7D9CDE2C2A7FA300D47241 /* Level6ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level6ViewModel.swift; sourceTree = "<group>"; };
@@ -254,7 +254,6 @@
 			children = (
 				BA5E60F92C2A702C00BA943E /* ChordDetection.mlmodel */,
 				BA5E60F72C2A700400BA943E /* chordModel.swift */,
-				BA5E61192C2A70FC00BA943E /* ResultsObserver.swift */,
 			);
 			path = "ML Model";
 			sourceTree = "<group>";
@@ -321,6 +320,7 @@
 				FB7D9CE32C2A7FCD00D47241 /* ChordModel.swift */,
 				FB7D9CE42C2A7FCD00D47241 /* LyricModel.swift */,
 				FB7D9CE52C2A7FCD00D47241 /* MusicModel.swift */,
+				FB3A97AC2C2B924200EB2B92 /* ChordConditionalModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -514,10 +514,10 @@
 				BA5E61172C2A70D800BA943E /* ModalLevel2.swift in Sources */,
 				BA5E61142C2A70D800BA943E /* Level4View.swift in Sources */,
 				BA5E61002C2A709000BA943E /* CombinedLevels2View.swift in Sources */,
+				FB3A97AD2C2B924200EB2B92 /* ChordConditionalModel.swift in Sources */,
 				FB7D9CEF2C2A7FDE00D47241 /* Color.swift in Sources */,
 				A2B8E3552C1BDE87008A0E5A /* ChordJamApp.swift in Sources */,
 				BA5E61022C2A709000BA943E /* CombinedLevels4View.swift in Sources */,
-				BA5E611B2C2A70FC00BA943E /* ResultsObserver.swift in Sources */,
 				FB7D9CE02C2A7FA300D47241 /* GuitarComponents.swift in Sources */,
 				BA5E61152C2A70D800BA943E /* ModalLevel4.swift in Sources */,
 				A2C4C1FB2C23CD1E002FEEAB /* LeaderboardView.swift in Sources */,
@@ -704,7 +704,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ChordJam/Preview Content\"";
-				DEVELOPMENT_TEAM = CAPH2JRFFZ;
+				DEVELOPMENT_TEAM = 68FP6TZ275;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ChordJam/Info.plist;
@@ -736,7 +736,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ChordJam/Preview Content\"";
-				DEVELOPMENT_TEAM = CAPH2JRFFZ;
+				DEVELOPMENT_TEAM = 68FP6TZ275;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ChordJam/Info.plist;

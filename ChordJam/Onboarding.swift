@@ -532,7 +532,7 @@ struct Onboarding: View {
                         }
                     }
                 } else {
-                    progress += 1
+                    progress += 10
                 }
             }
         case "E2":

@@ -51,24 +51,19 @@ class Level6ViewModel: ObservableObject {
     private var audioPlayer: AVAudioPlayer!
     @Published var currentTime: Double = 0
     @Published var chordImage: ChordType?
-    
-    init() {
-        setupAudioSession()
-    }
-    
-    func setupAudioSession() {
-        do {
-            // Set the audio session category to playback
-            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
-            try AVAudioSession.sharedInstance().setActive(true)
-        } catch {
-            print("Failed to set audio session category: \(error)")
-        }
-    }
-    
+        
     func startLyrics() {
         guard !lyrics.isEmpty else { return }
         startAudio()
+    }
+    
+    func startTimerAgain() {
+        audioPlayer?.currentTime = currentTime
+        audioPlayer?.play()
+        timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) {_ in
+            self.currentTime += 0.01
+            self.updateLyricBasedOnCurrentTime()
+        }
     }
     
     private func startAudio() {
@@ -86,6 +81,12 @@ class Level6ViewModel: ObservableObject {
         } catch {
             print("Error loading audio file")
         }
+    }
+    
+    
+    func pauseTimer(){
+        audioPlayer.pause() 
+        timer?.invalidate()
     }
     
     
