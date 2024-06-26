@@ -4,17 +4,11 @@ struct Level6View: View {
     @ObservedObject var viewModel = Level6ViewModel()
     @StateObject var manager = chordModel()
     @StateObject var detection = StringDetection()
-    
-    @State private var offset: CGFloat = 122
-    @State private var contentWidth: CGFloat = 0
     @State private var currentChordIndex = 0
     @State private var viewLoaded: Bool = false
-    var fretViewWidth: CGFloat = 300
-    var desiredDuration: Double = 2
-    var speed: Double = 0.01
-    private var scrollSpeed: CGFloat {
-        fretViewWidth / CGFloat(desiredDuration / speed)
-    }
+    @State private var level  = 6
+    @State private var navigate = false
+
     private var getFretBoardLong: Int {
         return Int(ceil(Double(viewModel.lyrics.last!.time) / 2.0 )) + 10
     }
@@ -33,14 +27,14 @@ struct Level6View: View {
                         GeometryReader { proxy in
                             Color.clear.onAppear {
                                 if !viewLoaded {
-                                    
-                                    contentWidth = proxy.size.width
+                                    viewModel.contentWidth = proxy.size.width
                                     viewLoaded = true
+                                    viewModel.startLyrics()
                                 }
                             }
                         }
                     )
-                    .offset(x: offset)
+                    .offset(x: viewModel.offset)
                 }
                 .environmentObject(viewModel)
                 .environmentObject(manager)
@@ -48,6 +42,17 @@ struct Level6View: View {
             }
             .overlay(
                 ZStack{
+                    if(viewModel.isPause){
+                            PauseComponent(retryAction: {
+                                viewModel.resetMusic()
+                            }, exitAction: {
+                                navigate = true
+                            }, resumeAction: {
+                                viewModel.restartMusic()
+                            }).background{
+                                NavigationLink(destination: MainMenuView(unlockedLevel: $level).navigationBarBackButtonHidden(), isActive: $navigate) {EmptyView()}
+                            }
+                    }
                     RoundedRectangle(cornerRadius: 25)
                         .fill(.accent)
                         .frame(width: 8, height: 270)
@@ -70,17 +75,20 @@ struct Level6View: View {
                         Image(getImageChord(type: viewModel.chordImage!))
                             .offset(x: 300, y: 80)
                             .transition(.opacity)
+                            .animation(.easeInOut, value: viewModel.chordImage)
                     }
                     
-                    Button(action: {
-                        viewModel.startLyrics()
-                    }, label: {
-                        Image(systemName: "pause.fill")
-                            .resizable()
-                            .foregroundColor(.white)
-                            .frame(width: 24, height: 24)
-                    })
-                    .offset(x: 350, y: -160)
+                    if(!viewModel.isPause){
+                        Button(action: {
+                            viewModel.pauseMusic()
+                        }, label: {
+                            Image(systemName: "pause.fill")
+                                .resizable()
+                                .foregroundColor(.white)
+                                .frame(width: 24, height: 24)
+                        })
+                        .offset(x: 350, y: -160)
+                    }
                 }
             )
         }
@@ -94,32 +102,10 @@ struct Level6View: View {
             manager.startAudioEngine()
         }
         .onReceive(viewModel.$currentTime, perform: { time in
-//            if currentChordIndex < viewModel.chords.count {
-//                let expectedChord = viewModel.chords[currentChordIndex].chord.rawValue
-//                let detectedChord = manager.predictionResult
-//                
-//                if time >= viewModel.chords[currentChordIndex].time {
-//                    print(time, viewModel.chords[currentChordIndex].time)
-//                    print("Detected Chord \(detectedChord), Expected Chord: \(expectedChord)")
-//                    if detectedChord == expectedChord {
-//                        print("Correct")
-//                    } else {
-//                        print("False")
-//                    }
-//                    currentChordIndex += 1
-//                }
-//            }
-            
             if viewLoaded {
-                offset -= scrollSpeed
-                if offset <= -contentWidth {
-                    offset = 122
-                }
+
             }
         })
-//        .onReceive(manager.$predictionResult, perform: { result in
-//            print(result)
-//        })
     }
     
     func getImageChord(type: ChordType) -> ImageResource {
