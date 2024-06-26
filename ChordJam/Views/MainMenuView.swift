@@ -32,26 +32,32 @@ struct MainMenuView: View {
                 ZStack {
                     Color.black.edgesIgnoringSafeArea(.all)
                     
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        ZStack(alignment: .topLeading) {
-                            backgroundView(geometry: geometry)
-                            
-                            VStack(spacing: 20) {
-                                levelButtons(geometry: geometry)
+                    if currentView == "Home" {
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            ZStack(alignment: .topLeading) {
+                                backgroundView(geometry: geometry)
+                                
+                                VStack(spacing: 20) {
+                                    levelButtons(geometry: geometry)
+                                }
+                                .padding()
                             }
-                            .padding()
                         }
+                        .edgesIgnoringSafeArea(.all)
+                        .frame(height: geometry.size.height)
+                        .coordinateSpace(name: "scroll")
+                        .gesture(
+                            DragGesture()
+                                .onChanged { value in
+                                    let newOffset = scrollOffset + value.translation.width
+                                    scrollOffset = max(0, min(newOffset, geometry.size.width * 2.1 - geometry.size.width))
+                                }
+                        )
+                    } else if currentView == "Leaderboard" {
+                        LeaderboardView()
+                    } else if currentView == "Profile" {
+                        ProfileView()
                     }
-                    .edgesIgnoringSafeArea(.all)
-                    .frame(height: geometry.size.height)
-                    .coordinateSpace(name: "scroll")
-                    .gesture(
-                        DragGesture()
-                            .onChanged { value in
-                                let newOffset = scrollOffset + value.translation.width
-                                scrollOffset = max(0, min(newOffset, geometry.size.width * 2.1 - geometry.size.width))
-                            }
-                    )
                     
                     VStack {
                         Spacer()

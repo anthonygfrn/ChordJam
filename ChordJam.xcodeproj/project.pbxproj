@@ -269,10 +269,10 @@
 		BA5E60FF2C2A709000BA943E /* CombinedLevels */ = {
 			isa = PBXGroup;
 			children = (
+				BA5E60FE2C2A709000BA943E /* CombinedLevelsView.swift */,
 				BA5E60FB2C2A709000BA943E /* CombinedLevels2View.swift */,
 				BA5E60FC2C2A709000BA943E /* CombinedLevels3View.swift */,
 				BA5E60FD2C2A709000BA943E /* CombinedLevels4View.swift */,
-				BA5E60FE2C2A709000BA943E /* CombinedLevelsView.swift */,
 			);
 			path = CombinedLevels;
 			sourceTree = "<group>";
@@ -724,7 +724,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ChordJam/Preview Content\"";
-				DEVELOPMENT_TEAM = 68FP6TZ275;
+				DEVELOPMENT_TEAM = FTP77G36XW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ChordJam/Info.plist;
@@ -756,7 +756,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ChordJam/Preview Content\"";
-				DEVELOPMENT_TEAM = 68FP6TZ275;
+				DEVELOPMENT_TEAM = FTP77G36XW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ChordJam/Info.plist;

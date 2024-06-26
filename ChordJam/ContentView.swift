@@ -14,13 +14,22 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             if currentView == "Introduction" {
-                Introduction(onFinish: {
-                    withAnimation {
-                        currentView = "MainMenu"
+                Introduction(
+                    onFinish: {
+                        withAnimation {
+                            currentView = "MainMenu"
+                        }
+                    },
+                    onStartOnboarding: {
+                        withAnimation {
+                            currentView = "Onboarding" 
+                        }
                     }
-                })
+                )
             } else if currentView == "MainMenu" {
                 MainMenuView(unlockedLevel: $unlockedLevel)
+            } else if currentView == "Onboarding" {
+                Onboarding(unlockedLevel: $unlockedLevel)
             }
         }
     }
