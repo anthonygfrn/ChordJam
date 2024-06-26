@@ -8,7 +8,7 @@ import SwiftUI
 
 struct ModalLevel1: View {
     var body: some View {
-        Image("Modal1")
+        Image("Level Stage 1")
             .resizable()
             
             .ignoresSafeArea()

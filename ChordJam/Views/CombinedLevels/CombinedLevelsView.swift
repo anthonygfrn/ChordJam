@@ -10,7 +10,8 @@ import SwiftUI
 struct CombinedLevelsView: View {
     @State private var showNextLevelView = false
     @State private var showLevel1View = false
-    @State private var unlockedLevel: Int = 1
+
+    @Binding var unlockedLevel: Int
 
     var body: some View {
         Group {
@@ -32,5 +33,5 @@ struct CombinedLevelsView: View {
 }
 
 #Preview {
-    CombinedLevelsView()
+    CombinedLevelsView(unlockedLevel: .constant(1))
 }

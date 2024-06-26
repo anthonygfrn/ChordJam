@@ -58,6 +58,7 @@ struct Level1View: View {
             manager.startAudioEngine()
         }
         .onChange(of: manager.pointsC >= 1.0) { _ in
+            UserDefaults.standard.set(manager.currentLevel, forKey: "LevelSekarang")
             manager.audioEngine.stop()
             showNextLevelView = true
             unlockedLevel = max(unlockedLevel, 2) // Unlock the next level
