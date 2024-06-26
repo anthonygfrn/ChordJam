@@ -21,6 +21,7 @@ struct MainMenuView: View {
     @State private var scrollOffset: CGFloat = 0
     @Binding var unlockedLevel: Int
     @State private var currentView: String = "Home"
+    @State private var streakDays: Int = UserDefaults.standard.integer(forKey: "streakDays")
     
     private let imageSize: CGFloat = 71.88
     private let onboardingImageSize: CGFloat = 91.36
@@ -53,6 +54,16 @@ struct MainMenuView: View {
                                     scrollOffset = max(0, min(newOffset, geometry.size.width * 2.1 - geometry.size.width))
                                 }
                         )
+                        .overlay{
+                            VStack {
+                                HStack {
+                                    Spacer()
+                                    streakView()
+                                        .padding()
+                                }
+                                Spacer()
+                            }
+                        }
                     } else if currentView == "Leaderboard" {
                         LeaderboardView()
                     } else if currentView == "Profile" {
@@ -64,13 +75,12 @@ struct MainMenuView: View {
                         NavBar(currentView: $currentView)
                     }
                     .padding(.bottom, -30)
+                    
                 }
                 .navigationBarBackButtonHidden(true)
                 .onAppear {
                     UIScreen.main.brightness = 0.5
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                        unlockedLevel = max(unlockedLevel, 1) // Ensure level 1 is unlocked initially
-                    }
+                    unlockedLevel = max(unlockedLevel, 1) // Ensure level 1 is unlocked initially
                 }
                 .background(
                     VStack {
@@ -97,6 +107,11 @@ struct MainMenuView: View {
                         NavigationLink(
                             destination: LearnSong(),
                             isActive: $navigateToLevel5,
+                            label: { EmptyView() }
+                        )
+                        NavigationLink(
+                            destination: LearnSong(),
+                            isActive: $navigateToLevel6,
                             label: { EmptyView() }
                         )
                     }
@@ -132,10 +147,10 @@ struct MainMenuView: View {
             button(imageName: "Dm", action: { navigateToLevel4 = true }, isLocked: unlockedLevel < 4)
                 .offset(x: scrollOffsetForButton(x: geometry.size.width * 1.1 + 95, geometry: geometry), y: geometry.size.height * -0.1 + 35)
             
-            button(imageName: "Song", action: { navigateToLevel5 = true }, isLocked: unlockedLevel < 5)
+            button(imageName: "R", action: { navigateToLevel5 = true }, isLocked: unlockedLevel < 5)
                 .offset(x: scrollOffsetForButton(x: geometry.size.width * 1.5 + 70, geometry: geometry), y: geometry.size.height * -0.4 + 30)
             
-            button(imageName: "Next", action: { }, isLocked: unlockedLevel < 6)
+            button(imageName: "Song", action: { navigateToLevel6 = true }, isLocked: unlockedLevel < 6)
                 .offset(x: scrollOffsetForButton(x: geometry.size.width * 1.8 + 50, geometry: geometry), y: geometry.size.height * -0.8 + 20)
         }
     }
@@ -162,6 +177,26 @@ struct MainMenuView: View {
                 .frame(width: imageSize, height: imageSize)
         }
         .disabled(isLocked)
+    }
+
+    private func streakView() -> some View {
+        VStack {
+            Image("Streak")
+                .resizable()
+                .frame(width: 45, height: 45)
+                .overlay(
+                    Circle()
+                        .fill(Color.white)
+                        .frame(width: 30, height: 30)
+                        .overlay(
+                            Text("\(streakDays)")
+                                .foregroundColor(.orange)
+                                .font(.footnote)
+                        )
+                        .offset(x: 12, y: -18)
+                )
+        }
+        .offset(y: 18)
     }
 }
 

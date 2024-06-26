@@ -10,22 +10,35 @@ import GameKit
 
 struct ProfileView: View {
     @EnvironmentObject var gameCenterManager: GameCenterManager
-    @State private var playerAvatar: Image? // State to hold the avatar image
+    @State private var playerAvatar: Image?
+    @State private var streakDays: Int = UserDefaults.standard.integer(forKey: "streakDays")
+    @State private var lastOpenDate: Date? = UserDefaults.standard.object(forKey: "lastOpenDate") as? Date
 
     var body: some View {
         VStack {
             if gameCenterManager.isAuthenticated {
-                VStack {
-                    if let alias = gameCenterManager.playerAlias {
-                        Text("Welcome, \(alias)")
-                            .font(.headline)
+                HStack {
+                    if let playerAvatar = playerAvatar {
+                        playerAvatar
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 100, height: 100)
+                            .clipShape(Circle())
+                            .padding()
                     }
 
-                    playerAvatar?  // Display the avatar if it's loaded
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 100, height: 100)
-                        .clipShape(Circle())
+                    VStack(alignment: .leading, spacing: 10) {
+                        if let alias = gameCenterManager.playerAlias {
+                            Text("Welcome, \(alias)")
+                                .font(.headline)
+                        }
+
+                        VStack(alignment: .leading, spacing: 5) {
+                            Text("Streak Days: \(streakDays)")
+                                .font(.subheadline)
+                                .bold()
+                        }
+                    }
                 }
                 .padding()
             } else {
@@ -33,7 +46,8 @@ struct ProfileView: View {
                     .padding()
             }
         }
-        .onAppear { // Load the avatar when the view appears
+        .onAppear {
+            incrementStreakDays()
             GKLocalPlayer.local.loadPhoto(for: .normal) { image, error in
                 if let image = image {
                     self.playerAvatar = Image(uiImage: image)
@@ -41,9 +55,25 @@ struct ProfileView: View {
             }
         }
     }
+
+    private func incrementStreakDays() {
+        let today = Calendar.current.startOfDay(for: Date())
+        if let lastOpen = lastOpenDate, lastOpen == today {
+            // Already opened today, do nothing
+            return
+        } else if let lastOpen = lastOpenDate, Calendar.current.isDateInYesterday(lastOpen) {
+            // Opened yesterday, increment streak
+            streakDays += 1
+        } else {
+            // Opened after more than a day, reset streak
+            streakDays = 1
+        }
+        lastOpenDate = today
+        UserDefaults.standard.set(streakDays, forKey: "streakDays")
+        UserDefaults.standard.set(lastOpenDate, forKey: "lastOpenDate")
+    }
 }
 
-
 #Preview {
-    ProfileView()
+    ProfileView().environmentObject(GameCenterManager.shared)
 }
