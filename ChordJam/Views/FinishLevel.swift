@@ -44,7 +44,7 @@ struct FinishLevel: View {
                         })
                     }
                     .padding()
-                    NavigationLink(destination: MainMenuView().environmentObject(gameCenterManager).onAppear {
+                    NavigationLink(destination: MainMenuView(unlockedLevel: $unlockedLevel).environmentObject(gameCenterManager).onAppear {
                         unlockNextLevel()
                     }, isActive: $navigateToMainMenu) {
                         EmptyView()

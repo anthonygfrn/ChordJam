@@ -1,29 +1,69 @@
+//
+//  Level1View.swift
+//  ChordJam
+//
+//  Created by Christian Aldrich Darrien on 18/06/24.
+//
+
 import SwiftUI
 
 struct Level1View: View {
+    @StateObject var manager = chordModel()
     @Binding var unlockedLevel: Int
-    @Environment(\.presentationMode) var presentationMode
-    @State private var isLevelCompleted = false
+    @State var showNextLevelView = false
     
     var body: some View {
-        VStack {
-            Text("Level 1")
-                .font(.largeTitle)
-                .padding()
+        ZStack{
+            Image("BackgroundLevel")
+                .resizable()
             
-            Button(action: {
-                isLevelCompleted = true
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                    unlockedLevel = 2
-                    presentationMode.wrappedValue.dismiss()
+            HStack{
+                Spacer()
+                VStack(alignment: .leading){
+                    Spacer()
+                    VStack{
+                        ProgressView(value: manager.pointsC)
+                            .progressViewStyle(.linear)
+                            .frame(width: 200)
+                        
+                        Text("C Major Chord")
+                            .font(.largeTitle)
+                            .bold()
+                            .foregroundStyle(Color.yellow)
+                    }
+                    
+                    HStack{
+                        Image("Strings")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                        Image("FretC")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 700)
+                    }
+                    .frame(height: 190)
+                    Spacer()
                 }
-            }) {
-                Text("Complete Level 1")
-                    .padding()
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
             }
+            
+            Image("Fingering")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 96, height: 123)
+                .offset(x: 350, y: 100)
+        }
+        .ignoresSafeArea()
+        .onAppear {
+            manager.currentLevel = 1
+            manager.startAudioEngine()
+        }
+        .onChange(of: manager.pointsC >= 1.0) { _ in
+            manager.audioEngine.stop()
+            showNextLevelView = true
+            unlockedLevel = max(unlockedLevel, 2) // Unlock the next level
+        }
+        .fullScreenCover(isPresented: $showNextLevelView) {
+            FinishLevel(unlockedLevel: $unlockedLevel)
         }
     }
 }

@@ -9,34 +9,19 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var currentView = "Introduction"
+    @State private var unlockedLevel = 1
 
     var body: some View {
         ZStack {
             if currentView == "Introduction" {
                 Introduction(onFinish: {
                     withAnimation {
-                        currentView = "Home"
+                        currentView = "MainMenu"
                     }
                 })
-            } else if currentView == "Home" {
-                MainMenuView()
-            } else if currentView == "Challenges" {
-                ChallengesView()
-            } else if currentView == "Leaderboard" {
-                LeaderboardView()
-            } else if currentView == "Collection" {
-                CollectionView()
-            } else if currentView == "Profile" {
-                ProfileView()
+            } else if currentView == "MainMenu" {
+                MainMenuView(unlockedLevel: $unlockedLevel)
             }
-
-            VStack {
-                Spacer()
-                if currentView != "Introduction" {
-                    NavBar(currentView: $currentView)
-                }
-            }
-            .padding(.bottom, -30)
         }
     }
 }

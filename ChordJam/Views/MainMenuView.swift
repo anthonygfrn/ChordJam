@@ -19,7 +19,8 @@ struct MainMenuView: View {
     @State private var navigateToLevel6 = false
     
     @State private var scrollOffset: CGFloat = 0
-    @State private var unlockedLevel: Int = 0
+    @Binding var unlockedLevel: Int
+    @State private var currentView: String = "Home"
     
     private let imageSize: CGFloat = 71.88
     private let onboardingImageSize: CGFloat = 91.36
@@ -51,6 +52,12 @@ struct MainMenuView: View {
                                 scrollOffset = max(0, min(newOffset, geometry.size.width * 2.1 - geometry.size.width))
                             }
                     )
+                    
+                    VStack {
+                        Spacer()
+                        NavBar(currentView: $currentView)
+                    }
+                    .padding(.bottom, -30)
                 }
                 .navigationBarBackButtonHidden(true)
                 .onAppear {
@@ -158,5 +165,5 @@ struct MainMenuView: View {
 }
 
 #Preview {
-    MainMenuView()
+    MainMenuView(unlockedLevel: .constant(1))
 }
