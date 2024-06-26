@@ -11,6 +11,7 @@ struct BadgeNotif: View {
     
     @State private var imageText : String = ""
     @State private var badgeText : String = ""
+    @State private var showBadge: Bool = false
     
     @StateObject private var manager = chordModel()
 //    @Binding var unlockedLevel: Int
@@ -21,7 +22,7 @@ struct BadgeNotif: View {
         ZStack(alignment: .leading){
 //            Text("Adf")
             RoundedRectangle(cornerRadius: 30)
-                .frame(width: 275, height: 50)
+                .frame(width: 275, height: 45)
                 .foregroundStyle(Color(CGColor(srgbRed: 255/255.0, green: 193/255.0, blue: 7/255.0, alpha: 1)))
             
             HStack{
@@ -44,8 +45,22 @@ struct BadgeNotif: View {
             .padding()
             
         }
-        .transition(.move(edge: .top))
-        .animation(.easeInOut(duration:5))
+        .background(Color.clear)
+                        .offset(y: showBadge ? 0 : -UIScreen.main.bounds.height)
+                        .animation(.easeInOut(duration: 1), value: showBadge)
+                        .onAppear {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                withAnimation {
+                                    showBadge = false
+                                }
+                            }
+                        }
+                        .onAppear {
+                                    withAnimation {
+                                        showBadge = true
+                                    }
+                                }
+        
         
     }
     
