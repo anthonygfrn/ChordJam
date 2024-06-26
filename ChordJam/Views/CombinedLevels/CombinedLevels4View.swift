@@ -14,11 +14,10 @@ struct CombinedLevels4View: View {
     var body: some View {
         Group {
                    if showLevel4View {
-                        Level4View(unlockedLevel: .constant(2))
+                        Level4View(unlockedLevel: $unlockedLevel)
                     } else {
                         ModalLevel4()
                             .onAppear {
-                                // Start a timer to switch the view after 2 seconds
                                 Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { _ in
                                     withAnimation {
                                         showLevel4View = true

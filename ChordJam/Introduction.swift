@@ -11,6 +11,7 @@ struct Introduction: View {
     @State var Opacity: Double = 0.0
     @State var showButton: Bool = false
     var onFinish: () -> Void
+    var onStartOnboarding: () -> Void // Added a new closure for starting onboarding
 
     var body: some View {
         ZStack {
@@ -39,8 +40,7 @@ struct Introduction: View {
                     }
                     .position(x: 277, y: 223)
                     Button(action: {
-                        // Call the onFinish closure when the user decides to proceed with the onboarding
-                        onFinish()
+                        onStartOnboarding() // Call the new closure when "No" is clicked
                     }) {
                         Text("No")
                             .frame(width: 200, height: 52)
@@ -57,5 +57,5 @@ struct Introduction: View {
 }
 
 #Preview {
-    Introduction(onFinish: {})
+    Introduction(onFinish: {}, onStartOnboarding: {})
 }

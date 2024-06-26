@@ -89,6 +89,7 @@
 		294FD0CE2C2936F100031E61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		294FD0CF2C29394800031E61 /* LevelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelController.swift; sourceTree = "<group>"; };
 		294FD0D32C29ACF100031E61 /* SuccessCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessCase.swift; sourceTree = "<group>"; };
+		A284208C2C2C63A10073E9E2 /* ChordJam.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChordJam.entitlements; sourceTree = "<group>"; };
 		A2B8E3512C1BDE87008A0E5A /* ChordJam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChordJam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2B8E3542C1BDE87008A0E5A /* ChordJamApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordJamApp.swift; sourceTree = "<group>"; };
 		A2B8E3562C1BDE87008A0E5A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -190,6 +191,7 @@
 		A2B8E3532C1BDE87008A0E5A /* ChordJam */ = {
 			isa = PBXGroup;
 			children = (
+				A284208C2C2C63A10073E9E2 /* ChordJam.entitlements */,
 				FB7D9CEE2C2A7FDE00D47241 /* Utils */,
 				FB7D9CEB2C2A7FD400D47241 /* Assets */,
 				FB7D9CE62C2A7FCD00D47241 /* Models */,
@@ -241,20 +243,20 @@
 		A2C4C1ED2C23CC56002FEEAB /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				FBD1C21F2C2C1681009D356F /* Components */,
-				FB7D9CF22C2A8B8E00D47241 /* Level1 */,
 				A2C4C1F82C23CD04002FEEAB /* ChallengesView.swift */,
 				A2C4C1FC2C23CD2D002FEEAB /* CollectionView.swift */,
+				BA5E60FF2C2A709000BA943E /* CombinedLevels */,
+				FBD1C21F2C2C1681009D356F /* Components */,
 				BA5E61182C2A70FC00BA943E /* FinishLevel.swift */,
 				A2C4C1FA2C23CD1E002FEEAB /* LeaderboardView.swift */,
-				A2C4C1E92C23CC11002FEEAB /* MainMenuView.swift */,
-				A2C4C2002C23CD4C002FEEAB /* NavBar.swift */,
-				A2C4C1FE2C23CD3A002FEEAB /* ProfileView.swift */,
-				BA5E60FF2C2A709000BA943E /* CombinedLevels */,
 				FB7D9CDF2C2A7FA300D47241 /* Level 6 */,
+				FB7D9CF22C2A8B8E00D47241 /* Level1 */,
 				BA5E61112C2A70D800BA943E /* Level2 */,
 				BA5E610B2C2A70D800BA943E /* Level3 */,
 				BA5E610E2C2A70D800BA943E /* Level4 */,
+				A2C4C1E92C23CC11002FEEAB /* MainMenuView.swift */,
+				A2C4C2002C23CD4C002FEEAB /* NavBar.swift */,
+				A2C4C1FE2C23CD3A002FEEAB /* ProfileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -271,10 +273,10 @@
 		BA5E60FF2C2A709000BA943E /* CombinedLevels */ = {
 			isa = PBXGroup;
 			children = (
+				BA5E60FE2C2A709000BA943E /* CombinedLevelsView.swift */,
 				BA5E60FB2C2A709000BA943E /* CombinedLevels2View.swift */,
 				BA5E60FC2C2A709000BA943E /* CombinedLevels3View.swift */,
 				BA5E60FD2C2A709000BA943E /* CombinedLevels4View.swift */,
-				BA5E60FE2C2A709000BA943E /* CombinedLevelsView.swift */,
 			);
 			path = CombinedLevels;
 			sourceTree = "<group>";
@@ -725,10 +727,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ChordJam/ChordJam.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ChordJam/Preview Content\"";
-				DEVELOPMENT_TEAM = 68FP6TZ275;
+				DEVELOPMENT_TEAM = FTP77G36XW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ChordJam/Info.plist;
@@ -757,10 +760,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ChordJam/ChordJam.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ChordJam/Preview Content\"";
-				DEVELOPMENT_TEAM = 68FP6TZ275;
+				DEVELOPMENT_TEAM = FTP77G36XW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ChordJam/Info.plist;

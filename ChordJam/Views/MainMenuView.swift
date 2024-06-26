@@ -21,6 +21,7 @@ struct MainMenuView: View {
     @State private var scrollOffset: CGFloat = 0
     @Binding var unlockedLevel: Int
     @State private var currentView: String = "Home"
+    @State private var streakDays: Int = UserDefaults.standard.integer(forKey: "streakDays")
     
     private let imageSize: CGFloat = 71.88
     private let onboardingImageSize: CGFloat = 91.36
@@ -32,39 +33,54 @@ struct MainMenuView: View {
                 ZStack {
                     Color.black.edgesIgnoringSafeArea(.all)
                     
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        ZStack(alignment: .topLeading) {
-                            backgroundView(geometry: geometry)
-                            
-                            VStack(spacing: 20) {
-                                levelButtons(geometry: geometry)
+                    if currentView == "Home" {
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            ZStack(alignment: .topLeading) {
+                                backgroundView(geometry: geometry)
+                                
+                                VStack(spacing: 20) {
+                                    levelButtons(geometry: geometry)
+                                }
+                                .padding()
                             }
-                            .padding()
                         }
-                    }
-                    .edgesIgnoringSafeArea(.all)
-                    .frame(height: geometry.size.height)
-                    .coordinateSpace(name: "scroll")
-                    .gesture(
-                        DragGesture()
-                            .onChanged { value in
-                                let newOffset = scrollOffset + value.translation.width
-                                scrollOffset = max(0, min(newOffset, geometry.size.width * 2.1 - geometry.size.width))
+                        .edgesIgnoringSafeArea(.all)
+                        .frame(height: geometry.size.height)
+                        .coordinateSpace(name: "scroll")
+                        .gesture(
+                            DragGesture()
+                                .onChanged { value in
+                                    let newOffset = scrollOffset + value.translation.width
+                                    scrollOffset = max(0, min(newOffset, geometry.size.width * 2.1 - geometry.size.width))
+                                }
+                        )
+                        .overlay{
+                            VStack {
+                                HStack {
+                                    Spacer()
+                                    streakView()
+                                        .padding()
+                                }
+                                Spacer()
                             }
-                    )
+                        }
+                    } else if currentView == "Leaderboard" {
+                        LeaderboardView()
+                    } else if currentView == "Profile" {
+                        ProfileView()
+                    }
                     
                     VStack {
                         Spacer()
                         NavBar(currentView: $currentView)
                     }
                     .padding(.bottom, -30)
+                    
                 }
                 .navigationBarBackButtonHidden(true)
                 .onAppear {
                     UIScreen.main.brightness = 0.5
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                        unlockedLevel = max(unlockedLevel, 1) // Ensure level 1 is unlocked initially
-                    }
+                    unlockedLevel = max(unlockedLevel, 1) // Ensure level 1 is unlocked initially
                 }
                 .background(
                     VStack {
@@ -161,6 +177,26 @@ struct MainMenuView: View {
                 .frame(width: imageSize, height: imageSize)
         }
         .disabled(isLocked)
+    }
+
+    private func streakView() -> some View {
+        VStack {
+            Image("Streak")
+                .resizable()
+                .frame(width: 45, height: 45)
+                .overlay(
+                    Circle()
+                        .fill(Color.white)
+                        .frame(width: 30, height: 30)
+                        .overlay(
+                            Text("\(streakDays)")
+                                .foregroundColor(.orange)
+                                .font(.footnote)
+                        )
+                        .offset(x: 12, y: -18)
+                )
+        }
+        .offset(y: 18)
     }
 }
 

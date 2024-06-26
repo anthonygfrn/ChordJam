@@ -25,9 +25,7 @@ struct NavBar: View {
     var body: some View {
         HStack(spacing: 48) {
             NavBarItem(currentView: $currentView, viewName: "Home", imageName: "home")
-            NavBarItem(currentView: $currentView, viewName: "Challenges", imageName: "challenges")
             NavBarItem(currentView: $currentView, viewName: "Leaderboard", imageName: "leaderboard")
-            NavBarItem(currentView: $currentView, viewName: "Collection", imageName: "collection")
             NavBarItem(currentView: $currentView, viewName: "Profile", imageName: "profile")
         }
         .padding(15)

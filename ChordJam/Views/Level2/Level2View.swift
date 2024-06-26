@@ -50,15 +50,15 @@ struct Level2View: View {
     @State private var isLevelCompleted = false
 
     var body: some View {
-        ZStack{
+        ZStack {
             Image("BackgroundLevel")
                 .resizable()
             
-            HStack{
+            HStack {
                 Spacer()
-                VStack(alignment: .leading){
+                VStack(alignment: .leading) {
                     Spacer()
-                    VStack{
+                    VStack {
                         ProgressView(value: manager.pointsAm)
                             .progressViewStyle(.linear)
                             .frame(width: 200)
@@ -69,7 +69,7 @@ struct Level2View: View {
                             .foregroundStyle(Color.yellow)
                     }
                     
-                    HStack{
+                    HStack {
                         Image("Strings")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
@@ -98,12 +98,8 @@ struct Level2View: View {
             UserDefaults.standard.set(manager.currentLevel, forKey: "LevelSekarang")
             manager.audioEngine.stop()
             showNextLevelView = true
-            unlockedLevel = max(unlockedLevel, 3) // Unlock the next level
-//            isLevelCompleted = true
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-//                unlockedLevel = 3
-//                presentationMode.wrappedValue.dismiss()
-//            }
+            unlockedLevel = 3
+            print(unlockedLevel)// Unlock the next level (G chord)
         }
         .fullScreenCover(isPresented: $showNextLevelView) {
             FinishLevel(unlockedLevel: $unlockedLevel)

@@ -16,7 +16,7 @@ struct CombinedLevels2View: View {
     var body: some View {
         Group {
                    if showLevel2View {
-                        Level2View(unlockedLevel: .constant(2))
+                        Level2View(unlockedLevel: $unlockedLevel)
                     } else {
                         ModalLevel2()
                             .onAppear {

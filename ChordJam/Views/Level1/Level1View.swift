@@ -61,7 +61,14 @@ struct Level1View: View {
             UserDefaults.standard.set(manager.currentLevel, forKey: "LevelSekarang")
             manager.audioEngine.stop()
             showNextLevelView = true
-            unlockedLevel = max(unlockedLevel, 2) // Unlock the next level
+            if(unlockedLevel >= 2) {
+                print("not updating level")
+                return
+            } else {
+                print(" updating level")
+                unlockedLevel = 2 // Unlock the next level
+            }
+            
         }
         .fullScreenCover(isPresented: $showNextLevelView) {
             FinishLevel(unlockedLevel: $unlockedLevel)

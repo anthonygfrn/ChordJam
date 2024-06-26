@@ -15,11 +15,10 @@ struct CombinedLevels3View: View {
     var body: some View {
         Group {
                    if showLevel3View {
-                        Level3View(unlockedLevel: .constant(3))
+                        Level3View(unlockedLevel: $unlockedLevel)
                     } else {
                         ModalLevel3()
                             .onAppear {
-                                // Start a timer to switch the view after 2 seconds
                                 Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { _ in
                                     withAnimation {
                                         showLevel3View = true
