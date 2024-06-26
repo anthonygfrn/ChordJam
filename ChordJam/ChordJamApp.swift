@@ -18,7 +18,6 @@ struct ChordJamApp: App {
                 ContentView()
                     .environmentObject(gameCenterManager)
             }
-//            Level6View()
         }
     }
 }

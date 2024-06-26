@@ -28,6 +28,7 @@
 		A2C4C1FD2C23CD2D002FEEAB /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4C1FC2C23CD2D002FEEAB /* CollectionView.swift */; };
 		A2C4C1FF2C23CD3A002FEEAB /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4C1FE2C23CD3A002FEEAB /* ProfileView.swift */; };
 		A2C4C2012C23CD4C002FEEAB /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4C2002C23CD4C002FEEAB /* NavBar.swift */; };
+		BA5714462C2C08F3004DD0A3 /* BadgeNotif.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5714452C2C08F3004DD0A3 /* BadgeNotif.swift */; };
 		BA5E60F82C2A700400BA943E /* chordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5E60F72C2A700400BA943E /* chordModel.swift */; };
 		BA5E60FA2C2A702C00BA943E /* ChordDetection.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BA5E60F92C2A702C00BA943E /* ChordDetection.mlmodel */; };
 		BA5E61002C2A709000BA943E /* CombinedLevels2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5E60FB2C2A709000BA943E /* CombinedLevels2View.swift */; };
@@ -105,6 +106,7 @@
 		A2C4C1FC2C23CD2D002FEEAB /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		A2C4C1FE2C23CD3A002FEEAB /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		A2C4C2002C23CD4C002FEEAB /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
+		BA5714452C2C08F3004DD0A3 /* BadgeNotif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeNotif.swift; sourceTree = "<group>"; };
 		BA5E60F72C2A700400BA943E /* chordModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chordModel.swift; sourceTree = "<group>"; };
 		BA5E60F92C2A702C00BA943E /* ChordDetection.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ChordDetection.mlmodel; sourceTree = "<group>"; };
 		BA5E60FB2C2A709000BA943E /* CombinedLevels2View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombinedLevels2View.swift; sourceTree = "<group>"; };
@@ -347,6 +349,7 @@
 			isa = PBXGroup;
 			children = (
 				FB7D9CED2C2A7FDE00D47241 /* Color.swift */,
+				BA5714452C2C08F3004DD0A3 /* BadgeNotif.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -525,6 +528,7 @@
 				A2B8E3572C1BDE87008A0E5A /* ContentView.swift in Sources */,
 				BA5E611A2C2A70FC00BA943E /* FinishLevel.swift in Sources */,
 				BA5E60FA2C2A702C00BA943E /* ChordDetection.mlmodel in Sources */,
+				BA5714462C2C08F3004DD0A3 /* BadgeNotif.swift in Sources */,
 				294FD0D02C29394800031E61 /* LevelController.swift in Sources */,
 				290068EC2C22A2AE000DCE81 /* Introduction.swift in Sources */,
 				FBD1C2252C2C52C7009D356F /* MusicPlayerState.swift in Sources */,

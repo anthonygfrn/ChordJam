@@ -6,6 +6,8 @@ struct FinishLevel: View {
     @State private var navigateToMainMenu = false
     @EnvironmentObject var gameCenterManager: GameCenterManager
     
+    @State private var showNotification = false
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -54,8 +56,25 @@ struct FinishLevel: View {
                 }
             }
             .ignoresSafeArea()
+            
+            if showNotification{
+                BadgeNotif()
+                    .offset(y: -100)
+//                    .padding(.top, 50)
+            }
+            
         }
         .navigationBarBackButtonHidden(true)
+        .onAppear{
+            withAnimation{
+                showNotification = true
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                withAnimation {
+                    showNotification = false
+                }
+            }
+        }
     }
 
     private func unlockNextLevel() {

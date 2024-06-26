@@ -69,22 +69,22 @@ struct MainMenuView: View {
                 .background(
                     VStack {
                         NavigationLink(
-                            destination: Level1View(unlockedLevel: $unlockedLevel),
+                            destination: CombinedLevelsView(unlockedLevel: $unlockedLevel),
                             isActive: $navigateToLevel1,
                             label: { EmptyView() }
                         )
                         NavigationLink(
-                            destination: Level2View(unlockedLevel: $unlockedLevel),
+                            destination: CombinedLevels2View(unlockedLevel: $unlockedLevel),
                             isActive: $navigateToLevel2,
                             label: { EmptyView() }
                         )
                         NavigationLink(
-                            destination: Level3View(unlockedLevel: $unlockedLevel),
+                            destination: CombinedLevels3View(unlockedLevel: $unlockedLevel),
                             isActive: $navigateToLevel3,
                             label: { EmptyView() }
                         )
                         NavigationLink(
-                            destination: Level4View(unlockedLevel: $unlockedLevel),
+                            destination: CombinedLevels4View(unlockedLevel: $unlockedLevel),
                             isActive: $navigateToLevel4,
                             label: { EmptyView() }
                         )
